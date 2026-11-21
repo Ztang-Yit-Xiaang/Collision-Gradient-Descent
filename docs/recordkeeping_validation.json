@@ -1,0 +1,1415 @@
+{
+  "date": "2026-11-16",
+  "passed": true,
+  "retained_output_directories": 124,
+  "top_level_artifact_hashes_checked": 2121,
+  "local_document_links_checked": true,
+  "citation_records": 11,
+  "bibtex_entries": 11,
+  "search_queries_recorded": 13,
+  "new_optimization_runs": 0,
+  "latest_full_test_count_from_previous_experiment": 193,
+  "local_document_link_count": 523,
+  "source_archive_members_checked": 18113,
+  "source_archive_matches_current": false,
+  "automatic_doi_check": "0/1; failure retained; DOI metadata manually confirmed on publisher page",
+  "local_document_link_errors": [],
+  "new_run_breakdown": {
+    "archived_checkpoint_evaluations": 6,
+    "test_forwards": 192,
+    "training_runs": 0
+  },
+  "latest_full_test_count": 290,
+  "latest_full_test_seconds": 78.09,
+  "source_archive_checks": [
+    {
+      "archive": "docs/research/2026-11-08-source-snapshot.zip",
+      "members_checked": 77,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "README.md"
+      ]
+    },
+    {
+      "archive": "output/collision_cooling/source.zip",
+      "members_checked": 88,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_cooling/postprocessing_sources.zip",
+      "members_checked": 2,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_cooling_parent_analysis/source.zip",
+      "members_checked": 88,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_cooling_preflight/source.zip",
+      "members_checked": 87,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_curvature_energy/source.zip",
+      "members_checked": 133,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "analyze_curvature_energy.py",
+        "audit_curvature_energy.py",
+        "src/collision_optim/curvature_energy.py",
+        "src/collision_optim/curvature_energy_experiment.py",
+        "tests/test_curvature_energy.py"
+      ]
+    },
+    {
+      "archive": "output/collision_curvature_energy/postprocessing_sources.zip",
+      "members_checked": 21,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_curvature_energy_kinetic/source.zip",
+      "members_checked": 136,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "analyze_curvature_energy.py",
+        "check_curvature_energy.py",
+        "register_curvature_energy.py"
+      ]
+    },
+    {
+      "archive": "output/collision_curvature_energy_kinetic/postprocessing_sources.zip",
+      "members_checked": 21,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_curvature_energy_kinetic_preflight/source.zip",
+      "members_checked": 136,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "analyze_curvature_energy.py",
+        "check_curvature_energy.py",
+        "register_curvature_energy.py"
+      ]
+    },
+    {
+      "archive": "output/collision_curvature_energy_kinetic_preflight/postprocessing_sources.zip",
+      "members_checked": 21,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_curvature_energy_preflight/source.zip",
+      "members_checked": 132,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "audit_curvature_energy.py",
+        "src/collision_optim/curvature_energy.py",
+        "src/collision_optim/curvature_energy_experiment.py",
+        "tests/test_curvature_energy.py"
+      ]
+    },
+    {
+      "archive": "output/collision_curvature_energy_preflight/postprocessing_sources.zip",
+      "members_checked": 21,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_energy_generalization/source.zip",
+      "members_checked": 144,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "analyze_curvature_energy.py",
+        "analyze_energy_generalization.py"
+      ]
+    },
+    {
+      "archive": "output/collision_energy_generalization/postprocessing_sources.zip",
+      "members_checked": 22,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_energy_generalization_preflight/source.zip",
+      "members_checked": 143,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "analyze_curvature_energy.py",
+        "analyze_energy_generalization.py",
+        "audit_energy_generalization.py"
+      ]
+    },
+    {
+      "archive": "output/collision_energy_generalization_preflight/postprocessing_sources.zip",
+      "members_checked": 22,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_event_confirmation/source.zip",
+      "members_checked": 118,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "register_events.py"
+      ]
+    },
+    {
+      "archive": "output/collision_event_confirmation/postprocessing_sources.zip",
+      "members_checked": 18,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_event_development/source.zip",
+      "members_checked": 116,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "audit_events.py",
+        "src/collision_optim/event_experiment.py"
+      ]
+    },
+    {
+      "archive": "output/collision_event_development/postprocessing_sources.zip",
+      "members_checked": 18,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_event_preflight/source.zip",
+      "members_checked": 116,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "audit_events.py",
+        "src/collision_optim/event_experiment.py",
+        "src/collision_optim/event_replay.py",
+        "tests/test_event_replay.py"
+      ]
+    },
+    {
+      "archive": "output/collision_event_preflight/postprocessing_sources.zip",
+      "members_checked": 18,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_event_sensitivity/source.zip",
+      "members_checked": 116,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "audit_events.py",
+        "src/collision_optim/event_experiment.py",
+        "src/collision_optim/event_replay.py",
+        "tests/test_event_replay.py"
+      ]
+    },
+    {
+      "archive": "output/collision_event_sensitivity/postprocessing_sources.zip",
+      "members_checked": 18,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_event_sensitivity_long/source.zip",
+      "members_checked": 117,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "audit_events.py"
+      ]
+    },
+    {
+      "archive": "output/collision_event_sensitivity_long/postprocessing_sources.zip",
+      "members_checked": 18,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_handoff/source.zip",
+      "members_checked": 98,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_handoff/postprocessing_sources.zip",
+      "members_checked": 1,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_handoff_interrupted/source.zip",
+      "members_checked": 97,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "src/collision_optim/handoff.py",
+        "src/collision_optim/handoff_experiment.py",
+        "tests/test_handoff.py",
+        "docs/superpowers/specs/2026-11-08-collision-handoff-design.md"
+      ]
+    },
+    {
+      "archive": "output/collision_handoff_preflight/source.zip",
+      "members_checked": 96,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "audit_handoff.py",
+        "src/collision_optim/handoff.py",
+        "src/collision_optim/handoff_experiment.py",
+        "tests/test_handoff.py",
+        "docs/superpowers/specs/2026-11-08-collision-handoff-design.md"
+      ]
+    },
+    {
+      "archive": "output/collision_handoff_preflight/postprocessing_sources.zip",
+      "members_checked": 1,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_handoff_resume_preflight/source.zip",
+      "members_checked": 98,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_initial_budget/source.zip",
+      "members_checked": 152,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "analyze_curvature_energy.py",
+        "analyze_energy_generalization.py",
+        "analyze_initial_budget.py"
+      ]
+    },
+    {
+      "archive": "output/collision_initial_budget/postprocessing_sources.zip",
+      "members_checked": 24,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_initial_budget_preflight/source.zip",
+      "members_checked": 151,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "analyze_curvature_energy.py",
+        "analyze_energy_generalization.py",
+        "analyze_initial_budget.py"
+      ]
+    },
+    {
+      "archive": "output/collision_initial_budget_preflight/postprocessing_sources.zip",
+      "members_checked": 24,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_scattering/source.zip",
+      "members_checked": 79,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_scattering/postprocessing_sources.zip",
+      "members_checked": 2,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_scattering_interrupted/source.zip",
+      "members_checked": 79,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_scattering_preflight/source.zip",
+      "members_checked": 79,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_stability_map/source.zip",
+      "members_checked": 125,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_stability_map/postprocessing_sources.zip",
+      "members_checked": 20,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_stability_preflight/source.zip",
+      "members_checked": 121,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md",
+        "run_stability.py",
+        "src/collision_optim/stability.py",
+        "src/collision_optim/stability_experiment.py",
+        "tests/test_stability.py"
+      ]
+    },
+    {
+      "archive": "output/collision_stability_preflight/postprocessing_sources.zip",
+      "members_checked": 20,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_stability_preflight_corrected/source.zip",
+      "members_checked": 125,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_stability_preflight_corrected/postprocessing_sources.zip",
+      "members_checked": 20,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_stability_rosen/source.zip",
+      "members_checked": 125,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_stability_rosen/postprocessing_sources.zip",
+      "members_checked": 20,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_timing_confirmation/source.zip",
+      "members_checked": 109,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_timing_confirmation/postprocessing_sources.zip",
+      "members_checked": 14,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_timing_development/source.zip",
+      "members_checked": 106,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_timing_development/postprocessing_sources.zip",
+      "members_checked": 14,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_timing_preflight/source.zip",
+      "members_checked": 106,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_timing_preflight/postprocessing_sources.zip",
+      "members_checked": 14,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_timing_safety/source.zip",
+      "members_checked": 107,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_timing_safety/postprocessing_sources.zip",
+      "members_checked": 14,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_timing_safety_preflight/source.zip",
+      "members_checked": 106,
+      "integrity_passed": true,
+      "current_differences": [
+        "AGENTS.md"
+      ]
+    },
+    {
+      "archive": "output/collision_timing_safety_preflight/postprocessing_sources.zip",
+      "members_checked": 14,
+      "integrity_passed": true
+    },
+    {
+      "archive": "output/collision_conditional_transfer_preflight/source.zip",
+      "members_checked": 122,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_conditional_transfer_preflight/postprocessing_sources.zip",
+      "members_checked": 6,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_conditional_transfer/source.zip",
+      "members_checked": 122,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_conditional_transfer/postprocessing_sources.zip",
+      "members_checked": 6,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_overlap_transfer_preflight/source.zip",
+      "members_checked": 156,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_overlap_transfer_preflight/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": [
+        "docs/research/register_overlap_transfer.py",
+        "docs/experiment_log.md"
+      ]
+    },
+    {
+      "archive": "output/collision_overlap_transfer_development/source.zip",
+      "members_checked": 156,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_overlap_transfer_development/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": [
+        "docs/research/register_overlap_transfer.py",
+        "docs/experiment_log.md"
+      ]
+    },
+    {
+      "archive": "output/collision_overlap_transfer/source.zip",
+      "members_checked": 156,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_overlap_transfer/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": [
+        "docs/research/register_overlap_transfer.py",
+        "docs/experiment_log.md"
+      ]
+    },
+    {
+      "archive": "output/collision_shared_prefix_transfer_preflight/source.zip",
+      "members_checked": 160,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_shared_prefix_transfer_preflight/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_shared_prefix_transfer_development/source.zip",
+      "members_checked": 160,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_shared_prefix_transfer_development/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_shared_prefix_transfer/source.zip",
+      "members_checked": 160,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_shared_prefix_transfer/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_prebounce_warning_preflight/source.zip",
+      "members_checked": 164,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_prebounce_warning_preflight/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_prebounce_warning_development/source.zip",
+      "members_checked": 164,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_prebounce_warning_development/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_prebounce_warning/source.zip",
+      "members_checked": 164,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_prebounce_warning/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_warning_triggered_transfer_preflight/source.zip",
+      "members_checked": 166,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_warning_triggered_transfer_preflight/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_warning_triggered_transfer/source.zip",
+      "members_checked": 166,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_warning_triggered_transfer/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_postbounce_warning_transfer_preflight/source.zip",
+      "members_checked": 170,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_postbounce_warning_transfer_preflight/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_postbounce_warning_transfer/source.zip",
+      "members_checked": 170,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_postbounce_warning_transfer/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_time_transfer_preflight/source.zip",
+      "members_checked": 173,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_time_transfer_preflight/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_time_transfer/source.zip",
+      "members_checked": 173,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_time_transfer/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_warning_replication_preflight/source.zip",
+      "members_checked": 175,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_warning_replication_preflight/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_warning_replication/source.zip",
+      "members_checked": 175,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_warning_replication/postprocessing_sources.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_long_forecast_preflight/source.zip",
+      "members_checked": 179,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_long_forecast_preflight/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_long_forecast/source.zip",
+      "members_checked": 179,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_long_forecast/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_high_kinetic_intervention_timing_preflight/source.zip",
+      "members_checked": 181,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_high_kinetic_intervention_timing_preflight/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_high_kinetic_intervention_timing/source.zip",
+      "members_checked": 181,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_high_kinetic_intervention_timing/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_two_stage_protection_preflight/source.zip",
+      "members_checked": 183,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_two_stage_protection_preflight/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_two_stage_protection/source.zip",
+      "members_checked": 183,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_two_stage_protection/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_step_protection_preflight/source.zip",
+      "members_checked": 185,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_step_protection_preflight/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_step_protection/source.zip",
+      "members_checked": 185,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_step_protection/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_window_guard_preflight/source.zip",
+      "members_checked": 189,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_window_guard_preflight/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_window_guard/source.zip",
+      "members_checked": 189,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_contact_window_guard/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_later_reflection_warning_preflight/source.zip",
+      "members_checked": 192,
+      "integrity_passed": true,
+      "current_differences": [
+        "audit_later_reflection_warning.py"
+      ]
+    },
+    {
+      "archive": "output/collision_later_reflection_warning_preflight/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_later_reflection_warning_preflight_verified/source.zip",
+      "members_checked": 192,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_later_reflection_warning_preflight_verified/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_later_reflection_warning/source.zip",
+      "members_checked": 192,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_later_reflection_warning/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_capped_reflection_transfer_preflight/source.zip",
+      "members_checked": 195,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_capped_reflection_transfer_preflight/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_capped_reflection_transfer/source.zip",
+      "members_checked": 195,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_capped_reflection_transfer/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_reflection_capped_policy_preflight/source.zip",
+      "members_checked": 198,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_reflection_capped_policy_preflight/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_reflection_capped_policy/source.zip",
+      "members_checked": 198,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_reflection_capped_policy/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "docs/research/e40_exploration/analysis_source.zip",
+      "members_checked": 7,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_long_horizon_exploration_preflight/source.zip",
+      "members_checked": 201,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_long_horizon_exploration_preflight/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_long_horizon_exploration/source.zip",
+      "members_checked": 201,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_long_horizon_exploration/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_guard_preflight/source.zip",
+      "members_checked": 202,
+      "integrity_passed": true,
+      "current_differences": [
+        "audit_later_reflection_warning.py",
+        "audit_third_reflection_guard.py",
+        "run_third_reflection_guard.py"
+      ]
+    },
+    {
+      "archive": "output/collision_third_reflection_guard_preflight/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_guard_preflight_verified/source.zip",
+      "members_checked": 202,
+      "integrity_passed": true,
+      "current_differences": [
+        "audit_later_reflection_warning.py",
+        "audit_third_reflection_guard.py"
+      ]
+    },
+    {
+      "archive": "output/collision_third_reflection_guard_preflight_verified/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_guard_preflight_final/source.zip",
+      "members_checked": 202,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_guard_preflight_final/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_guard/source.zip",
+      "members_checked": 202,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_guard/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_replication_preflight/source.zip",
+      "members_checked": 205,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_replication_preflight/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_replication/source.zip",
+      "members_checked": 205,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_replication/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_saved_window_preflight/source.zip",
+      "members_checked": 208,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_saved_window_preflight/postprocessing_sources.zip",
+      "members_checked": 13,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_saved_window/source.zip",
+      "members_checked": 208,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_saved_window/postprocessing_sources.zip",
+      "members_checked": 13,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_contact_gate_preflight/source.zip",
+      "members_checked": 211,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_contact_gate_preflight/postprocessing_sources.zip",
+      "members_checked": 14,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_contact_gate/source.zip",
+      "members_checked": 211,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_reflection_contact_gate/postprocessing_sources.zip",
+      "members_checked": 14,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_post_contact_positive_stress_preflight/source.zip",
+      "members_checked": 213,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_post_contact_positive_stress_preflight/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_post_contact_positive_stress/source.zip",
+      "members_checked": 213,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_post_contact_positive_stress/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_post_contact_curvature_screen_preflight/source.zip",
+      "members_checked": 215,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_post_contact_curvature_screen_preflight/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_post_contact_curvature_screen/source.zip",
+      "members_checked": 215,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_post_contact_curvature_screen/postprocessing_sources.zip",
+      "members_checked": 8,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_post_contact_curvature_preflight/source.zip",
+      "members_checked": 217,
+      "integrity_passed": true,
+      "current_differences": [
+        "audit_second_post_contact_curvature.py",
+        "docs/superpowers/specs/2026-11-15-second-post-contact-curvature-design.md"
+      ]
+    },
+    {
+      "archive": "output/collision_second_post_contact_curvature_preflight/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_post_contact_curvature_preflight_verified/source.zip",
+      "members_checked": 217,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_post_contact_curvature_preflight_verified/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_post_contact_curvature/source.zip",
+      "members_checked": 217,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_post_contact_curvature/postprocessing_sources.zip",
+      "members_checked": 9,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_mixed_post_contact_curvature_preflight/source.zip",
+      "members_checked": 219,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_mixed_post_contact_curvature_preflight/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_mixed_post_contact_curvature/source.zip",
+      "members_checked": 219,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_mixed_post_contact_curvature/postprocessing_sources.zip",
+      "members_checked": 10,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_contact_reflection_preflight/source.zip",
+      "members_checked": 221,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_contact_reflection_preflight/postprocessing_sources.zip",
+      "members_checked": 11,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_contact_reflection/source.zip",
+      "members_checked": 221,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_second_contact_reflection/postprocessing_sources.zip",
+      "members_checked": 11,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_saved_point_preflight/source.zip",
+      "members_checked": 223,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_saved_point_preflight/postprocessing_sources.zip",
+      "members_checked": 13,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_saved_point/source.zip",
+      "members_checked": 223,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_saved_point/postprocessing_sources.zip",
+      "members_checked": 13,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_point_bound_preflight/source.zip",
+      "members_checked": 225,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_point_bound_preflight/postprocessing_sources.zip",
+      "members_checked": 15,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_point_bound/source.zip",
+      "members_checked": 225,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_point_bound/postprocessing_sources.zip",
+      "members_checked": 15,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_point_bound_replication_preflight/source.zip",
+      "members_checked": 227,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_point_bound_replication_preflight/postprocessing_sources.zip",
+      "members_checked": 17,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_point_bound_replication/source.zip",
+      "members_checked": 227,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_third_point_bound_replication/postprocessing_sources.zip",
+      "members_checked": 17,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_fourth_point_bound_preflight/source.zip",
+      "members_checked": 229,
+      "integrity_passed": true,
+      "current_differences": [
+        "audit_fourth_point_bound.py"
+      ]
+    },
+    {
+      "archive": "output/collision_fourth_point_bound_preflight/postprocessing_sources.zip",
+      "members_checked": 16,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_fourth_point_bound_preflight_verified/source.zip",
+      "members_checked": 229,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_fourth_point_bound_preflight_verified/postprocessing_sources.zip",
+      "members_checked": 16,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_fourth_point_bound/source.zip",
+      "members_checked": 229,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/collision_fourth_point_bound/postprocessing_sources.zip",
+      "members_checked": 16,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/final_nanogpt_exchange_preflight/source.zip",
+      "members_checked": 60,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/final_nanogpt_exchange_preflight/postprocessing_sources.zip",
+      "members_checked": 6,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/final_nanogpt_exchange/source.zip",
+      "members_checked": 60,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/final_nanogpt_exchange/postprocessing_sources.zip",
+      "members_checked": 6,
+      "integrity_passed": true,
+      "current_differences": []
+    },
+    {
+      "archive": "output/final_nanogpt_reselection_evaluation/source.zip",
+      "members_checked": 56,
+      "integrity_passed": true,
+      "current_differences": []
+    }
+  ],
+  "root_run_rows_retained": 21821,
+  "root_tuning_rows_retained": 475,
+  "new_model_benchmark_runs": 0,
+  "mechanism_count_note": "E16 scans have identical 1515 records in each output/shard; count one controlled scan, not independent repeated samples.",
+  "table_records_checked": true,
+  "new_optimization_runs_note": "Existing NanoGPT checkpoints evaluated on fixed original test minibatches.",
+  "new_execution_segments_with_complete_tables": 0,
+  "new_accepted_execution_segments": 0,
+  "new_formal_mechanism_execution_segments": 0,
+  "excluded_engineering_executions": 0,
+  "latest_maintenance": {
+    "date": "2026-11-10",
+    "record_path": "docs/research/2026-11-10-metric-terminology-update.json",
+    "new_experiments": 0,
+    "new_oracle_calls": 0,
+    "historical_output_artifacts_unchanged": 853,
+    "nonplot_analysis_unchanged": true
+  },
+  "historical_output_artifact_hashes_unchanged_for_E25": 853,
+  "threshold_candidates_evaluated_on_existing_trajectories": 7,
+  "historical_output_artifact_hashes_unchanged_for_E26": 891,
+  "new_audit_oracle_calls": 0,
+  "E26_link_verification_correction": {
+    "initial_reported_links": 0,
+    "corrected_links": 226,
+    "new_trajectories": 0,
+    "new_oracle_calls": 0,
+    "sealed_archives_preserved": true
+  },
+  "historical_output_artifact_hashes_unchanged_for_E27": 947,
+  "historical_output_artifact_hashes_unchanged_for_E28": 1001,
+  "historical_output_artifact_hashes_unchanged_for_E29": 1048,
+  "historical_output_artifact_hashes_unchanged_for_E30": 1081,
+  "historical_output_artifact_hashes_unchanged_for_E31": 1114,
+  "historical_output_artifact_hashes_unchanged_for_E32": 1147,
+  "historical_output_artifact_hashes_unchanged_for_E33": 1184,
+  "historical_output_artifact_hashes_unchanged_for_E34": 1221,
+  "historical_output_artifact_hashes_unchanged_for_E35": 1260,
+  "historical_output_artifact_hashes_unchanged_for_E36": 1298,
+  "historical_output_artifact_hashes_unchanged_for_E37": 1337,
+  "historical_output_artifact_hashes_unchanged_for_E38": 1377,
+  "historical_output_artifact_hashes_unchanged_for_E39": 1430,
+  "historical_output_artifact_hashes_unchanged_for_E40": 1466,
+  "E40_explorer_analysis": {
+    "new_trajectories": 0,
+    "new_oracle_calls": 0,
+    "paired_contexts": 480,
+    "sources_verified": 2926,
+    "historical_outputs_verified": 1503,
+    "record_path": "docs/research/e40_exploration/record.json"
+  },
+  "historical_output_artifact_hashes_unchanged_for_E41": 1503,
+  "historical_output_artifact_hashes_unchanged_for_E42": 1535,
+  "historical_output_artifact_hashes_unchanged_for_E43": 1601,
+  "historical_output_artifact_hashes_unchanged_for_E44": 1638,
+  "historical_output_artifact_hashes_unchanged_for_E45": 1676,
+  "historical_output_artifact_hashes_unchanged_for_E46": 1714,
+  "historical_output_artifact_hashes_unchanged_for_E47": 1746,
+  "historical_output_artifact_hashes_unchanged_for_E48": 1778,
+  "engineering_audit_failures": 1,
+  "historical_output_artifact_hashes_unchanged_for_E49": 1830,
+  "historical_output_artifact_hashes_unchanged_for_E50": 1862,
+  "historical_output_artifact_hashes_unchanged_for_E51": 1898,
+  "historical_output_artifact_hashes_unchanged_for_E52": 1934,
+  "historical_output_artifact_hashes_unchanged_for_E53": 1970,
+  "historical_output_artifact_hashes_unchanged_for_E54": 2002,
+  "historical_output_artifact_hashes_unchanged_for_final_nanogpt_exchange": 2057,
+  "historical_output_artifact_hashes_unchanged_for_final_nanogpt_reselection_evaluation": 2112
+}

@@ -1,0 +1,993 @@
+{
+  "file": "/Users/chenyixin/Documents/EE 5239/Project/docs/research/bounce_jacobian.lean",
+  "status": "PASS",
+  "problems": [],
+  "declarations": [
+    {
+      "name": "BounceJacobian.Phase",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "Type",
+      "type_explicit": "Type",
+      "kind": "other",
+      "statement_uses": [],
+      "definition": "\u211d \u00d7 \u211d"
+    },
+    {
+      "name": "BounceJacobian.contactX",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 Real",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.contact_deriv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d), 0 < g \u2192 0 < v \u2192 HasFDerivAt (BounceJacobian.contactX g \u03ba v) (BounceJacobian.flightLinear g v) 0",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) g \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) v \u2192       @HasFDerivAt Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)         BounceJacobian.Phase (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         Real Real.instAddCommGroup (@Semiring.toModule Real Real.semiring)         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         (BounceJacobian.contactX g \u03ba v) (BounceJacobian.flightLinear g v)         (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)           (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.contactX",
+        "BounceJacobian.du",
+        "BounceJacobian.dx",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightLinear",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.flightLinear._proof_1",
+        "BounceJacobian.flightLinear._proof_2",
+        "BounceJacobian.flightLinear._proof_3",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.du",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "BounceJacobian.Phase \u2192L[\u211d] \u211d",
+      "type_explicit": "@ContinuousLinearMap Real Real Real.semiring Real.semiring   (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase   (@instTopologicalSpaceProd Real Real     (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))     (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))   (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real   (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))   Real.instAddCommMonoid   (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid     (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))   (@Semiring.toModule Real Real.semiring)",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.dx",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "BounceJacobian.Phase \u2192L[\u211d] \u211d",
+      "type_explicit": "@ContinuousLinearMap Real Real Real.semiring Real.semiring   (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase   (@instTopologicalSpaceProd Real Real     (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))     (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))   (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real   (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))   Real.instAddCommMonoid   (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid     (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))   (@Semiring.toModule Real Real.semiring)",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.first_contact",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d),   0 < g \u2192     0 < v \u2192       \u2200\u1da0 (p : BounceJacobian.Phase) in nhds 0,         0 < BounceJacobian.radicand g \u03ba v p \u2227           0 < BounceJacobian.flightTime g \u03ba v p \u2227             BounceJacobian.gap g \u03ba v p (BounceJacobian.flightTime g \u03ba v p) = 0 \u2227               (\u2200 (t : \u211d), 0 < t \u2192 t < BounceJacobian.flightTime g \u03ba v p \u2192 0 < BounceJacobian.gap g \u03ba v p t) \u2227                 BounceJacobian.incomingZ g \u03ba v p - BounceJacobian.slope g \u03ba v p * p.2 < 0",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) g \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) v \u2192       @Filter.Eventually BounceJacobian.Phase         (fun p =>           And             (@LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))               (BounceJacobian.radicand g \u03ba v p))             (And               (@LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))                 (BounceJacobian.flightTime g \u03ba v p))               (And                 (@Eq Real (BounceJacobian.gap g \u03ba v p (BounceJacobian.flightTime g \u03ba v p))                   (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)))                 (And                   (\u2200 (t : Real),                     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) t \u2192                       @LT.lt Real Real.instLT t (BounceJacobian.flightTime g \u03ba v p) \u2192                         @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))                           (BounceJacobian.gap g \u03ba v p t))                   (@LT.lt Real Real.instLT                     (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (BounceJacobian.incomingZ g \u03ba v p)                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (BounceJacobian.slope g \u03ba v p)                         (@Prod.snd Real Real p)))                     (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)))))))         (@nhds BounceJacobian.Phase           (@instTopologicalSpaceProd Real Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))           (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)             (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.contactX",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.gap",
+        "BounceJacobian.incomingZ",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.slope",
+        "BounceJacobian.wall",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flightDenominator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 Real",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flightLinear",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192L[\u211d] \u211d",
+      "type_explicit": "Real \u2192   Real \u2192     @ContinuousLinearMap Real Real Real.semiring Real.semiring       (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase       (@instTopologicalSpaceProd Real Real         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))       (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real       (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))       Real.instAddCommMonoid       (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid         (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))       (@Semiring.toModule Real Real.semiring)",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flightNumerator",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 Real",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flightTime",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 Real",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flight_deriv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d), 0 < g \u2192 0 < v \u2192 HasFDerivAt (BounceJacobian.flightTime g \u03ba v) 0 0",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) g \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) v \u2192       @HasFDerivAt Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)         BounceJacobian.Phase (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         Real Real.instAddCommGroup (@Semiring.toModule Real Real.semiring)         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         (BounceJacobian.flightTime g \u03ba v)         (@OfNat.ofNat           (@ContinuousLinearMap Real Real Real.semiring Real.semiring             (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommMonoid             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring))           (nat_lit 0)           (@Zero.toOfNat0             (@ContinuousLinearMap Real Real Real.semiring Real.semiring               (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               Real.instAddCommMonoid               (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))               (@Semiring.toModule Real Real.semiring))             (@ContinuousLinearMap.zero Real Real Real.semiring Real.semiring               (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               Real.instAddCommMonoid               (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))               (@Semiring.toModule Real Real.semiring))))         (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)           (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flight_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d), 0 < v \u2192 BounceJacobian.flightTime g \u03ba v 0 = 2 * v / g",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) v \u2192     @Eq Real       (BounceJacobian.flightTime g \u03ba v         (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)           (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero))))       (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) v)         g)",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 Real \u2192 Real",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.gap_factor",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase) (t : \u211d),   BounceJacobian.gap g \u03ba v p t =     t * (BounceJacobian.flightNumerator g \u03ba v p - BounceJacobian.flightDenominator g \u03ba p * t / 2)",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase) (t : Real),   @Eq Real (BounceJacobian.gap g \u03ba v p t)     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) t       (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (BounceJacobian.flightNumerator g \u03ba v p)         (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (BounceJacobian.flightDenominator g \u03ba p) t)           (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.gap",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.wall",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.horizontalReflection",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 Real",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "BounceJacobian.incomingZ",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 Real",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.incoming_deriv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d), 0 < g \u2192 0 < v \u2192 HasFDerivAt (BounceJacobian.incomingZ g \u03ba v) 0 0",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) g \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) v \u2192       @HasFDerivAt Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)         BounceJacobian.Phase (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         Real Real.instAddCommGroup (@Semiring.toModule Real Real.semiring)         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         (BounceJacobian.incomingZ g \u03ba v)         (@OfNat.ofNat           (@ContinuousLinearMap Real Real Real.semiring Real.semiring             (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommMonoid             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring))           (nat_lit 0)           (@Zero.toOfNat0             (@ContinuousLinearMap Real Real Real.semiring Real.semiring               (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               Real.instAddCommMonoid               (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))               (@Semiring.toModule Real Real.semiring))             (@ContinuousLinearMap.zero Real Real Real.semiring Real.semiring               (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               Real.instAddCommMonoid               (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))               (@Semiring.toModule Real Real.semiring))))         (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)           (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.incomingZ",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.incoming_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d), 0 < g \u2192 0 < v \u2192 BounceJacobian.incomingZ g \u03ba v 0 = -v",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) g \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) v \u2192       @Eq Real         (BounceJacobian.incomingZ g \u03ba v           (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)             (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero))))         (@Neg.neg Real Real.instNeg v)",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.incomingZ",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.jacobian",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192L[\u211d] BounceJacobian.Phase",
+      "type_explicit": "Real \u2192   Real \u2192     Real \u2192       @ContinuousLinearMap Real Real Real.semiring Real.semiring         (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) BounceJacobian.Phase         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.jacobian_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase),   have T := 2 * v / g;   (BounceJacobian.jacobian g \u03ba v) p = (p.1 + T * p.2, -(2 * v * \u03ba) * p.1 + (1 - 2 * v * \u03ba * T) * p.2)",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase),   have T :=     @HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)         (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) v)       g;   @Eq BounceJacobian.Phase     (@DFunLike.coe       (@ContinuousLinearMap Real Real Real.semiring Real.semiring         (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) BounceJacobian.Phase         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring)))       BounceJacobian.Phase (fun x => BounceJacobian.Phase)       (@ContinuousLinearMap.funLike Real Real Real.semiring Real.semiring         (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) BounceJacobian.Phase         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring)))       (BounceJacobian.jacobian g \u03ba v) p)     (@Prod.mk Real Real       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (@Prod.fst Real Real p)         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) T (@Prod.snd Real Real p)))       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@Neg.neg Real Real.instNeg             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) v)               \u03ba))           (@Prod.fst Real Real p))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                   (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) v)                 \u03ba)               T))           (@Prod.snd Real Real p))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.du",
+        "BounceJacobian.dx",
+        "BounceJacobian.flightLinear",
+        "BounceJacobian.jacobian",
+        "BounceJacobian.flightLinear._proof_1",
+        "BounceJacobian.flightLinear._proof_2",
+        "BounceJacobian.flightLinear._proof_3",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.launchSpeed",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 Real",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.launch_deriv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d), 0 < v \u2192 HasFDerivAt (BounceJacobian.launchSpeed g \u03ba v) 0 0",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) v \u2192     @HasFDerivAt Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField) BounceJacobian.Phase       (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)       (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid         (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))       (@instTopologicalSpaceProd Real Real         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))       Real Real.instAddCommGroup (@Semiring.toModule Real Real.semiring)       (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))       (BounceJacobian.launchSpeed g \u03ba v)       (@OfNat.ofNat         (@ContinuousLinearMap Real Real Real.semiring Real.semiring           (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase           (@instTopologicalSpaceProd Real Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))           (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           Real.instAddCommMonoid           (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid             (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))           (@Semiring.toModule Real Real.semiring))         (nat_lit 0)         (@Zero.toOfNat0           (@ContinuousLinearMap Real Real Real.semiring Real.semiring             (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommMonoid             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring))           (@ContinuousLinearMap.zero Real Real Real.semiring Real.semiring             (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommMonoid             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring))))       (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)         (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand"
+      ]
+    },
+    {
+      "name": "BounceJacobian.physical_fderiv_apply",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba H : \u211d),   0 < g \u2192     0 < H \u2192       \u2200 (p : BounceJacobian.Phase),         have v := \u221a(2 * g * H);         have T := 2 * v / g;         (fderiv \u211d (BounceJacobian.returnMap g \u03ba v) 0) p =           (p.1 + T * p.2, -(2 * v * \u03ba) * p.1 + (1 - 2 * v * \u03ba * T) * p.2)",
+      "type_explicit": "\u2200 (g \u03ba H : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) g \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) H \u2192       \u2200 (p : BounceJacobian.Phase),         have v :=           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) g)               H).sqrt;         have T :=           @HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) v)             g;         @Eq BounceJacobian.Phase           (@DFunLike.coe             (@ContinuousLinearMap Real Real               (@CommSemiring.toSemiring Real                 (@Semifield.toCommSemiring Real                   (@Field.toSemifield Real                     (@NormedField.toField Real                       (@NontriviallyNormedField.toNormedField Real                         (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))               (@CommSemiring.toSemiring Real                 (@Semifield.toCommSemiring Real                   (@Field.toSemifield Real                     (@NormedField.toField Real                       (@NontriviallyNormedField.toNormedField Real                         (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))               (@RingHom.id Real                 (@Semiring.toNonAssocSemiring Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))               BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@AddCommGroup.toAddCommMonoid BounceJacobian.Phase                 (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup))               BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@AddCommGroup.toAddCommMonoid BounceJacobian.Phase                 (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup))               (@Prod.instModule Real Real Real                 (@CommSemiring.toSemiring Real                   (@Semifield.toCommSemiring Real                     (@Field.toSemifield Real                       (@NormedField.toField Real                         (@NontriviallyNormedField.toNormedField Real                           (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))                 Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)))))))                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))               (@Prod.instModule Real Real Real                 (@CommSemiring.toSemiring Real                   (@Semifield.toCommSemiring Real                     (@Field.toSemifield Real                       (@NormedField.toField Real                         (@NontriviallyNormedField.toNormedField Real                           (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))                 Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)))))))                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)))))))))             BounceJacobian.Phase (fun x => BounceJacobian.Phase)             (@ContinuousLinearMap.funLike Real Real               (@CommSemiring.toSemiring Real                 (@Semifield.toCommSemiring Real                   (@Field.toSemifield Real                     (@NormedField.toField Real                       (@NontriviallyNormedField.toNormedField Real                         (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))               (@CommSemiring.toSemiring Real                 (@Semifield.toCommSemiring Real                   (@Field.toSemifield Real                     (@NormedField.toField Real                       (@NontriviallyNormedField.toNormedField Real                         (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))               (@RingHom.id Real                 (@Semiring.toNonAssocSemiring Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))               BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@AddCommGroup.toAddCommMonoid BounceJacobian.Phase                 (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup))               BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@AddCommGroup.toAddCommMonoid BounceJacobian.Phase                 (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup))               (@Prod.instModule Real Real Real                 (@CommSemiring.toSemiring Real                   (@Semifield.toCommSemiring Real                     (@Field.toSemifield Real                       (@NormedField.toField Real                         (@NontriviallyNormedField.toNormedField Real                           (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))                 Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)))))))                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))               (@Prod.instModule Real Real Real                 (@CommSemiring.toSemiring Real                   (@Semifield.toCommSemiring Real                     (@Field.toSemifield Real                       (@NormedField.toField Real                         (@NontriviallyNormedField.toNormedField Real                           (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))                 Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)))))))                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)))))))))             (@fderiv Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)               BounceJacobian.Phase (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)               (@Prod.instModule Real Real Real                 (@CommSemiring.toSemiring Real                   (@Semifield.toCommSemiring Real                     (@Field.toSemifield Real                       (@NormedField.toField Real                         (@NontriviallyNormedField.toNormedField Real                           (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))                 Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)))))))                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               BounceJacobian.Phase (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)               (@Prod.instModule Real Real Real                 (@CommSemiring.toSemiring Real                   (@Semifield.toCommSemiring Real                     (@Field.toSemifield Real                       (@NormedField.toField Real                         (@NontriviallyNormedField.toNormedField Real                           (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))                 Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)))))))                 (@Semiring.toModule Real                   (@CommSemiring.toSemiring Real                     (@Semifield.toCommSemiring Real                       (@Field.toSemifield Real                         (@NormedField.toField Real                           (@NontriviallyNormedField.toNormedField Real                             (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField))))))))               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (BounceJacobian.returnMap g \u03ba v)               (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)                 (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero))))             p)           (@Prod.mk Real Real             (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (@Prod.fst Real Real p)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) T (@Prod.snd Real Real p)))             (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@Neg.neg Real Real.instNeg                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                       (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) v)                     \u03ba))                 (@Prod.fst Real Real p))               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                   (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                         (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) v)                       \u03ba)                     T))                 (@Prod.snd Real Real p))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.contactX",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.horizontalReflection",
+        "BounceJacobian.incomingZ",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.returnMap",
+        "BounceJacobian.slope",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.physical_radicand",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba H : \u211d),   0 < g \u2192     0 < H \u2192       \u2200 (p : BounceJacobian.Phase),         BounceJacobian.radicand g \u03ba (\u221a(2 * g * H)) p = 2 * g * (H - BounceJacobian.wall \u03ba p.1) - p.2 ^ 2",
+      "type_explicit": "\u2200 (g \u03ba H : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) g \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) H \u2192       \u2200 (p : BounceJacobian.Phase),         @Eq Real           (BounceJacobian.radicand g \u03ba             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                   (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) g)                 H).sqrt             p)           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) g)               (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) H                 (BounceJacobian.wall \u03ba (@Prod.fst Real Real p))))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))               (@Prod.snd Real Real p) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.radicand",
+        "BounceJacobian.wall",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.physical_return_deriv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba H : \u211d),   0 < g \u2192     0 < H \u2192       have v := \u221a(2 * g * H);       HasFDerivAt (BounceJacobian.returnMap g \u03ba v) (BounceJacobian.jacobian g \u03ba v) 0",
+      "type_explicit": "\u2200 (g \u03ba H : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) g \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) H \u2192       have v :=         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) g)             H).sqrt;       @HasFDerivAt Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)         BounceJacobian.Phase (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         BounceJacobian.Phase (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (BounceJacobian.returnMap g \u03ba v) (BounceJacobian.jacobian g \u03ba v)         (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)           (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.contactX",
+        "BounceJacobian.du",
+        "BounceJacobian.dx",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightLinear",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.horizontalReflection",
+        "BounceJacobian.incomingZ",
+        "BounceJacobian.jacobian",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.returnMap",
+        "BounceJacobian.slope",
+        "BounceJacobian.flightLinear._proof_1",
+        "BounceJacobian.flightLinear._proof_2",
+        "BounceJacobian.flightLinear._proof_3",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.radicand",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 Real",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.reflection_rational",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (s u w : \u211d), BounceJacobian.horizontalReflection s u w = u + s * (2 * (w - s * u) / (1 + s ^ 2))",
+      "type_explicit": "\u2200 (s u w : Real),   @Eq Real (BounceJacobian.horizontalReflection s u w)     (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) u       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) s         (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) w               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) s u)))           (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) s               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.horizontalReflection",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.returnMap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 BounceJacobian.Phase",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 BounceJacobian.Phase",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.return_deriv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d), 0 < g \u2192 0 < v \u2192 HasFDerivAt (BounceJacobian.returnMap g \u03ba v) (BounceJacobian.jacobian g \u03ba v) 0",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) g \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) v \u2192       @HasFDerivAt Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)         BounceJacobian.Phase (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         BounceJacobian.Phase (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup)         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (BounceJacobian.returnMap g \u03ba v) (BounceJacobian.jacobian g \u03ba v)         (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)           (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.contactX",
+        "BounceJacobian.du",
+        "BounceJacobian.dx",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightLinear",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.horizontalReflection",
+        "BounceJacobian.incomingZ",
+        "BounceJacobian.jacobian",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.returnMap",
+        "BounceJacobian.slope",
+        "BounceJacobian.flightLinear._proof_1",
+        "BounceJacobian.flightLinear._proof_2",
+        "BounceJacobian.flightLinear._proof_3",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.return_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d), BounceJacobian.returnMap g \u03ba v 0 = 0",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @Eq BounceJacobian.Phase     (BounceJacobian.returnMap g \u03ba v       (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)         (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero))))     (@OfNat.ofNat BounceJacobian.Phase (nat_lit 0)       (@Zero.toOfNat0 BounceJacobian.Phase (@Prod.instZero Real Real Real.instZero Real.instZero)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.contactX",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.horizontalReflection",
+        "BounceJacobian.incomingZ",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.returnMap",
+        "BounceJacobian.slope",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.slope",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 BounceJacobian.Phase \u2192 Real",
+      "kind": "other",
+      "statement_uses": [
+        "BounceJacobian.Phase"
+      ]
+    },
+    {
+      "name": "BounceJacobian.wall",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "BounceJacobian.wall_deriv",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (\u03ba x : \u211d), HasDerivAt (BounceJacobian.wall \u03ba) (\u03ba * x) x",
+      "type_explicit": "\u2200 (\u03ba x : Real),   @HasDerivAt Real (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField) Real     Real.instAddCommGroup     (@Semiring.toModule Real       (@CommSemiring.toSemiring Real         (@Semifield.toCommSemiring Real           (@Field.toSemifield Real             (@NormedField.toField Real               (@NontriviallyNormedField.toNormedField Real                 (@DenselyNormedField.toNontriviallyNormedField Real Real.denselyNormedField)))))))     (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)) \u22ef     (BounceJacobian.wall \u03ba) (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03ba x) x",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.wall",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.contactX.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase),   BounceJacobian.contactX g \u03ba v p = p.1 + BounceJacobian.flightTime g \u03ba v p * p.2",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase),   @Eq Real (BounceJacobian.contactX g \u03ba v p)     (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (@Prod.fst Real Real p)       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (BounceJacobian.flightTime g \u03ba v p)         (@Prod.snd Real Real p)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.contactX",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flightDenominator.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba : \u211d) (p : BounceJacobian.Phase), BounceJacobian.flightDenominator g \u03ba p = g + \u03ba * p.2 ^ 2",
+      "type_explicit": "\u2200 (g \u03ba : Real) (p : BounceJacobian.Phase),   @Eq Real (BounceJacobian.flightDenominator g \u03ba p)     (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) g       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03ba         (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))           (@Prod.snd Real Real p) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.flightDenominator"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flightLinear.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g v : \u211d), BounceJacobian.flightLinear g v = BounceJacobian.dx + (2 * v / g) \u2022 BounceJacobian.du",
+      "type_explicit": "\u2200 (g v : Real),   @Eq     (@ContinuousLinearMap Real Real Real.semiring Real.semiring       (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase       (@instTopologicalSpaceProd Real Real         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))       (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real       (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))       Real.instAddCommMonoid       (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid         (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))       (@Semiring.toModule Real Real.semiring))     (BounceJacobian.flightLinear g v)     (@HAdd.hAdd       (@ContinuousLinearMap Real Real Real.semiring Real.semiring         (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         Real.instAddCommMonoid         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@Semiring.toModule Real Real.semiring))       (@ContinuousLinearMap Real Real Real.semiring Real.semiring         (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         Real.instAddCommMonoid         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@Semiring.toModule Real Real.semiring))       (@ContinuousLinearMap Real Real Real.semiring Real.semiring         (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase         (@instTopologicalSpaceProd Real Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))         (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         Real.instAddCommMonoid         (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid           (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))         (@Semiring.toModule Real Real.semiring))       (@instHAdd         (@ContinuousLinearMap Real Real Real.semiring Real.semiring           (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase           (@instTopologicalSpaceProd Real Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))           (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           Real.instAddCommMonoid           (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid             (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))           (@Semiring.toModule Real Real.semiring))         (@ContinuousLinearMap.add Real Real Real.semiring Real.semiring           (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase           (@instTopologicalSpaceProd Real Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))           (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           Real.instAddCommMonoid           (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid             (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))           (@Semiring.toModule Real Real.semiring) BounceJacobian.flightLinear._proof_1))       BounceJacobian.dx       (@HSMul.hSMul Real         (@ContinuousLinearMap Real Real Real.semiring Real.semiring           (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase           (@instTopologicalSpaceProd Real Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))           (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           Real.instAddCommMonoid           (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid             (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))           (@Semiring.toModule Real Real.semiring))         (@ContinuousLinearMap Real Real Real.semiring Real.semiring           (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase           (@instTopologicalSpaceProd Real Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))           (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           Real.instAddCommMonoid           (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid             (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))           (@Semiring.toModule Real Real.semiring))         (@instHSMul Real           (@ContinuousLinearMap Real Real Real.semiring Real.semiring             (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommMonoid             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring))           (@ContinuousLinearMap.instSMul Real Real Real.semiring Real.semiring             (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommMonoid             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring) Real             (@NonUnitalNonAssocSemiring.toDistribSMul Real               (@NonUnitalNonAssocRing.toNonUnitalNonAssocSemiring Real                 (@NonUnitalNonAssocCommRing.toNonUnitalNonAssocRing Real                   (@NonUnitalCommRing.toNonUnitalNonAssocCommRing Real                     (@CommRing.toNonUnitalCommRing Real Real.commRing)))))             BounceJacobian.flightLinear._proof_2 BounceJacobian.flightLinear._proof_3))         (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@OfNat.ofNat Real (nat_lit 2)               (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast BounceJacobian.wall._proof_1))             v)           g)         BounceJacobian.du))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.du",
+        "BounceJacobian.dx",
+        "BounceJacobian.flightLinear",
+        "BounceJacobian.flightLinear._proof_1",
+        "BounceJacobian.flightLinear._proof_2",
+        "BounceJacobian.flightLinear._proof_3",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flightNumerator.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase),   BounceJacobian.flightNumerator g \u03ba v p = BounceJacobian.launchSpeed g \u03ba v p - \u03ba * p.1 * p.2",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase),   @Eq Real (BounceJacobian.flightNumerator g \u03ba v p)     (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (BounceJacobian.launchSpeed g \u03ba v p)       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03ba (@Prod.fst Real Real p)) (@Prod.snd Real Real p)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand"
+      ]
+    },
+    {
+      "name": "BounceJacobian.flightTime.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase),   BounceJacobian.flightTime g \u03ba v p =     2 * BounceJacobian.flightNumerator g \u03ba v p / BounceJacobian.flightDenominator g \u03ba p",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase),   @Eq Real (BounceJacobian.flightTime g \u03ba v p)     (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)         (@OfNat.ofNat Real (nat_lit 2)           (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast BounceJacobian.wall._proof_1))         (BounceJacobian.flightNumerator g \u03ba v p))       (BounceJacobian.flightDenominator g \u03ba p))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.incomingZ.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase),   BounceJacobian.incomingZ g \u03ba v p = BounceJacobian.launchSpeed g \u03ba v p - g * BounceJacobian.flightTime g \u03ba v p",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase),   @Eq Real (BounceJacobian.incomingZ g \u03ba v p)     (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (BounceJacobian.launchSpeed g \u03ba v p)       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) g (BounceJacobian.flightTime g \u03ba v p)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.incomingZ",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.jacobian.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d),   BounceJacobian.jacobian g \u03ba v =     ContinuousLinearMap.prod (BounceJacobian.flightLinear g v)       (BounceJacobian.du - (2 * v * \u03ba) \u2022 BounceJacobian.flightLinear g v)",
+      "type_explicit": "\u2200 (g \u03ba v : Real),   @Eq     (@ContinuousLinearMap Real Real Real.semiring Real.semiring       (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase       (@instTopologicalSpaceProd Real Real         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))       (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) BounceJacobian.Phase       (@instTopologicalSpaceProd Real Real         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))       (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid)       (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid         (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))       (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid         (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring)))     (BounceJacobian.jacobian g \u03ba v)     (@ContinuousLinearMap.prod Real Real.semiring BounceJacobian.Phase       (@instTopologicalSpaceProd Real Real         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))         (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))       (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid)       (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid         (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))       Real (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))       Real.instAddCommMonoid (@Semiring.toModule Real Real.semiring) Real       (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))       Real.instAddCommMonoid (@Semiring.toModule Real Real.semiring) (BounceJacobian.flightLinear g v)       (@HSub.hSub         (@ContinuousLinearMap Real Real Real.semiring Real.semiring           (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase           (@instTopologicalSpaceProd Real Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))           (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           Real.instAddCommMonoid           (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid             (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))           (@Semiring.toModule Real Real.semiring))         (@ContinuousLinearMap Real Real Real.semiring Real.semiring           (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase           (@instTopologicalSpaceProd Real Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))           (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           Real.instAddCommMonoid           (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid             (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))           (@Semiring.toModule Real Real.semiring))         (@ContinuousLinearMap Real Real Real.semiring Real.semiring           (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase           (@instTopologicalSpaceProd Real Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))           (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real           (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))           Real.instAddCommMonoid           (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid             (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))           (@Semiring.toModule Real Real.semiring))         (@instHSub           (@ContinuousLinearMap Real Real Real.semiring Real.semiring             (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommMonoid             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring))           (@ContinuousLinearMap.sub Real Real.instRing Real Real.instRing BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommGroup Real Real Real.instAddCommGroup Real.instAddCommGroup) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommGroup             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring) (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring))             instIsTopologicalAddGroupReal))         BounceJacobian.du         (@HSMul.hSMul Real           (@ContinuousLinearMap Real Real Real.semiring Real.semiring             (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommMonoid             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring))           (@ContinuousLinearMap Real Real Real.semiring Real.semiring             (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase             (@instTopologicalSpaceProd Real Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))             (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real             (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))             Real.instAddCommMonoid             (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid               (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))             (@Semiring.toModule Real Real.semiring))           (@instHSMul Real             (@ContinuousLinearMap Real Real Real.semiring Real.semiring               (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               Real.instAddCommMonoid               (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))               (@Semiring.toModule Real Real.semiring))             (@ContinuousLinearMap.instSMul Real Real Real.semiring Real.semiring               (@RingHom.id Real (@Semiring.toNonAssocSemiring Real Real.semiring)) BounceJacobian.Phase               (@instTopologicalSpaceProd Real Real                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))                 (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace)))               (@Prod.instAddCommMonoid Real Real Real.instAddCommMonoid Real.instAddCommMonoid) Real               (@UniformSpace.toTopologicalSpace Real (@PseudoMetricSpace.toUniformSpace Real Real.pseudoMetricSpace))               Real.instAddCommMonoid               (@Prod.instModule Real Real Real Real.semiring Real.instAddCommMonoid Real.instAddCommMonoid                 (@Semiring.toModule Real Real.semiring) (@Semiring.toModule Real Real.semiring))               (@Semiring.toModule Real Real.semiring) Real               (@NonUnitalNonAssocSemiring.toDistribSMul Real                 (@NonUnitalNonAssocRing.toNonUnitalNonAssocSemiring Real                   (@NonUnitalNonAssocCommRing.toNonUnitalNonAssocRing Real                     (@NonUnitalCommRing.toNonUnitalNonAssocCommRing Real                       (@CommRing.toNonUnitalCommRing Real Real.commRing)))))               BounceJacobian.flightLinear._proof_2 BounceJacobian.flightLinear._proof_3))           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@OfNat.ofNat Real (nat_lit 2)                 (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast BounceJacobian.wall._proof_1))               v)             \u03ba)           (BounceJacobian.flightLinear g v))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.du",
+        "BounceJacobian.dx",
+        "BounceJacobian.flightLinear",
+        "BounceJacobian.jacobian",
+        "BounceJacobian.flightLinear._proof_1",
+        "BounceJacobian.flightLinear._proof_2",
+        "BounceJacobian.flightLinear._proof_3",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.launchSpeed.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase), BounceJacobian.launchSpeed g \u03ba v p = \u221a(BounceJacobian.radicand g \u03ba v p)",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase),   @Eq Real (BounceJacobian.launchSpeed g \u03ba v p) (Real.sqrt (BounceJacobian.radicand g \u03ba v p))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand"
+      ]
+    },
+    {
+      "name": "BounceJacobian.radicand.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase), BounceJacobian.radicand g \u03ba v p = v ^ 2 - g * \u03ba * p.1 ^ 2 - p.2 ^ 2",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase),   @Eq Real (BounceJacobian.radicand g \u03ba v p)     (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)       (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)         (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) v           (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) g \u03ba)           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@Prod.fst Real Real p) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))       (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))         (@Prod.snd Real Real p) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.radicand"
+      ]
+    },
+    {
+      "name": "BounceJacobian.returnMap.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase),   BounceJacobian.returnMap g \u03ba v p =     (BounceJacobian.contactX g \u03ba v p,       BounceJacobian.horizontalReflection (BounceJacobian.slope g \u03ba v p) p.2 (BounceJacobian.incomingZ g \u03ba v p))",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase),   @Eq BounceJacobian.Phase (BounceJacobian.returnMap g \u03ba v p)     (@Prod.mk Real Real (BounceJacobian.contactX g \u03ba v p)       (BounceJacobian.horizontalReflection (BounceJacobian.slope g \u03ba v p) (@Prod.snd Real Real p)         (BounceJacobian.incomingZ g \u03ba v p)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.contactX",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.horizontalReflection",
+        "BounceJacobian.incomingZ",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.returnMap",
+        "BounceJacobian.slope",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.slope.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (g \u03ba v : \u211d) (p : BounceJacobian.Phase), BounceJacobian.slope g \u03ba v p = \u03ba * BounceJacobian.contactX g \u03ba v p",
+      "type_explicit": "\u2200 (g \u03ba v : Real) (p : BounceJacobian.Phase),   @Eq Real (BounceJacobian.slope g \u03ba v p)     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03ba (BounceJacobian.contactX g \u03ba v p))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.Phase",
+        "BounceJacobian.contactX",
+        "BounceJacobian.flightDenominator",
+        "BounceJacobian.flightNumerator",
+        "BounceJacobian.flightTime",
+        "BounceJacobian.launchSpeed",
+        "BounceJacobian.radicand",
+        "BounceJacobian.slope",
+        "BounceJacobian.wall._proof_1"
+      ]
+    },
+    {
+      "name": "BounceJacobian.wall.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (\u03ba x : \u211d), BounceJacobian.wall \u03ba x = \u03ba * x ^ 2 / 2",
+      "type_explicit": "\u2200 (\u03ba x : Real),   @Eq Real (BounceJacobian.wall \u03ba x)     (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03ba         (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) x           (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))       (@OfNat.ofNat Real (nat_lit 2)         (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast BounceJacobian.wall._proof_1)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "BounceJacobian.wall",
+        "BounceJacobian.wall._proof_1"
+      ]
+    }
+  ],
+  "statement_context": {
+    "BounceJacobian.Phase": {
+      "definition": "\u211d \u00d7 \u211d",
+      "type": "Type"
+    },
+    "BounceJacobian.contactX": {
+      "definition": "fun g \u03ba v p => p.1 + BounceJacobian.flightTime g \u03ba v p * p.2",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d"
+    },
+    "BounceJacobian.du": {
+      "definition": "ContinuousLinearMap.snd \u211d \u211d \u211d",
+      "type": "BounceJacobian.Phase \u2192L[\u211d] \u211d"
+    },
+    "BounceJacobian.dx": {
+      "definition": "ContinuousLinearMap.fst \u211d \u211d \u211d",
+      "type": "BounceJacobian.Phase \u2192L[\u211d] \u211d"
+    },
+    "BounceJacobian.flightDenominator": {
+      "definition": "fun g \u03ba p => g + \u03ba * p.2 ^ 2",
+      "type": "\u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d"
+    },
+    "BounceJacobian.flightLinear": {
+      "definition": "fun g v => BounceJacobian.dx + (2 * v / g) \u2022 BounceJacobian.du",
+      "type": "\u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192L[\u211d] \u211d"
+    },
+    "BounceJacobian.flightLinear._proof_1": {
+      "type": "ContinuousAdd \u211d"
+    },
+    "BounceJacobian.flightLinear._proof_2": {
+      "type": "SMulCommClass \u211d \u211d \u211d"
+    },
+    "BounceJacobian.flightLinear._proof_3": {
+      "type": "ContinuousConstSMul \u211d \u211d"
+    },
+    "BounceJacobian.flightNumerator": {
+      "definition": "fun g \u03ba v p => BounceJacobian.launchSpeed g \u03ba v p - \u03ba * p.1 * p.2",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d"
+    },
+    "BounceJacobian.flightTime": {
+      "definition": "fun g \u03ba v p => 2 * BounceJacobian.flightNumerator g \u03ba v p / BounceJacobian.flightDenominator g \u03ba p",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d"
+    },
+    "BounceJacobian.gap": {
+      "definition": "fun g \u03ba v p t =>   BounceJacobian.wall \u03ba p.1 + BounceJacobian.launchSpeed g \u03ba v p * t - g * t ^ 2 / 2 -     BounceJacobian.wall \u03ba (p.1 + t * p.2)",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d \u2192 \u211d"
+    },
+    "BounceJacobian.horizontalReflection": {
+      "definition": "fun s u w =>   have n\u2081 := -s / \u221a(1 + s ^ 2);   have n\u2082 := 1 / \u221a(1 + s ^ 2);   u - 2 * (u * n\u2081 + w * n\u2082) * n\u2081",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 \u211d"
+    },
+    "BounceJacobian.incomingZ": {
+      "definition": "fun g \u03ba v p => BounceJacobian.launchSpeed g \u03ba v p - g * BounceJacobian.flightTime g \u03ba v p",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d"
+    },
+    "BounceJacobian.jacobian": {
+      "definition": "fun g \u03ba v =>   ContinuousLinearMap.prod (BounceJacobian.flightLinear g v)     (BounceJacobian.du - (2 * v * \u03ba) \u2022 BounceJacobian.flightLinear g v)",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192L[\u211d] BounceJacobian.Phase"
+    },
+    "BounceJacobian.launchSpeed": {
+      "definition": "fun g \u03ba v p => \u221a(BounceJacobian.radicand g \u03ba v p)",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d"
+    },
+    "BounceJacobian.radicand": {
+      "definition": "fun g \u03ba v p => v ^ 2 - g * \u03ba * p.1 ^ 2 - p.2 ^ 2",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d"
+    },
+    "BounceJacobian.returnMap": {
+      "definition": "fun g \u03ba v p =>   (BounceJacobian.contactX g \u03ba v p,     BounceJacobian.horizontalReflection (BounceJacobian.slope g \u03ba v p) p.2 (BounceJacobian.incomingZ g \u03ba v p))",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 BounceJacobian.Phase"
+    },
+    "BounceJacobian.slope": {
+      "definition": "fun g \u03ba v p => \u03ba * BounceJacobian.contactX g \u03ba v p",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 BounceJacobian.Phase \u2192 \u211d"
+    },
+    "BounceJacobian.wall": {
+      "definition": "fun \u03ba x => \u03ba * x ^ 2 / 2",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d"
+    },
+    "BounceJacobian.wall._proof_1": {
+      "type": "(1 + 1).AtLeastTwo"
+    }
+  },
+  "checker": {
+    "version": "2.5",
+    "sha256_checker": "94612c73d6e82faa7bc0f8496ce779d799b80862f4b0f895dc9dfd89a0fe1353",
+    "sha256_driver": "629965dfd96f28296344971f45e4f622800cf8cfab6c808561a485866746e749"
+  },
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_rev": "v4.35.0",
+  "pinned": true,
+  "tier": "local",
+  "stages": {
+    "source_scan": {
+      "status": "pass"
+    },
+    "packages": {
+      "status": "pass",
+      "seconds": 1.3,
+      "checked": [
+        "mathlib",
+        "plausible",
+        "LeanSearchClient",
+        "importGraph",
+        "proofwidgets",
+        "aesop",
+        "Qq",
+        "batteries",
+        "Cli"
+      ]
+    },
+    "compile": {
+      "status": "pass",
+      "seconds": 183.1,
+      "sandboxed": false
+    },
+    "audit": {
+      "status": "pass",
+      "seconds": 736.2
+    },
+    "replay": {
+      "status": "pass",
+      "seconds": 123.2
+    }
+  }
+}

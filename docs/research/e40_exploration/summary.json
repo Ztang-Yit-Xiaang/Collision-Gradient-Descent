@@ -1,0 +1,141 @@
+{
+  "transferred_only": {
+    "contexts": 20,
+    "explorer_pairs": 60,
+    "e37": {
+      "entry_events": 5,
+      "particles_ever_entered": 5,
+      "contexts_ever_entered": 5,
+      "particles_ever_hit": 0,
+      "contexts_ever_hit": 0,
+      "median_first_target_time_among_hits": null,
+      "earliest_target_time": null,
+      "latest_first_target_time": null,
+      "contexts_final_hit": 0,
+      "median_best_explorer_final_loss": 0.1838714591245108,
+      "median_explorer_final_loss": 0.2720965369561362,
+      "median_best_explorer_historical_loss": 0.050661406529426356,
+      "min_longitudinal_margin": -0.4150786794675945
+    },
+    "capped_policy": {
+      "entry_events": 5,
+      "particles_ever_entered": 5,
+      "contexts_ever_entered": 5,
+      "particles_ever_hit": 0,
+      "contexts_ever_hit": 0,
+      "median_first_target_time_among_hits": null,
+      "earliest_target_time": null,
+      "latest_first_target_time": null,
+      "contexts_final_hit": 0,
+      "median_best_explorer_final_loss": 0.18284065106940617,
+      "median_explorer_final_loss": 0.272685522170484,
+      "median_best_explorer_historical_loss": 0.050661406529426356,
+      "min_longitudinal_margin": -0.41557379916024617
+    },
+    "paired": {
+      "best_explorer_final_loss": {
+        "median_delta": 0.00017545037638773409,
+        "min_delta": -0.001712868296784964,
+        "max_delta": 0.0018421605594814427,
+        "lower": 9,
+        "higher": 11,
+        "tied": 0
+      },
+      "best_explorer_historical_loss": {
+        "median_delta": 0.0,
+        "min_delta": 0.0,
+        "max_delta": 7.996402786607237e-05,
+        "lower": 0,
+        "higher": 2,
+        "tied": 18
+      },
+      "entry_events": {
+        "median_delta": 0.0,
+        "min_delta": 0,
+        "max_delta": 0,
+        "lower": 0,
+        "higher": 0,
+        "tied": 20
+      }
+    },
+    "energy_at_transfer": {
+      "cases": 20,
+      "median_total_explorer_gain": 1.1742216105793766e-05,
+      "min_total_explorer_gain": 4.386374791352787e-06,
+      "max_total_explorer_gain": 2.290410186122499e-05,
+      "individual_explorers_gained": 31,
+      "individual_explorers_lost": 29
+    }
+  },
+  "all_contexts": {
+    "contexts": 480,
+    "explorer_pairs": 1440,
+    "e37": {
+      "entry_events": 174,
+      "particles_ever_entered": 174,
+      "contexts_ever_entered": 174,
+      "particles_ever_hit": 0,
+      "contexts_ever_hit": 0,
+      "median_first_target_time_among_hits": null,
+      "earliest_target_time": null,
+      "latest_first_target_time": null,
+      "contexts_final_hit": 0,
+      "median_best_explorer_final_loss": 0.14741313245263996,
+      "median_explorer_final_loss": 0.25352118079093483,
+      "median_best_explorer_historical_loss": 0.0505490100239655,
+      "min_longitudinal_margin": -0.6473968299506357
+    },
+    "capped_policy": {
+      "entry_events": 174,
+      "particles_ever_entered": 174,
+      "contexts_ever_entered": 174,
+      "particles_ever_hit": 0,
+      "contexts_ever_hit": 0,
+      "median_first_target_time_among_hits": null,
+      "earliest_target_time": null,
+      "latest_first_target_time": null,
+      "contexts_final_hit": 0,
+      "median_best_explorer_final_loss": 0.14741313245263996,
+      "median_explorer_final_loss": 0.2536359468140561,
+      "median_best_explorer_historical_loss": 0.0505490100239655,
+      "min_longitudinal_margin": -0.6473968299506357
+    },
+    "paired": {
+      "best_explorer_final_loss": {
+        "median_delta": 0.0,
+        "min_delta": -0.001712868296784964,
+        "max_delta": 0.0018421605594814427,
+        "lower": 9,
+        "higher": 11,
+        "tied": 460
+      },
+      "best_explorer_historical_loss": {
+        "median_delta": 0.0,
+        "min_delta": 0.0,
+        "max_delta": 7.996402786607237e-05,
+        "lower": 0,
+        "higher": 2,
+        "tied": 478
+      },
+      "entry_events": {
+        "median_delta": 0.0,
+        "min_delta": 0,
+        "max_delta": 0,
+        "lower": 0,
+        "higher": 0,
+        "tied": 480
+      }
+    },
+    "energy_at_transfer": {
+      "cases": 20,
+      "median_total_explorer_gain": 1.1742216105793766e-05,
+      "min_total_explorer_gain": 4.386374791352787e-06,
+      "max_total_explorer_gain": 2.290410186122499e-05,
+      "individual_explorers_gained": 31,
+      "individual_explorers_lost": 29
+    }
+  },
+  "new_trajectories": 0,
+  "new_oracle_calls": 0,
+  "source_files_checked": 2926
+}

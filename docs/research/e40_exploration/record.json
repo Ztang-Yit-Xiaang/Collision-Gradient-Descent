@@ -1,0 +1,34 @@
+{
+  "date": "2026-11-12",
+  "kind": "e40_archived_exploration_analysis",
+  "parent_phase": "E40",
+  "new_experiments": 0,
+  "new_oracle_calls": 0,
+  "derived_contexts": 480,
+  "transferred_contexts": 20,
+  "explorer_pairs": 1440,
+  "new_independent_seeds": 0,
+  "historical_top_level_artifact_hashes_unchanged": 1503,
+  "report_path": "docs/collision_second_reflection_exploration_results.md",
+  "summary_path": "docs/research/e40_exploration/summary.json",
+  "per_context_path": "docs/research/e40_exploration/per_context.json",
+  "provenance_path": "docs/research/e40_exploration/provenance.json",
+  "analysis_archive": "docs/research/e40_exploration/analysis_source.zip",
+  "archive_sha256": "3305c6355db436bad33933a4b864c2533e04b85a042fa7993a64995db4d6aed7",
+  "archive_members_sha256": {
+    "docs/research/e40_exploration.py": "63b68de9203e7cf7a126eaf0472500a9228582c1e8312dcf34415d02dd1012c9",
+    "docs/collision_second_reflection_exploration_results.md": "7ddcf68d8809a36566ff9dc4a9d5804fecb0a21d66653112f4c58df0eb3a1294",
+    "docs/experiment_log.md": "475ae4fa7bb4f8cdc33e9513f76dcf6c6756dc9788c7d9c6d8ee66e983bd92d0",
+    "finalize_initial_budget.py": "e0cc41044135830e9c0f697970fb93ef2102e08de8ef88f7bfeec106cc02d521",
+    "run_conditional_transfer.py": "038346018bfe18097090020a29d613ade7f1b75bf849e3b533d0521b0f4eb250",
+    "run_later_reflection_warning.py": "799d913d6d467c57f9645ead4bf536f2de3dc2815437448e4bc6e6e39d596afe",
+    "audit_shared_prefix_transfer.py": "15ea87970f10aaaca374b736baef3974e1ae7b34a614e164ba924a85b2f8e8fb"
+  },
+  "frozen_e40_source_archive": "output/collision_second_reflection_capped_policy/source.zip",
+  "frozen_e40_source_sha256": "39f6e74ac902dfcc966ca09aeb265a45cb2075b8baabf95abb8fce5827970cce",
+  "derived_artifacts_sha256": {
+    "docs/research/e40_exploration/summary.json": "eb4c909aa0dd32fab96e7314b4b27b7cf19c1841dd5c60baeece01cb1bce8f12",
+    "docs/research/e40_exploration/per_context.json": "c7ed705103fd9fa7009f7424b534f71ec59b190b7e9de23ded9da4767e4bc470",
+    "docs/research/e40_exploration/provenance.json": "ec39730f2f59fdb7553cbff61c630c1564b55c1b15ad56f57f39f6fe72702374"
+  }
+}

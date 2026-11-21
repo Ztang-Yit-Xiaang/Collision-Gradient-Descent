@@ -1,0 +1,396 @@
+{
+  "date": "2026-11-08",
+  "archive": "docs/research/2026-11-08-source-snapshot.zip",
+  "archive_sha256": "3e29deeb6523b20df7eb0ad065afa3f1989967fede34e9bffcbcfb3132c7bb06",
+  "scope": "Current source, tests, top-level Python runners/auditors/plots, project settings, NanoGPT vendor/license and local text data. Historical outputs remain under output/.",
+  "historical_limit": "Current snapshot only. It does not reconstruct the two older development-preflight source revisions that differ from current files.",
+  "python": "3.12.6 (v3.12.6:a4a2d2b0d85, Sep  6 2024, 16:08:03) [Clang 13.0.0 (clang-1300.0.29.30)]",
+  "latest_recorded_full_tests": 193,
+  "members": [
+    {
+      "path": "AGENTS.md",
+      "bytes": 2668,
+      "sha256": "fc2e3afab960cdb172a90b1b9c0c02bda7f3fb2d6c043891e4c4ef19eb8efd7d"
+    },
+    {
+      "path": "README.md",
+      "bytes": 27914,
+      "sha256": "e1efb0a044424b8bd547679bc862c94a1832406571c3015eba2174380c38d8b5"
+    },
+    {
+      "path": "audit_damping_prefixes.py",
+      "bytes": 3027,
+      "sha256": "e48668c5ee03427d43365dfd7b097f2163508b9c826b454c996b50c591d7788e"
+    },
+    {
+      "path": "audit_momentum_routing.py",
+      "bytes": 5707,
+      "sha256": "9ae0fcc33aac3dcf76953b8f1871f208e9af44af48f2d75f9cce860b32250e08"
+    },
+    {
+      "path": "audit_optimizer_comparison.py",
+      "bytes": 8067,
+      "sha256": "e700b3926c2442834f2ab5ac2d1e0d3b953172e36892fd40e1fc230a5239db5f"
+    },
+    {
+      "path": "audit_predictive.py",
+      "bytes": 9706,
+      "sha256": "61bb25e21bb7ac965ba68eaa971708bfe74dde95aeae88afd7d73d8c001f7d65"
+    },
+    {
+      "path": "data/tinyshakespeare.txt",
+      "bytes": 1115394,
+      "sha256": "86c4e6aa9db7c042ec79f339dcb96d42b0075e16b8fc2e86bf0ca57e2dc565ed"
+    },
+    {
+      "path": "plot_damping_replication.py",
+      "bytes": 2508,
+      "sha256": "f990cc8cbf6934e55c01496f8b3c80b522e7942db873360aa905eb6b8c603dfc"
+    },
+    {
+      "path": "plot_momentum_routing.py",
+      "bytes": 4021,
+      "sha256": "46e5414515aa644ba0139fd31c93e238a01e128267b91ca82803b11f45a22c99"
+    },
+    {
+      "path": "plot_optimizer_comparison.py",
+      "bytes": 4661,
+      "sha256": "eb09c06c97912a83a70fd871ad71b7533708cc93b6008a75e8287fd2a3c1fff2"
+    },
+    {
+      "path": "pyproject.toml",
+      "bytes": 574,
+      "sha256": "49efadf1f861b1c06f918dbc7b364082e6809c9e4e68b7438b0c03d4cdfe1cb9"
+    },
+    {
+      "path": "run_damping_replication.py",
+      "bytes": 110,
+      "sha256": "b0fbe1611504b1b1ac9e8093dfe82c60264e84ddbaaae96145262b620d2dde95"
+    },
+    {
+      "path": "run_gravity.py",
+      "bytes": 414,
+      "sha256": "d9a76db8c9c65cc63a032dad0636ee7e58633b92b76333cb7434cb3a20d2e06a"
+    },
+    {
+      "path": "run_gravity_duration.py",
+      "bytes": 461,
+      "sha256": "b2eec8c9d2f862628d93706f8c31cc0d4c4c5227de81013eaa7b5a1061235e74"
+    },
+    {
+      "path": "run_highdim.py",
+      "bytes": 416,
+      "sha256": "5e4e2e5d940b709d2fbaefa068c6c13d154e34d8e4e216e49853da2c9a441db0"
+    },
+    {
+      "path": "run_momentum_routing.py",
+      "bytes": 109,
+      "sha256": "653a3477e6b29a38bdfcf1fdf59720bdb5ac3b492d3cde00d9feef1e187c9528"
+    },
+    {
+      "path": "run_nanogpt_comparison.py",
+      "bytes": 383,
+      "sha256": "30c4cd44457b00bb74d5d3257151a6eb892639faf90f5f0b359428ff87674fbf"
+    },
+    {
+      "path": "run_optimizer_comparison.py",
+      "bytes": 390,
+      "sha256": "8c02d1866f3f0fa5bb9c3a98c16570cdd72e3b5c71e4cd754c1982bd8376a471"
+    },
+    {
+      "path": "run_population.py",
+      "bytes": 415,
+      "sha256": "14cdecfbfb9d61cb13ee319bfa660df3931117abf911ca5581a62966fe9a4985"
+    },
+    {
+      "path": "run_population_cost.py",
+      "bytes": 399,
+      "sha256": "200e0970473d6e99ab5930449e3b448662f6af924f8dd03bd58292bb6b4ce695"
+    },
+    {
+      "path": "run_predictive.py",
+      "bytes": 525,
+      "sha256": "b818bf1490020d477dc76751aec6451738d4fcd24ad9c8350d59ac3199357229"
+    },
+    {
+      "path": "run_smoke.py",
+      "bytes": 284,
+      "sha256": "8f435868c9b406bceb605ca39f093b45fae18d6f0de74b062522662cce3ccecf"
+    },
+    {
+      "path": "run_stability.py",
+      "bytes": 404,
+      "sha256": "c9bab157f9066a79eda75423de03ebb2023b568eab1372b12f999ae92b1843ba"
+    },
+    {
+      "path": "run_strategic.py",
+      "bytes": 411,
+      "sha256": "42551aac4302e2f66409e01f986f2cb1622bf15004f79843ec3047dda3528bf3"
+    },
+    {
+      "path": "src/collision_optim/__init__.py",
+      "bytes": 1477,
+      "sha256": "eaea3e7d993d584716fb4c668c0d32614c579dbf45cda67f0416b1c0164fc7ba"
+    },
+    {
+      "path": "src/collision_optim/active.py",
+      "bytes": 5884,
+      "sha256": "e31da6269c90825a8020804c439851bd8d621cca13fcfb040fc3eb2f1a858613"
+    },
+    {
+      "path": "src/collision_optim/core.py",
+      "bytes": 2935,
+      "sha256": "1406dea5214ac6c73af8f3133f665e69a1c3d80399d085d7ba46800d852606d5"
+    },
+    {
+      "path": "src/collision_optim/damping_replication.py",
+      "bytes": 14184,
+      "sha256": "70643a611bc9b230153172b15b31a96a59ceadf99c353ec505d0ddc01b2ae5ad"
+    },
+    {
+      "path": "src/collision_optim/gravity.py",
+      "bytes": 14185,
+      "sha256": "22e7ad07eae6810abcf2f0ba1b500b9fd799d5118580657e9d4e56c7db9ac001"
+    },
+    {
+      "path": "src/collision_optim/gravity_audit.py",
+      "bytes": 4848,
+      "sha256": "7e6099063fe752b42401995cc7ecfee0713e0fe026d872ddde9cde0f19444512"
+    },
+    {
+      "path": "src/collision_optim/gravity_experiment.py",
+      "bytes": 17075,
+      "sha256": "c04a9eb0bc22f2a40dfe0dd156600ae7bc356ff4e37f8846dc7124d6f7f62295"
+    },
+    {
+      "path": "src/collision_optim/highdim.py",
+      "bytes": 21512,
+      "sha256": "0b7278c2d31a1ce57245436119a74e9199fade6740fda19beb5e4015f736db28"
+    },
+    {
+      "path": "src/collision_optim/highdim_objectives.py",
+      "bytes": 6162,
+      "sha256": "0dfb8e36de7d18d4c1602a49aba52afb6ad74bd804363997ff118b864dafbdfc"
+    },
+    {
+      "path": "src/collision_optim/hybrid.py",
+      "bytes": 8969,
+      "sha256": "679fb129b421e9699596f651a3ad39ebebd3d4cd1b171c212c530eeb6ef48dca"
+    },
+    {
+      "path": "src/collision_optim/momentum_routing.py",
+      "bytes": 12727,
+      "sha256": "b9965225bb7261e061786cb3dda0fdb5c9a9e29216a90088a37d5abf0967783f"
+    },
+    {
+      "path": "src/collision_optim/nanogpt_benchmark.py",
+      "bytes": 18158,
+      "sha256": "15429273cd6197814bf55fa7c51248041814c8de8ba943481ee91d3f30aa00ce"
+    },
+    {
+      "path": "src/collision_optim/nanogpt_routing.py",
+      "bytes": 9336,
+      "sha256": "fcbad267a708d90029e7cd38efa9ffac6f676ba3669f0f2805f17d9b649edbe5"
+    },
+    {
+      "path": "src/collision_optim/objectives.py",
+      "bytes": 7627,
+      "sha256": "c87db3a8999f6883f375a30803ea1c567d9d7a3b7b201d01bb54d9a4fb9fed4a"
+    },
+    {
+      "path": "src/collision_optim/optimizer_comparison.py",
+      "bytes": 11342,
+      "sha256": "0427324923562261d6974a0101bd9392ca905c0272798ed47c09d4c7ce3121b0"
+    },
+    {
+      "path": "src/collision_optim/optimizer_controls.py",
+      "bytes": 11125,
+      "sha256": "fc3844de5dce3880a18e148e35d877c738459ded19f352f542dec96bece41628"
+    },
+    {
+      "path": "src/collision_optim/population.py",
+      "bytes": 19577,
+      "sha256": "2a531fa2f76c224003667743595c87c091e723ceb84a3bc54a05463c07ce75f0"
+    },
+    {
+      "path": "src/collision_optim/population_cost.py",
+      "bytes": 7339,
+      "sha256": "f152ee3ce5a986469fa2129f7900b488a91e447e0dacb484ed8391fe25f4b0b8"
+    },
+    {
+      "path": "src/collision_optim/population_experiment.py",
+      "bytes": 23361,
+      "sha256": "c0c83a239095e2d4a2130b019ff532c04816b60dbb180f96c376aba04b6c8038"
+    },
+    {
+      "path": "src/collision_optim/predictive.py",
+      "bytes": 9849,
+      "sha256": "50495e5621df75e8ba856cbea25a16b9435ab86038d85d3f8a2acf5a0d80c038"
+    },
+    {
+      "path": "src/collision_optim/predictive_experiment.py",
+      "bytes": 13019,
+      "sha256": "7ac3062ca43ee62971e260abafcdce6cd6d1860732505197d5125beececf4756"
+    },
+    {
+      "path": "src/collision_optim/predictive_runner.py",
+      "bytes": 15996,
+      "sha256": "27e555bc3dc5dfc3afab0c2938a0f2d226b0aba2ed195cdc204a9e6a55c624c7"
+    },
+    {
+      "path": "src/collision_optim/routing_experiment.py",
+      "bytes": 9829,
+      "sha256": "c3e85c8bab3f4855c1a5ddc910e9f0935cb82ea8fa0f07c56ad73cb701442826"
+    },
+    {
+      "path": "src/collision_optim/runner.py",
+      "bytes": 5173,
+      "sha256": "0ce3a390fb64e6509b0bfcc9dde686c7af96d7d0967e4057adcd487129df1209"
+    },
+    {
+      "path": "src/collision_optim/smoke.py",
+      "bytes": 16370,
+      "sha256": "a8a82d7c52951c01ec16eaa706083620bcdfcafa010eaa05d2ae01001748c884"
+    },
+    {
+      "path": "src/collision_optim/stability.py",
+      "bytes": 5524,
+      "sha256": "d69decad9db7d82b41ae9d5461f74e7e86360582de54bfdae40e43c1ebb2070d"
+    },
+    {
+      "path": "src/collision_optim/strategic.py",
+      "bytes": 18044,
+      "sha256": "cf1bc51384022e50822717b57faa6d914bdbb25efacf7e122da8de63c7ff7bdf"
+    },
+    {
+      "path": "src/collision_optim/strategic_experiment.py",
+      "bytes": 17523,
+      "sha256": "901b1db35cc8b366ebd54aa943553e42108295b99bbb8a38c8f51e65dd455f73"
+    },
+    {
+      "path": "tests/test_counterfactuals.py",
+      "bytes": 1625,
+      "sha256": "b8cbc75a0438977b86abf34c04ed27ba56eff760e35d343268a2ea2356188836"
+    },
+    {
+      "path": "tests/test_damping_replication.py",
+      "bytes": 3955,
+      "sha256": "8f519bd15cad3bf4b781c16e5a28bf0b11d618d7d5c5a854dc22dc87e9e0a97e"
+    },
+    {
+      "path": "tests/test_failure_recording.py",
+      "bytes": 2170,
+      "sha256": "7b56e9994d3de2578977d4b20180a92be7f7160c44da4972be2144fd44c373f7"
+    },
+    {
+      "path": "tests/test_gravity.py",
+      "bytes": 8222,
+      "sha256": "01aab28ccab74db0617033fd1c7fa2038a9f4d2ff74acda93def970382f06fe4"
+    },
+    {
+      "path": "tests/test_gravity_experiment.py",
+      "bytes": 1892,
+      "sha256": "1ac1c06b47b6dfd18454e924101a3c6a2e9b07694c7bd8a20f6b5bfcb9e48257"
+    },
+    {
+      "path": "tests/test_highdim.py",
+      "bytes": 5436,
+      "sha256": "7731df334bbc822f9f1716460014c5061000cae228bdb1626420649f3ef8d5ee"
+    },
+    {
+      "path": "tests/test_methods.py",
+      "bytes": 6781,
+      "sha256": "de8c5f5b0be7a2ed162aff71d0b30be6f3e9fbd5b0c96ff364961bdbe0acea4a"
+    },
+    {
+      "path": "tests/test_model_limits.py",
+      "bytes": 1544,
+      "sha256": "3a47e701fef1f8ea8ae4057379bc8fcd92e5fc8a7587a94f1c033dd8359a9d37"
+    },
+    {
+      "path": "tests/test_momentum_routing.py",
+      "bytes": 9652,
+      "sha256": "e3b8f82317d1c7d8f51220196d1f1c8e894d703421f385277b5626d52f34bad9"
+    },
+    {
+      "path": "tests/test_nanogpt_benchmark.py",
+      "bytes": 3908,
+      "sha256": "28ed9113f90663f17c60490387eee15006c2ff4d91d840ac8a6a46c6fbafb4c6"
+    },
+    {
+      "path": "tests/test_optimizer_comparison.py",
+      "bytes": 1399,
+      "sha256": "604f88b46c8c0577d3b5d1f6a06b184b95663d78dba65cc4d175b48fc1df3824"
+    },
+    {
+      "path": "tests/test_optimizer_controls.py",
+      "bytes": 3930,
+      "sha256": "b77abc8b77378846fde7cd6cc60055dddd9906ffd3cd0d2ed5249399c3ea0352"
+    },
+    {
+      "path": "tests/test_physics.py",
+      "bytes": 5467,
+      "sha256": "ce243cbcb6300ccbaf93185dc242fbfac3e2083296701607d524a8a4d565fc67"
+    },
+    {
+      "path": "tests/test_population.py",
+      "bytes": 7702,
+      "sha256": "20705825e0f758ec6e92471c100c5a20ebaf4f245ccfd4e71372d258f8e2e110"
+    },
+    {
+      "path": "tests/test_population_cost.py",
+      "bytes": 1927,
+      "sha256": "9cd5728b3ea743881b7221cf9c1e12a777c222e9fefee7066ab2e47d095e31eb"
+    },
+    {
+      "path": "tests/test_population_experiment.py",
+      "bytes": 1893,
+      "sha256": "7f52949fefa6967758d6b5bdefe0dc0a00a2dc72495f820960254131a1d1c5a7"
+    },
+    {
+      "path": "tests/test_predictive.py",
+      "bytes": 6986,
+      "sha256": "03c3463c5bf24b4f869c632d51b65768c8facaf483260608f806848cb6f16c21"
+    },
+    {
+      "path": "tests/test_predictive_experiment.py",
+      "bytes": 2742,
+      "sha256": "0701eb389118a8790412e6fa42f7de5abe8e6077f4325efd4ba56fbdc2f32ea1"
+    },
+    {
+      "path": "tests/test_smoke_export.py",
+      "bytes": 1440,
+      "sha256": "e1a13874b91b97554ab7ddfb657c5da7a2055b9ff85adffd15677b3d014548f2"
+    },
+    {
+      "path": "tests/test_stability.py",
+      "bytes": 1364,
+      "sha256": "64614fc8208039a02fb7f5c51f8cafb8c66cdf8e07cc12f5f4161454ba963b55"
+    },
+    {
+      "path": "tests/test_strategic.py",
+      "bytes": 6975,
+      "sha256": "a1f8fe738949fdc7afbb5a0dfdd8f22cea660c6c3626a49cdf5c91d1d93eb9f5"
+    },
+    {
+      "path": "tests/test_strategic_experiment.py",
+      "bytes": 2327,
+      "sha256": "9ecd11eaa8da6431950606f3b877b10a7c3f0321113fdbabb84a6526229138b2"
+    },
+    {
+      "path": "third_party/nanogpt/LICENSE",
+      "bytes": 1072,
+      "sha256": "a59ec5cdb1c1e447e5266a014b3e7ded511f8d6e5a08931e931c87490ff821fe"
+    },
+    {
+      "path": "third_party/nanogpt/PROVENANCE.md",
+      "bytes": 652,
+      "sha256": "9103b6ccd374afae156c672249301277e91ac92599634d498c8ec5e47de1ca00"
+    },
+    {
+      "path": "third_party/nanogpt/model.py",
+      "bytes": 16345,
+      "sha256": "7c01703240dbec5d554527dc666e35b3df8391d0b117fddc07afcf325a21d11c"
+    }
+  ]
+}

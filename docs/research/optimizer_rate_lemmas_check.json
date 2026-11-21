@@ -1,0 +1,102 @@
+{
+  "file": "/Users/chenyixin/Documents/EE 5239/Project/docs/research/optimizer_rate_lemmas.lean",
+  "status": "PASS",
+  "problems": [],
+  "declarations": [
+    {
+      "name": "OptimizerRate.auxiliary_square",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (\u03c1 q j next : \u211d),   0 \u2264 \u03c1 \u2192 \u03c1 < 1 \u2192 0 \u2264 next \u2192 next \u2264 \u03c1 * (q + j) \u2192 (1 - \u03c1) * next ^ 2 \u2264 (1 - \u03c1) * \u03c1 * q ^ 2 + \u03c1 ^ 2 * j ^ 2",
+      "type_explicit": "\u2200 (\u03c1 q j next : Real),   @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03c1 \u2192     @LT.lt Real Real.instLT \u03c1 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192       @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) next \u2192         @LE.le Real Real.instLE next             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03c1               (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) q j)) \u2192           @LE.le Real Real.instLE             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u03c1)               (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                 next (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))             (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                   (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                     (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u03c1)                   \u03c1)                 (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                   q (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                   \u03c1 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))                 (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                   j (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerRate.guard_error",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (m n \u03b5 : \u211d), m ^ 2 \u2264 2 * n ^ 2 + 2 * \u03b5 ^ 2 \u2192 -n ^ 2 / 2 + 2 * \u03b5 * n \u2264 -m ^ 2 / 8 + 17 / 4 * \u03b5 ^ 2",
+      "type_explicit": "\u2200 (m n \u03b5 : Real),   @LE.le Real Real.instLE       (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) m         (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) n             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03b5             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))) \u2192     @LE.le Real Real.instLE       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)         (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))           (@Neg.neg Real Real.instNeg             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) n               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))           (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) \u03b5)           n))       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)         (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))           (@Neg.neg Real Real.instNeg             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) m               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))           (@OfNat.ofNat Real (nat_lit 8) (@instOfNatAtLeastTwo Real (nat_lit 8) Real.instNatCast \u22ef)))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))             (@OfNat.ofNat Real (nat_lit 17) (@instOfNatAtLeastTwo Real (nat_lit 17) Real.instNatCast \u22ef))             (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef)))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03b5             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerRate.momentum_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (\u03bc \u03b7 a v g \u03be : \u211d),   have s := \u03bc * a * v - \u03b7 * (g + \u03be);   2 * \u03b7 * g * s + s ^ 2 = (\u03bc * a * v) ^ 2 - \u03b7 ^ 2 * g ^ 2 + \u03b7 ^ 2 * \u03be ^ 2 - 2 * \u03b7 * \u03bc * a * v * \u03be",
+      "type_explicit": "\u2200 (\u03bc \u03b7 a v g \u03be : Real),   have s :=     @HSub.hSub Real Real Real (@instHSub Real Real.instSub)       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03bc a) v)       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) g \u03be));   @Eq Real     (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) \u03b7)           g)         s)       (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) s         (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))     (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)         (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03bc a) v)             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03b7               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) g               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03b7             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03be             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) \u03b7)               \u03bc)             a)           v)         \u03be))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerRate.sum_decrease",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (z c : \u2115 \u2192 \u211d), (\u2200 (t : \u2115), z (t + 1) + c t \u2264 z t) \u2192 \u2200 (n : \u2115), z n + \u2211 t \u2208 Finset.range n, c t \u2264 z 0",
+      "type_explicit": "\u2200 (z c : Nat \u2192 Real),   (\u2200 (t : Nat),       @LE.le Real Real.instLE         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)           (z             (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t               (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))           (c t))         (z t)) \u2192     \u2200 (n : Nat),       @LE.le Real Real.instLE         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (z n) (\u2211 t \u2208 Finset.range n, c t))         (z (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))",
+      "kind": "theorem",
+      "statement_uses": []
+    }
+  ],
+  "statement_context": {},
+  "checker": {
+    "version": "2.5",
+    "sha256_checker": "94612c73d6e82faa7bc0f8496ce779d799b80862f4b0f895dc9dfd89a0fe1353",
+    "sha256_driver": "629965dfd96f28296344971f45e4f622800cf8cfab6c808561a485866746e749"
+  },
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_rev": "v4.35.0",
+  "pinned": true,
+  "tier": "local",
+  "stages": {
+    "source_scan": {
+      "status": "pass"
+    },
+    "packages": {
+      "status": "pass",
+      "seconds": 1.4,
+      "checked": [
+        "mathlib",
+        "plausible",
+        "LeanSearchClient",
+        "importGraph",
+        "proofwidgets",
+        "aesop",
+        "Qq",
+        "batteries",
+        "Cli"
+      ]
+    },
+    "compile": {
+      "status": "pass",
+      "seconds": 75.2,
+      "sandboxed": false
+    },
+    "audit": {
+      "status": "pass",
+      "seconds": 499.0
+    },
+    "replay": {
+      "status": "pass",
+      "seconds": 89.3
+    }
+  }
+}

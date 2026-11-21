@@ -1,0 +1,39 @@
+{
+  "date": "2026-11-08",
+  "references_checked": 11,
+  "method": "Primary proceedings / arXiv / author-manuscript / publisher metadata checks using web tools; source URLs and reading depth are in search-and-citations JSON.",
+  "automatic_tool": {
+    "path": "/Users/chenyixin/.codex/skills/literature-review-lean/scripts/verify_citations.py",
+    "input": "2026-11-08-intervention-literature.md",
+    "result": "1 DOI detected, 0 automatically verified, 1 failed; raw report retained",
+    "failure_detail": "The utility did not record an error cause; do not infer that this DOI is invalid.",
+    "raw_report": "2026-11-08-intervention-literature_citation_report.json"
+  },
+  "manual_resolution": [
+    {
+      "doi": "10.1007/s10589-026-00776-2",
+      "status": "confirmed on primary publisher page; automatic DOI service verification remains unsuccessful",
+      "source": "https://link.springer.com/article/10.1007/s10589-026-00776-2",
+      "title": "Effectively leveraging momentum terms in stochastic line search frameworks for fast optimization of finite-sum problems",
+      "authors": [
+        "Matteo Lapucci",
+        "Davide Pucci"
+      ],
+      "journal": "Computational Optimization and Applications",
+      "volume": 94,
+      "pages": "543–569",
+      "year": 2026,
+      "published": "2026-03-11"
+    }
+  ],
+  "access_limits": [
+    "ACM and ACS DOI resolvers / Crossref API were inaccessible through web tools; those papers cite readable primary author manuscripts instead.",
+    "OpenReview page returned browser verification; no bypass attempted.",
+    "Some NeurIPS PDF URLs timed out; official proceedings metadata and author arXiv full texts used."
+  ],
+  "not_claimed": [
+    "Successful automated verification of every DOI",
+    "Complete systematic-review coverage",
+    "Independent reproduction of cited algorithms"
+  ]
+}

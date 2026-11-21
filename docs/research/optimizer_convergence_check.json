@@ -1,0 +1,961 @@
+{
+  "file": "/Users/chenyixin/Documents/EE 5239/Project/docs/research/optimizer_convergence.lean",
+  "status": "PASS",
+  "problems": [],
+  "declarations": [
+    {
+      "name": "OptimizerConvergence.Compatible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 E \u2192 E \u2192 E \u2192 Prop",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192 E \u2192 E \u2192 E \u2192 Prop",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.Contraction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 \u211d \u2192 \u211d",
+      "type_explicit": "Real \u2192 Real \u2192 Real \u2192 Real \u2192 Real",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.Energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [NormedAddCommGroup E] \u2192 {\u03b9 : Type u_2} \u2192 [Fintype \u03b9] \u2192 (E \u2192 \u211d) \u2192 \u211d \u2192 \u211d \u2192 \u211d \u2192 (\u03b9 \u2192 E) \u2192 (\u03b9 \u2192 E) \u2192 \u211d",
+      "type_explicit": "{E : Type u_1} \u2192   [NormedAddCommGroup E] \u2192 {\u03b9 : Type u_2} \u2192 [Fintype \u03b9] \u2192 (E \u2192 Real) \u2192 Real \u2192 Real \u2192 Real \u2192 (\u03b9 \u2192 E) \u2192 (\u03b9 \u2192 E) \u2192 Real",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.Gap",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 {\u03b9 : Type u_2} \u2192 [Fintype \u03b9] \u2192 (E \u2192 \u211d) \u2192 \u211d \u2192 (\u03b9 \u2192 E) \u2192 \u211d",
+      "type_explicit": "{E : Type u_1} \u2192 {\u03b9 : Type u_2} \u2192 [Fintype \u03b9] \u2192 (E \u2192 Real) \u2192 Real \u2192 (\u03b9 \u2192 E) \u2192 Real",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.GradDominance",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [NormedAddCommGroup E] \u2192 (E \u2192 \u211d) \u2192 (E \u2192 E) \u2192 \u211d \u2192 \u211d \u2192 Prop",
+      "type_explicit": "{E : Type u_1} \u2192 [NormedAddCommGroup E] \u2192 (E \u2192 Real) \u2192 (E \u2192 E) \u2192 Real \u2192 Real \u2192 Prop",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.Guard",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 Prop",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       Real \u2192 Real \u2192 E \u2192 E \u2192 Prop",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.GuardedStep",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 E",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       Real \u2192 Real \u2192 E \u2192 E \u2192 E",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.Mean",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{\u03a9 : Type u_3} \u2192 [Fintype \u03a9] \u2192 (\u03a9 \u2192 \u211d) \u2192 (\u03a9 \u2192 \u211d) \u2192 \u211d",
+      "type_explicit": "{\u03a9 : Type u_3} \u2192 [Fintype \u03a9] \u2192 (\u03a9 \u2192 Real) \u2192 (\u03a9 \u2192 Real) \u2192 Real",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.MomentumRun",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [InnerProductSpace \u211d E] \u2192       {\u03b9 : Type u_2} \u2192         [Fintype \u03b9] \u2192 (E \u2192 E) \u2192 \u211d \u2192 \u211d \u2192 (\u2115 \u2192 \u03b9 \u2192 E) \u2192 (\u2115 \u2192 \u03b9 \u2192 E) \u2192 (\u2115 \u2192 \u03b9 \u2192 E) \u2192 (\u2115 \u2192 \u03b9 \u2192 E) \u2192 (\u2115 \u2192 \u03b9 \u2192 \u211d) \u2192 Prop",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       {\u03b9 : Type u_2} \u2192         [Fintype \u03b9] \u2192           (E \u2192 E) \u2192             Real \u2192 Real \u2192 (Nat \u2192 \u03b9 \u2192 E) \u2192 (Nat \u2192 \u03b9 \u2192 E) \u2192 (Nat \u2192 \u03b9 \u2192 E) \u2192 (Nat \u2192 \u03b9 \u2192 E) \u2192 (Nat \u2192 \u03b9 \u2192 Real) \u2192 Prop",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.SqMass",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [NormedAddCommGroup E] \u2192 {\u03b9 : Type u_2} \u2192 [Fintype \u03b9] \u2192 (\u03b9 \u2192 E) \u2192 \u211d",
+      "type_explicit": "{E : Type u_1} \u2192 [NormedAddCommGroup E] \u2192 {\u03b9 : Type u_2} \u2192 [Fintype \u03b9] \u2192 (\u03b9 \u2192 E) \u2192 Real",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.Trial",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 E \u2192 E",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       Real \u2192 Real \u2192 Real \u2192 E \u2192 E \u2192 E \u2192 E",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.UpperModel",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 (E \u2192 \u211d) \u2192 (E \u2192 E) \u2192 \u211d \u2192 Prop",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       (E \u2192 Real) \u2192 (E \u2192 E) \u2192 Real \u2192 Prop",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.contraction_le_one",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {L \u03b7 \u03bc m : \u211d}, 0 < \u03b7 \u2192 \u03b7 * L < 1 - \u03bc ^ 2 \u2192 m \u2264 L \u2192 OptimizerConvergence.Contraction L \u03b7 \u03bc m \u2264 1",
+      "type_explicit": "\u2200 {L \u03b7 \u03bc m : Real},   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192     @LT.lt Real Real.instLT (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)         (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)           (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) \u2192       @LE.le Real Real.instLE m L \u2192         @LE.le Real Real.instLE (OptimizerConvergence.Contraction L \u03b7 \u03bc m)           (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Contraction"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.contraction_pos",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {L \u03b7 \u03bc m : \u211d}, 0 < \u03b7 \u2192 \u03b7 * L < 1 - \u03bc ^ 2 \u2192 0 < m \u2192 0 < OptimizerConvergence.Contraction L \u03b7 \u03bc m",
+      "type_explicit": "\u2200 {L \u03b7 \u03bc m : Real},   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192     @LT.lt Real Real.instLT (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)         (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)           (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) \u2192       @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) m \u2192         @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))           (OptimizerConvergence.Contraction L \u03b7 \u03bc m)",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Contraction"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.elastic_reflection_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] (v n : E),   \u2016n\u2016 = 1 \u2192 \u2016v - (2 * inner \u211d v n) \u2022 n\u2016 ^ 2 = \u2016v\u2016 ^ 2",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] (v n : E),   @Eq Real (@norm E (@NormedAddCommGroup.toNorm E inst) n)       (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192     @Eq Real       (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))         (@norm E (@NormedAddCommGroup.toNorm E inst)           (@HSub.hSub E E E             (@instHSub E               (@SubNegMonoid.toSub E                 (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))             v             (@HSMul.hSMul Real E E               (@instHSMul Real E                 (@SMulZeroClass.toSMul Real E                   (@AddZero.toZero E                     (@AddZeroClass.toAddZero E                       (@AddMonoid.toAddZeroClass E                         (@SubNegMonoid.toAddMonoid E                           (@AddGroup.toSubNegMonoid E                             (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                   (@DistribSMul.toSMulZeroClass Real E                     (@AddMonoid.toAddZeroClass E                       (@SubNegMonoid.toAddMonoid E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                     (@DistribMulAction.toDistribSMul Real E Real.instMonoid                       (@SubNegMonoid.toAddMonoid E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                       (@Module.toDistribMulAction Real E Real.semiring                         (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                         (@NormedSpace.toModule Real E Real.normedField                           (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                           (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                             (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))                 (@inner Real E                   (@InnerProductSpace.toInner Real E Real.instRCLike                     (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)                   v n))               n)))         (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))       (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))         (@norm E (@NormedAddCommGroup.toNorm E inst) v) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.energy_nonneg",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {f : E \u2192 \u211d}   {star L \u03b7 \u03bc : \u211d},   (\u2200 (x : E), star \u2264 f x) \u2192     0 < \u03b7 \u2192 \u03b7 * L < 1 - \u03bc ^ 2 \u2192 \u2200 (x u : \u03b9 \u2192 E), 0 \u2264 @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x u",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] {\u03b9 : Type u_2}   [inst_2 : Fintype \u03b9] {f : E \u2192 Real} {star L \u03b7 \u03bc : Real},   (\u2200 (x : E), @LE.le Real Real.instLE star (f x)) \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192       @LT.lt Real Real.instLT (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) \u2192         \u2200 (x u : \u03b9 \u2192 E),           @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))             (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x u)",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Energy",
+        "OptimizerConvergence.Gap",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.fallback_passes",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : InnerProductSpace \u211d E] \u2192       {L \u03b7 : \u211d} \u2192 0 < \u03b7 \u2192 \u03b7 * L \u2264 1 \u2192 (G : E) \u2192 @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G (-\u03b7 \u2022 G)",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       {L \u03b7 : Real} \u2192         @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192           @LE.le Real Real.instLE (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192             (G : E) \u2192               @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G                 (@HSMul.hSMul Real E E                   (@instHSMul Real E                     (@SMulZeroClass.toSMul Real E                       (@AddZero.toZero E                         (@AddZeroClass.toAddZero E                           (@AddMonoid.toAddZeroClass E                             (@SubNegMonoid.toAddMonoid E                               (@AddGroup.toSubNegMonoid E                                 (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                       (@DistribSMul.toSMulZeroClass Real E                         (@AddMonoid.toAddZeroClass E                           (@SubNegMonoid.toAddMonoid E                             (@AddGroup.toSubNegMonoid E                               (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                         (@DistribMulAction.toDistribSMul Real E Real.instMonoid                           (@SubNegMonoid.toAddMonoid E                             (@AddGroup.toSubNegMonoid E                               (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                           (@Module.toDistribMulAction Real E Real.semiring                             (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                             (@NormedSpace.toModule Real E Real.normedField                               (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                               (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                                 (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))                   (@Neg.neg Real Real.instNeg \u03b7) G)",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Guard",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.geometric_descent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {z : \u2115 \u2192 \u211d} {r b : \u211d},   r \u2264 1 \u2192 (\u2200 (t : \u2115), z (t + 1) \u2264 (1 - r) * z t + r * b) \u2192 \u2200 (T : \u2115), z T \u2264 (1 - r) ^ T * z 0 + (1 - (1 - r) ^ T) * b",
+      "type_explicit": "\u2200 {z : Nat \u2192 Real} {r b : Real},   @LE.le Real Real.instLE r (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192     (\u2200 (t : Nat),         @LE.le Real Real.instLE           (z             (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t               (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))           (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) r)               (z t))             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) r b))) \u2192       \u2200 (T : Nat),         @LE.le Real Real.instLE (z T)           (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                 (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                   (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) r)                 T)               (z (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                 (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                   (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                     (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) r)                   T))               b))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.gradient_upper_model",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : InnerProductSpace \u211d E] \u2192       [inst_2 : CompleteSpace E] \u2192         {f : E \u2192 \u211d} \u2192           {g : E \u2192 E} \u2192             {L : \u211d} \u2192               (\u2200 (x : E), HasGradientAt f (g x) x) \u2192                 (\u2200 (x y : E), \u2016g x - g y\u2016 \u2264 L * \u2016x - y\u2016) \u2192 @OptimizerConvergence.UpperModel E inst inst_1 f g L",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       [inst_2 :           @CompleteSpace E             (@PseudoMetricSpace.toUniformSpace E               (@SeminormedAddCommGroup.toPseudoMetricSpace E (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)))] \u2192         {f : E \u2192 Real} \u2192           {g : E \u2192 E} \u2192             {L : Real} \u2192               (\u2200 (x : E), @HasGradientAt Real E Real.instRCLike inst inst_1 inst_2 f (g x) x) \u2192                 (\u2200 (x y : E),                     @LE.le Real Real.instLE                       (@norm E (@NormedAddCommGroup.toNorm E inst)                         (@HSub.hSub E E E                           (@instHSub E                             (@SubNegMonoid.toSub E                               (@AddGroup.toSubNegMonoid E                                 (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                           (g x) (g y)))                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) L                         (@norm E (@NormedAddCommGroup.toNorm E inst)                           (@HSub.hSub E E E                             (@instHSub E                               (@SubNegMonoid.toSub E                                 (@AddGroup.toSubNegMonoid E                                   (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                             x y)))) \u2192                   @OptimizerConvergence.UpperModel E inst inst_1 f g L",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.gravity_damping_rate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 (energy K \u03b2 : \u2115 \u2192 \u211d) {cap : \u211d},   (\u2200 (t : \u2115), 0 \u2264 energy t) \u2192     (\u2200 (t : \u2115), 0 \u2264 K t) \u2192       0 \u2264 cap \u2192         cap < 1 \u2192           (\u2200 (t : \u2115), 0 \u2264 \u03b2 t \u2227 \u03b2 t \u2264 cap) \u2192             (\u2200 (t : \u2115), energy (t + 1) + (1 - \u03b2 t ^ 2) * K t = energy t) \u2192               \u2200 (T : \u2115),                 0 < T \u2192                   energy T + \u2211 t \u2208 Finset.range T, (1 - \u03b2 t ^ 2) * K t = energy 0 \u2227                     \u2203 t < T, K t \u2264 energy 0 / (\u2191T * (1 - cap ^ 2))",
+      "type_explicit": "\u2200 (energy K \u03b2 : Nat \u2192 Real) {cap : Real},   (\u2200 (t : Nat),       @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (energy t)) \u2192     (\u2200 (t : Nat), @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (K t)) \u2192       @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) cap \u2192         @LT.lt Real Real.instLT cap (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192           (\u2200 (t : Nat),               And (@LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (\u03b2 t))                 (@LE.le Real Real.instLE (\u03b2 t) cap)) \u2192             (\u2200 (t : Nat),                 @Eq Real                   (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                     (energy                       (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t                         (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                       (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                         (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                         (@HPow.hPow Real Nat Real                           (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) (\u03b2 t)                           (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))                       (K t)))                   (energy t)) \u2192               \u2200 (T : Nat),                 @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) T \u2192                   And                     (@Eq Real                       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (energy T)                         (\u2211 t \u2208 Finset.range T,                           @HMul.hMul Real Real Real (@instHMul Real Real.instMul)                             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                               (@HPow.hPow Real Nat Real                                 (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) (\u03b2 t)                                 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))                             (K t)))                       (energy (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))                     (\u2203 t,                       And (@LT.lt Nat instLTNat t T)                         (@LE.le Real Real.instLE (K t)                           (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                             (energy (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))                             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (@Nat.cast Real Real.instNatCast T)                               (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                                 (@HPow.hPow Real Nat Real                                   (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) cap                                   (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))))))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.gravity_flight_energy",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] (v n : E) (gravity z star t : \u211d),   \u2016n\u2016 = 1 \u2192     \u2016v - (gravity * t) \u2022 n\u2016 ^ 2 / 2 + gravity * (z + t * inner \u211d v n - gravity / 2 * t ^ 2 - star) =       \u2016v\u2016 ^ 2 / 2 + gravity * (z - star)",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] (v n : E)   (gravity z star t : Real),   @Eq Real (@norm E (@NormedAddCommGroup.toNorm E inst) n)       (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192     @Eq Real       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)         (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@norm E (@NormedAddCommGroup.toNorm E inst)               (@HSub.hSub E E E                 (@instHSub E                   (@SubNegMonoid.toSub E                     (@AddGroup.toSubNegMonoid E                       (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                 v                 (@HSMul.hSMul Real E E                   (@instHSMul Real E                     (@SMulZeroClass.toSMul Real E                       (@AddZero.toZero E                         (@AddZeroClass.toAddZero E                           (@AddMonoid.toAddZeroClass E                             (@SubNegMonoid.toAddMonoid E                               (@AddGroup.toSubNegMonoid E                                 (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                       (@DistribSMul.toSMulZeroClass Real E                         (@AddMonoid.toAddZeroClass E                           (@SubNegMonoid.toAddMonoid E                             (@AddGroup.toSubNegMonoid E                               (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                         (@DistribMulAction.toDistribSMul Real E Real.instMonoid                           (@SubNegMonoid.toAddMonoid E                             (@AddGroup.toSubNegMonoid E                               (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                           (@Module.toDistribMulAction Real E Real.semiring                             (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                             (@NormedSpace.toModule Real E Real.normedField                               (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                               (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                                 (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) gravity t) n)))             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))           (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) gravity           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)               (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) z                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) t                   (@inner Real E                     (@InnerProductSpace.toInner Real E Real.instRCLike                       (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)                     v n)))               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) gravity                   (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))                 (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                   t (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))             star)))       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)         (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@norm E (@NormedAddCommGroup.toNorm E inst) v) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))           (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) gravity           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) z star)))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.guard_descent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {f : E \u2192 \u211d} {g : E \u2192 E} {L \u03b7 \u03b5 : \u211d}   {x G d : E} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   \u2016G - g x\u2016 \u2264 \u03b5 \u2192     \u2200 (accept : @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G d),       f (x + d) - f x \u2264 -(\u03b7 / 2) * \u2016G\u2016 ^ 2 + 2 * \u03b7 * \u03b5 * \u2016G\u2016",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {f : E \u2192 Real} {g : E \u2192 E} {L \u03b7 \u03b5 : Real} {x G d : E} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   @LE.le Real Real.instLE       (@norm E (@NormedAddCommGroup.toNorm E inst)         (@HSub.hSub E E E           (@instHSub E             (@SubNegMonoid.toSub E               (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))           G (g x)))       \u03b5 \u2192     \u2200 (accept : @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G d),       @LE.le Real Real.instLE         (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)           (f             (@HAdd.hAdd E E E               (@instHAdd E                 (@AddCommMagma.toAdd E                   (@AddCommSemigroup.toAddCommMagma E                     (@AddCommMonoid.toAddCommSemigroup E                       (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))               x d))           (f x))         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@Neg.neg Real Real.instNeg               (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))               (@norm E (@NormedAddCommGroup.toNorm E inst) G)               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) \u03b7)               \u03b5)             (@norm E (@NormedAddCommGroup.toNorm E inst) G)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Guard",
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.guard_error_descent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {f : E \u2192 \u211d} {g : E \u2192 E} {L \u03b7 \u03b5 : \u211d}   {x G d : E} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   0 < \u03b7 \u2192     \u2016G - g x\u2016 \u2264 \u03b5 \u2192       \u2200 (accept : @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G d),         f (x + d) - f x + \u03b7 / 8 * \u2016g x\u2016 ^ 2 \u2264 17 * \u03b7 / 4 * \u03b5 ^ 2",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {f : E \u2192 Real} {g : E \u2192 E} {L \u03b7 \u03b5 : Real} {x G d : E} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192     @LE.le Real Real.instLE         (@norm E (@NormedAddCommGroup.toNorm E inst)           (@HSub.hSub E E E             (@instHSub E               (@SubNegMonoid.toSub E                 (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))             G (g x)))         \u03b5 \u2192       \u2200 (accept : @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G d),         @LE.le Real Real.instLE           (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)               (f                 (@HAdd.hAdd E E E                   (@instHAdd E                     (@AddCommMagma.toAdd E                       (@AddCommSemigroup.toAddCommMagma E                         (@AddCommMonoid.toAddCommSemigroup E                           (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))                   x d))               (f x))             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7                 (@OfNat.ofNat Real (nat_lit 8) (@instOfNatAtLeastTwo Real (nat_lit 8) Real.instNatCast \u22ef)))               (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                 (@norm E (@NormedAddCommGroup.toNorm E inst) (g x))                 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@OfNat.ofNat Real (nat_lit 17) (@instOfNatAtLeastTwo Real (nat_lit 17) Real.instNatCast \u22ef)) \u03b7)               (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef)))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03b5               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Guard",
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.guarded_geometric_rates",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {f : E \u2192 \u211d} {g : E \u2192 E} {star L \u03b7 m : \u211d}   (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L)   (pl : @OptimizerConvergence.GradDominance E inst f g star m),   0 < \u03b7 \u2192     \u03b7 * L \u2264 1 \u2192       0 < m \u2192         m \u2264 L \u2192           \u2200 (x G candidate : \u2115 \u2192 E),             (\u2200 (t : \u2115), x (t + 1) = x t + @OptimizerConvergence.GuardedStep E inst inst_1 L \u03b7 (G t) (candidate t)) \u2192               \u2200 (T : \u2115),                 ((\u2200 (t : \u2115), G t = g (x t)) \u2192 f (x T) - star \u2264 (1 - \u03b7 * m) ^ T * (f (x 0) - star)) \u2227                   \u2200 (\u03b5 : \u211d),                     (\u2200 (t : \u2115), \u2016G t - g (x t)\u2016 \u2264 \u03b5) \u2192                       f (x T) - star \u2264                         (1 - \u03b7 * m / 4) ^ T * (f (x 0) - star) + (1 - (1 - \u03b7 * m / 4) ^ T) * (17 * \u03b5 ^ 2 / m)",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {f : E \u2192 Real} {g : E \u2192 E} {star L \u03b7 m : Real} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L)   (pl : @OptimizerConvergence.GradDominance E inst f g star m),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192     @LE.le Real Real.instLE (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)         (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192       @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) m \u2192         @LE.le Real Real.instLE m L \u2192           \u2200 (x G candidate : Nat \u2192 E),             (\u2200 (t : Nat),                 @Eq E                   (x                     (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t                       (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))                   (@HAdd.hAdd E E E                     (@instHAdd E                       (@AddCommMagma.toAdd E                         (@AddCommSemigroup.toAddCommMagma E                           (@AddCommMonoid.toAddCommSemigroup E                             (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))                     (x t) (@OptimizerConvergence.GuardedStep E inst inst_1 L \u03b7 (G t) (candidate t)))) \u2192               \u2200 (T : Nat),                 And                   ((\u2200 (t : Nat), @Eq E (G t) (g (x t))) \u2192                     @LE.le Real Real.instLE (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (f (x T)) star)                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                         (@HPow.hPow Real Nat Real                           (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 m))                           T)                         (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                           (f (x (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))) star)))                   (\u2200 (\u03b5 : Real),                     (\u2200 (t : Nat),                         @LE.le Real Real.instLE                           (@norm E (@NormedAddCommGroup.toNorm E inst)                             (@HSub.hSub E E E                               (@instHSub E                                 (@SubNegMonoid.toSub E                                   (@AddGroup.toSubNegMonoid E                                     (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                               (G t) (g (x t))))                           \u03b5) \u2192                       @LE.le Real Real.instLE (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (f (x T)) star)                         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                             (@HPow.hPow Real Nat Real                               (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                               (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                                 (@HDiv.hDiv Real Real Real                                   (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 m)                                   (@OfNat.ofNat Real (nat_lit 4)                                     (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef))))                               T)                             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                               (f (x (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))) star))                           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                               (@HPow.hPow Real Nat Real                                 (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                                 (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                   (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                                   (@HDiv.hDiv Real Real Real                                     (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 m)                                     (@OfNat.ofNat Real (nat_lit 4)                                       (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef))))                                 T))                             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                                 (@OfNat.ofNat Real (nat_lit 17)                                   (@instOfNatAtLeastTwo Real (nat_lit 17) Real.instNatCast \u22ef))                                 (@HPow.hPow Real Nat Real                                   (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03b5                                   (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))                               m))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.GradDominance",
+        "OptimizerConvergence.Guard",
+        "OptimizerConvergence.GuardedStep",
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.guarded_passes",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : InnerProductSpace \u211d E] \u2192       {L \u03b7 : \u211d} \u2192         0 < \u03b7 \u2192           \u03b7 * L \u2264 1 \u2192             (G candidate : E) \u2192               @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G                 (@OptimizerConvergence.GuardedStep E inst inst_1 L \u03b7 G candidate)",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       {L \u03b7 : Real} \u2192         @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192           @LE.le Real Real.instLE (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192             (G candidate : E) \u2192               @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G                 (@OptimizerConvergence.GuardedStep E inst inst_1 L \u03b7 G candidate)",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Guard",
+        "OptimizerConvergence.GuardedStep",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.guarded_rates",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {f : E \u2192 \u211d} {g : E \u2192 E} {star L \u03b7 : \u211d}   (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), star \u2264 f x) \u2192     0 < \u03b7 \u2192       \u03b7 * L \u2264 1 \u2192         \u2200 (x G candidate : \u2115 \u2192 E) (\u03b5 : \u2115 \u2192 \u211d),           (\u2200 (t : \u2115), x (t + 1) = x t + @OptimizerConvergence.GuardedStep E inst inst_1 L \u03b7 (G t) (candidate t)) \u2192             (\u2200 (t : \u2115), \u2016G t - g (x t)\u2016 \u2264 \u03b5 t) \u2192               \u2200 (T : \u2115),                 0 < T \u2192                   (\u2203 t < T, \u2016g (x t)\u2016 ^ 2 \u2264 8 * (f (x 0) - star) / (\u03b7 * \u2191T) + 34 / \u2191T * \u2211 s \u2208 Finset.range T, \u03b5 s ^ 2) \u2227                     ((\u2200 (t : \u2115), G t = g (x t)) \u2192 \u2203 t < T, \u2016g (x t)\u2016 ^ 2 \u2264 2 * (f (x 0) - star) / (\u03b7 * \u2191T))",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {f : E \u2192 Real} {g : E \u2192 E} {star L \u03b7 : Real} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), @LE.le Real Real.instLE star (f x)) \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192       @LE.le Real Real.instLE (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)           (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192         \u2200 (x G candidate : Nat \u2192 E) (\u03b5 : Nat \u2192 Real),           (\u2200 (t : Nat),               @Eq E                 (x                   (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t                     (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))                 (@HAdd.hAdd E E E                   (@instHAdd E                     (@AddCommMagma.toAdd E                       (@AddCommSemigroup.toAddCommMagma E                         (@AddCommMonoid.toAddCommSemigroup E                           (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))                   (x t) (@OptimizerConvergence.GuardedStep E inst inst_1 L \u03b7 (G t) (candidate t)))) \u2192             (\u2200 (t : Nat),                 @LE.le Real Real.instLE                   (@norm E (@NormedAddCommGroup.toNorm E inst)                     (@HSub.hSub E E E                       (@instHSub E                         (@SubNegMonoid.toSub E                           (@AddGroup.toSubNegMonoid E                             (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                       (G t) (g (x t))))                   (\u03b5 t)) \u2192               \u2200 (T : Nat),                 @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) T \u2192                   And                     (\u2203 t,                       And (@LT.lt Nat instLTNat t T)                         (@LE.le Real Real.instLE                           (@HPow.hPow Real Nat Real                             (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                             (@norm E (@NormedAddCommGroup.toNorm E inst) (g (x t)))                             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))                           (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                                 (@OfNat.ofNat Real (nat_lit 8)                                   (@instOfNatAtLeastTwo Real (nat_lit 8) Real.instNatCast \u22ef))                                 (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                   (f (x (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))) star))                               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7                                 (@Nat.cast Real Real.instNatCast T)))                             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                               (@HDiv.hDiv Real Real Real                                 (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                                 (@OfNat.ofNat Real (nat_lit 34)                                   (@instOfNatAtLeastTwo Real (nat_lit 34) Real.instNatCast \u22ef))                                 (@Nat.cast Real Real.instNatCast T))                               (\u2211 s \u2208 Finset.range T,                                 @HPow.hPow Real Nat Real                                   (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) (\u03b5 s)                                   (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))))                     ((\u2200 (t : Nat), @Eq E (G t) (g (x t))) \u2192                       \u2203 t,                         And (@LT.lt Nat instLTNat t T)                           (@LE.le Real Real.instLE                             (@HPow.hPow Real Nat Real                               (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                               (@norm E (@NormedAddCommGroup.toNorm E inst) (g (x t)))                               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))                             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                                 (@OfNat.ofNat Real (nat_lit 2)                                   (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))                                 (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                   (f (x (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))) star))                               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7                                 (@Nat.cast Real Real.instNatCast T)))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Guard",
+        "OptimizerConvergence.GuardedStep",
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.history_cross_zero",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {\u03a9 : Type u_3} {H : Type u_4}   [inst_2 : Fintype \u03a9] [Fintype H] [inst_4 : DecidableEq H] (prob : \u03a9 \u2192 \u211d) (hist : \u03a9 \u2192 H) (p : H \u2192 E) (\u03be : \u03a9 \u2192 E),   (\u2200 (h : H), (\u2211 w, if hist w = h then prob w \u2022 \u03be w else 0) = 0) \u2192     (@OptimizerConvergence.Mean \u03a9 inst_2 prob fun w => inner \u211d (p (hist w)) (\u03be w)) = 0",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {\u03a9 : Type u_3} {H : Type u_4} [inst_2 : Fintype \u03a9] [Fintype H] [inst_4 : DecidableEq H] (prob : \u03a9 \u2192 Real)   (hist : \u03a9 \u2192 H) (p : H \u2192 E) (\u03be : \u03a9 \u2192 E),   (\u2200 (h : H),       @Eq E         (\u2211 w,           @ite E (@Eq H (hist w) h) (inst_4 (hist w) h)             (@HSMul.hSMul Real E E               (@instHSMul Real E                 (@SMulZeroClass.toSMul Real E                   (@AddZero.toZero E                     (@AddZeroClass.toAddZero E                       (@AddMonoid.toAddZeroClass E                         (@SubNegMonoid.toAddMonoid E                           (@AddGroup.toSubNegMonoid E                             (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                   (@DistribSMul.toSMulZeroClass Real E                     (@AddMonoid.toAddZeroClass E                       (@SubNegMonoid.toAddMonoid E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                     (@DistribMulAction.toDistribSMul Real E Real.instMonoid                       (@SubNegMonoid.toAddMonoid E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                       (@Module.toDistribMulAction Real E Real.semiring                         (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                         (@NormedSpace.toModule Real E Real.normedField                           (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                           (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                             (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))               (prob w) (\u03be w))             (@OfNat.ofNat E (nat_lit 0)               (@Zero.toOfNat0 E                 (@NegZeroClass.toZero E                   (@SubNegZeroMonoid.toNegZeroClass E                     (@SubtractionMonoid.toSubNegZeroMonoid E                       (@SubtractionCommMonoid.toSubtractionMonoid E                         (@AddCommGroup.toDivisionAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst)))))))))         (@OfNat.ofNat E (nat_lit 0)           (@Zero.toOfNat0 E             (@NegZeroClass.toZero E               (@SubNegZeroMonoid.toNegZeroClass E                 (@SubtractionMonoid.toSubNegZeroMonoid E                   (@SubtractionCommMonoid.toSubtractionMonoid E                     (@AddCommGroup.toDivisionAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))))) \u2192     @Eq Real       (@OptimizerConvergence.Mean \u03a9 inst_2 prob fun w =>         @inner Real E           (@InnerProductSpace.toInner Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)             inst_1)           (p (hist w)) (\u03be w))       (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Mean"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.mean_add",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] (prob a b : \u03a9 \u2192 \u211d),   (@OptimizerConvergence.Mean \u03a9 inst prob fun w => a w + b w) =     @OptimizerConvergence.Mean \u03a9 inst prob a + @OptimizerConvergence.Mean \u03a9 inst prob b",
+      "type_explicit": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] (prob a b : \u03a9 \u2192 Real),   @Eq Real     (@OptimizerConvergence.Mean \u03a9 inst prob fun w =>       @HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (a w) (b w))     (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (@OptimizerConvergence.Mean \u03a9 inst prob a)       (@OptimizerConvergence.Mean \u03a9 inst prob b))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Mean"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.mean_centered_step",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] {prob z z' k n cross : \u03a9 \u2192 \u211d} {b c \u03c3 : \u211d},   (\u2200 (w : \u03a9), 0 \u2264 prob w) \u2192     0 \u2264 c \u2192       @OptimizerConvergence.Mean \u03a9 inst prob n \u2264 \u03c3 \u2192         @OptimizerConvergence.Mean \u03a9 inst prob cross = 0 \u2192           (\u2200 (w : \u03a9), z' w + c * k w \u2264 b * z w + c * n w - cross w) \u2192             @OptimizerConvergence.Mean \u03a9 inst prob z' + c * @OptimizerConvergence.Mean \u03a9 inst prob k \u2264               b * @OptimizerConvergence.Mean \u03a9 inst prob z + c * \u03c3",
+      "type_explicit": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] {prob z z' k n cross : \u03a9 \u2192 Real} {b c \u03c3 : Real},   (\u2200 (w : \u03a9), @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (prob w)) \u2192     @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) c \u2192       @LE.le Real Real.instLE (@OptimizerConvergence.Mean \u03a9 inst prob n) \u03c3 \u2192         @Eq Real (@OptimizerConvergence.Mean \u03a9 inst prob cross)             (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u2192           (\u2200 (w : \u03a9),               @LE.le Real Real.instLE                 (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (z' w)                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) c (k w)))                 (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                   (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) b (z w))                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) c (n w)))                   (cross w))) \u2192             @LE.le Real Real.instLE               (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (@OptimizerConvergence.Mean \u03a9 inst prob z')                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) c (@OptimizerConvergence.Mean \u03a9 inst prob k)))               (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) b (@OptimizerConvergence.Mean \u03a9 inst prob z))                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) c \u03c3))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Mean"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.mean_mono",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] {prob a b : \u03a9 \u2192 \u211d},   (\u2200 (w : \u03a9), 0 \u2264 prob w) \u2192     (\u2200 (w : \u03a9), a w \u2264 b w) \u2192 @OptimizerConvergence.Mean \u03a9 inst prob a \u2264 @OptimizerConvergence.Mean \u03a9 inst prob b",
+      "type_explicit": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] {prob a b : \u03a9 \u2192 Real},   (\u2200 (w : \u03a9), @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (prob w)) \u2192     (\u2200 (w : \u03a9), @LE.le Real Real.instLE (a w) (b w)) \u2192       @LE.le Real Real.instLE (@OptimizerConvergence.Mean \u03a9 inst prob a) (@OptimizerConvergence.Mean \u03a9 inst prob b)",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Mean"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.mean_mul",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] (prob : \u03a9 \u2192 \u211d) (c : \u211d) (a : \u03a9 \u2192 \u211d),   (@OptimizerConvergence.Mean \u03a9 inst prob fun w => c * a w) = c * @OptimizerConvergence.Mean \u03a9 inst prob a",
+      "type_explicit": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] (prob : \u03a9 \u2192 Real) (c : Real) (a : \u03a9 \u2192 Real),   @Eq Real     (@OptimizerConvergence.Mean \u03a9 inst prob fun w => @HMul.hMul Real Real Real (@instHMul Real Real.instMul) c (a w))     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) c (@OptimizerConvergence.Mean \u03a9 inst prob a))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Mean"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.mean_sub",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] (prob a b : \u03a9 \u2192 \u211d),   (@OptimizerConvergence.Mean \u03a9 inst prob fun w => a w - b w) =     @OptimizerConvergence.Mean \u03a9 inst prob a - @OptimizerConvergence.Mean \u03a9 inst prob b",
+      "type_explicit": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] (prob a b : \u03a9 \u2192 Real),   @Eq Real     (@OptimizerConvergence.Mean \u03a9 inst prob fun w =>       @HSub.hSub Real Real Real (@instHSub Real Real.instSub) (a w) (b w))     (@HSub.hSub Real Real Real (@instHSub Real Real.instSub) (@OptimizerConvergence.Mean \u03a9 inst prob a)       (@OptimizerConvergence.Mean \u03a9 inst prob b))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Mean"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.momentum_PL_step",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {f : E \u2192 \u211d}   {g : E \u2192 E} {star L \u03b7 \u03bc m : \u211d},   (\u2200 (x : E), star \u2264 f x) \u2192     \u2200 (pl : @OptimizerConvergence.GradDominance E inst f g star m),       0 < \u03b7 \u2192         \u03b7 * L < 1 - \u03bc ^ 2 \u2192           \u2200 (x u : \u03b9 \u2192 E) {next error : \u211d},             (next + (1 - \u03b7 * L - \u03bc ^ 2) / (2 * \u03b7) * @OptimizerConvergence.SqMass E inst \u03b9 inst_2 u +                   \u03b7 / 2 * @OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x i)) \u2264                 @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x u + error \u2192               next \u2264                 (1 - OptimizerConvergence.Contraction L \u03b7 \u03bc m) *                     @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x u +                   error",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] {\u03b9 : Type u_2}   [inst_2 : Fintype \u03b9] {f : E \u2192 Real} {g : E \u2192 E} {star L \u03b7 \u03bc m : Real},   (\u2200 (x : E), @LE.le Real Real.instLE star (f x)) \u2192     \u2200 (pl : @OptimizerConvergence.GradDominance E inst f g star m),       @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192         @LT.lt Real Real.instLT (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))               (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc                 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) \u2192           \u2200 (x u : \u03b9 \u2192 E) {next error : Real},             @LE.le Real Real.instLE                 (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                   (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) next                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                       (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                         (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L))                           (@HPow.hPow Real Nat Real                             (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc                             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))                         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                           (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) \u03b7))                       (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 u)))                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                     (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7                       (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))                     (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x i))))                 (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                   (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x u) error) \u2192               @LE.le Real Real.instLE next                 (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                     (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                       (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                       (OptimizerConvergence.Contraction L \u03b7 \u03bc m))                     (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x u))                   error)",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Contraction",
+        "OptimizerConvergence.Energy",
+        "OptimizerConvergence.Gap",
+        "OptimizerConvergence.GradDominance",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.momentum_descent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9]   {f : E \u2192 \u211d} {g : E \u2192 E} {star L \u03b7 \u03bc : \u211d} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   0 < \u03b7 \u2192     \u03b7 * L < 1 - \u03bc ^ 2 \u2192       0 \u2264 \u03bc \u2192         \u2200 (x u x' u' d \u03be : \u03b9 \u2192 E) (a : \u03b9 \u2192 \u211d),           (\u2200 (i : \u03b9), 0 \u2264 a i \u2227 a i \u2264 1) \u2192             (\u2200 (i : \u03b9), x' i = x i + d i) \u2192               \u2200                 (direction :                   (i : \u03b9) \u2192                     @OptimizerConvergence.Compatible E inst inst_1 (g (x i)) (d i)                       (@OptimizerConvergence.Trial E inst inst_1 \u03bc \u03b7 (a i) (u i) (g (x i)) (\u03be i))),                 @OptimizerConvergence.SqMass E inst \u03b9 inst_2 u' \u2264 @OptimizerConvergence.SqMass E inst \u03b9 inst_2 d \u2192                   (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x' u' +                         (1 - \u03b7 * L - \u03bc ^ 2) / (2 * \u03b7) * @OptimizerConvergence.SqMass E inst \u03b9 inst_2 u +                       \u03b7 / 2 * @OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x i)) \u2264                     @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x u +                         \u03b7 / 2 * @OptimizerConvergence.SqMass E inst \u03b9 inst_2 \u03be -                       \u2211 i, inner \u211d ((\u03bc * a i) \u2022 u i) (\u03be i)",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {f : E \u2192 Real} {g : E \u2192 E} {star L \u03b7 \u03bc : Real}   (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192     @LT.lt Real Real.instLT (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)         (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)           (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) \u2192       @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03bc \u2192         \u2200 (x u x' u' d \u03be : \u03b9 \u2192 E) (a : \u03b9 \u2192 Real),           (\u2200 (i : \u03b9),               And (@LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (a i))                 (@LE.le Real Real.instLE (a i) (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))) \u2192             (\u2200 (i : \u03b9),                 @Eq E (x' i)                   (@HAdd.hAdd E E E                     (@instHAdd E                       (@AddCommMagma.toAdd E                         (@AddCommSemigroup.toAddCommMagma E                           (@AddCommMonoid.toAddCommSemigroup E                             (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))                     (x i) (d i))) \u2192               \u2200                 (direction :                   (i : \u03b9) \u2192                     @OptimizerConvergence.Compatible E inst inst_1 (g (x i)) (d i)                       (@OptimizerConvergence.Trial E inst inst_1 \u03bc \u03b7 (a i) (u i) (g (x i)) (\u03be i))),                 @LE.le Real Real.instLE (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 u')                     (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 d) \u2192                   @LE.le Real Real.instLE                     (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                         (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x' u')                         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                           (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                               (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L))                               (@HPow.hPow Real Nat Real                                 (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc                                 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))                             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                               (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))                               \u03b7))                           (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 u)))                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                         (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7                           (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))                         (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x i))))                     (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                         (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 x u)                         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                           (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7                             (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))                           (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 \u03be)))                       (\u2211 i,                         @inner Real E                           (@InnerProductSpace.toInner Real E Real.instRCLike                             (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)                           (@HSMul.hSMul Real E E                             (@instHSMul Real E                               (@SMulZeroClass.toSMul Real E                                 (@AddZero.toZero E                                   (@AddZeroClass.toAddZero E                                     (@AddMonoid.toAddZeroClass E                                       (@SubNegMonoid.toAddMonoid E                                         (@AddGroup.toSubNegMonoid E                                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                                 (@DistribSMul.toSMulZeroClass Real E                                   (@AddMonoid.toAddZeroClass E                                     (@SubNegMonoid.toAddMonoid E                                       (@AddGroup.toSubNegMonoid E                                         (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                                   (@DistribMulAction.toDistribSMul Real E Real.instMonoid                                     (@SubNegMonoid.toAddMonoid E                                       (@AddGroup.toSubNegMonoid E                                         (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                                     (@Module.toDistribMulAction Real E Real.semiring                                       (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                                       (@NormedSpace.toModule Real E Real.normedField                                         (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                                         (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                                           (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))                             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03bc (a i)) (u i))                           (\u03be i)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.Energy",
+        "OptimizerConvergence.Gap",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.momentum_exact_rate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9]   {f : E \u2192 \u211d} {g : E \u2192 E} {star L \u03b7 \u03bc : \u211d} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), star \u2264 f x) \u2192     0 < \u03b7 \u2192       \u03b7 * L < 1 - \u03bc ^ 2 \u2192         0 \u2264 \u03bc \u2192           \u2200 (x u d : \u2115 \u2192 \u03b9 \u2192 E) (a : \u2115 \u2192 \u03b9 \u2192 \u211d)             (run : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d (fun x x_1 => 0) a) (T : \u2115),             0 < T \u2192               0 < Fintype.card \u03b9 \u2192                 (\u2211 t \u2208 Finset.range T, @OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x t i)) /                     (\u2191(Fintype.card \u03b9) * \u2191T) \u2264                   2 * @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 (x 0) (u 0) /                     (\u03b7 * (\u2191(Fintype.card \u03b9) * \u2191T))",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {f : E \u2192 Real} {g : E \u2192 E} {star L \u03b7 \u03bc : Real}   (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), @LE.le Real Real.instLE star (f x)) \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192       @LT.lt Real Real.instLT (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) \u2192         @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03bc \u2192           \u2200 (x u d : Nat \u2192 \u03b9 \u2192 E) (a : Nat \u2192 \u03b9 \u2192 Real)             (run :               @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d                 (fun x x_1 =>                   @OfNat.ofNat E (nat_lit 0)                     (@Zero.toOfNat0 E                       (@NegZeroClass.toZero E                         (@SubNegZeroMonoid.toNegZeroClass E                           (@SubtractionMonoid.toSubNegZeroMonoid E                             (@SubtractionCommMonoid.toSubtractionMonoid E                               (@AddCommGroup.toDivisionAddCommMonoid E                                 (@NormedAddCommGroup.toAddCommGroup E inst))))))))                 a)             (T : Nat),             @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) T \u2192               @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) (@Fintype.card \u03b9 inst_2) \u2192                 @LE.le Real Real.instLE                   (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                     (\u2211 t \u2208 Finset.range T, @OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x t i))                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                       (@Nat.cast Real Real.instNatCast (@Fintype.card \u03b9 inst_2)) (@Nat.cast Real Real.instNatCast T)))                   (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                       (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))                       (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7                         (x (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))                         (u (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))))                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                         (@Nat.cast Real Real.instNatCast (@Fintype.card \u03b9 inst_2))                         (@Nat.cast Real Real.instNatCast T))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.Energy",
+        "OptimizerConvergence.Gap",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.MomentumRun.mk",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.momentum_expected_rates",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9]   {\u03a9 : Type u_3} [inst_3 : Fintype \u03a9] {f : E \u2192 \u211d} {g : E \u2192 E} {star L \u03b7 \u03bc varianceBound : \u211d}   (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), star \u2264 f x) \u2192     0 < \u03b7 \u2192       \u03b7 * L < 1 - \u03bc ^ 2 \u2192         0 \u2264 \u03bc \u2192           \u2200 (prob : \u03a9 \u2192 \u211d),             (\u2200 (w : \u03a9), 0 \u2264 prob w) \u2192               \u2211 w, prob w = 1 \u2192                 \u2200 (x u d \u03be : \u03a9 \u2192 \u2115 \u2192 \u03b9 \u2192 E) (a : \u03a9 \u2192 \u2115 \u2192 \u03b9 \u2192 \u211d)                   (run :                     (w : \u03a9) \u2192                       @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 (x w) (u w) (d w) (\u03be w) (a w)),                   (\u2200 (t : \u2115),                       (@OptimizerConvergence.Mean \u03a9 inst_3 prob fun w =>                           @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (\u03be w t)) \u2264                         \u2191(Fintype.card \u03b9) * varianceBound) \u2192                     (\u2200 (t : \u2115),                         (@OptimizerConvergence.Mean \u03a9 inst_3 prob fun w =>                             \u2211 i, inner \u211d ((\u03bc * a w t i) \u2022 u w t i) (\u03be w t i)) =                           0) \u2192                       \u2200 (T : \u2115),                         0 < T \u2192                           0 < Fintype.card \u03b9 \u2192                             have z := fun t =>                               @OptimizerConvergence.Mean \u03a9 inst_3 prob fun w =>                                 @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 (x w t) (u w t);                             have A := fun t =>                               @OptimizerConvergence.Mean \u03a9 inst_3 prob fun w =>                                 @OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x w t i);                             have n := \u2191(Fintype.card \u03b9) * \u2191T;                             (\u2211 t \u2208 Finset.range T, A t) / n \u2264 2 * z 0 / (\u03b7 * n) + varianceBound \u2227                               \u2200 (m : \u211d),                                 0 < m \u2192                                   m \u2264 L \u2192                                     \u2200 (a : @OptimizerConvergence.GradDominance E inst f g star m),                                       have r := OptimizerConvergence.Contraction L \u03b7 \u03bc m;                                       z T \u2264                                         (1 - r) ^ T * z 0 +                                           (1 - (1 - r) ^ T) * (\u03b7 * \u2191(Fintype.card \u03b9) * varianceBound / (2 * r))",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {\u03a9 : Type u_3} [inst_3 : Fintype \u03a9] {f : E \u2192 Real} {g : E \u2192 E}   {star L \u03b7 \u03bc varianceBound : Real} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), @LE.le Real Real.instLE star (f x)) \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192       @LT.lt Real Real.instLT (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) \u2192         @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03bc \u2192           \u2200 (prob : \u03a9 \u2192 Real),             (\u2200 (w : \u03a9),                 @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (prob w)) \u2192               @Eq Real (\u2211 w, prob w) (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192                 \u2200 (x u d \u03be : \u03a9 \u2192 Nat \u2192 \u03b9 \u2192 E) (a : \u03a9 \u2192 Nat \u2192 \u03b9 \u2192 Real)                   (run :                     (w : \u03a9) \u2192                       @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 (x w) (u w) (d w) (\u03be w) (a w)),                   (\u2200 (t : Nat),                       @LE.le Real Real.instLE                         (@OptimizerConvergence.Mean \u03a9 inst_3 prob fun w =>                           @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (\u03be w t))                         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                           (@Nat.cast Real Real.instNatCast (@Fintype.card \u03b9 inst_2)) varianceBound)) \u2192                     (\u2200 (t : Nat),                         @Eq Real                           (@OptimizerConvergence.Mean \u03a9 inst_3 prob fun w =>                             \u2211 i,                               @inner Real E                                 (@InnerProductSpace.toInner Real E Real.instRCLike                                   (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)                                 (@HSMul.hSMul Real E E                                   (@instHSMul Real E                                     (@SMulZeroClass.toSMul Real E                                       (@AddZero.toZero E                                         (@AddZeroClass.toAddZero E                                           (@AddMonoid.toAddZeroClass E                                             (@SubNegMonoid.toAddMonoid E                                               (@AddGroup.toSubNegMonoid E                                                 (@AddCommGroup.toAddGroup E                                                   (@NormedAddCommGroup.toAddCommGroup E inst)))))))                                       (@DistribSMul.toSMulZeroClass Real E                                         (@AddMonoid.toAddZeroClass E                                           (@SubNegMonoid.toAddMonoid E                                             (@AddGroup.toSubNegMonoid E                                               (@AddCommGroup.toAddGroup E                                                 (@NormedAddCommGroup.toAddCommGroup E inst)))))                                         (@DistribMulAction.toDistribSMul Real E Real.instMonoid                                           (@SubNegMonoid.toAddMonoid E                                             (@AddGroup.toSubNegMonoid E                                               (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                                           (@Module.toDistribMulAction Real E Real.semiring                                             (@AddCommGroup.toAddCommMonoid E                                               (@NormedAddCommGroup.toAddCommGroup E inst))                                             (@NormedSpace.toModule Real E Real.normedField                                               (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                                               (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                                                 (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))                                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03bc (a w t i)) (u w t i))                                 (\u03be w t i))                           (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))) \u2192                       \u2200 (T : Nat),                         @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) T \u2192                           @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))                               (@Fintype.card \u03b9 inst_2) \u2192                             have z := fun t =>                               @OptimizerConvergence.Mean \u03a9 inst_3 prob fun w =>                                 @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 (x w t) (u w t);                             have A := fun t =>                               @OptimizerConvergence.Mean \u03a9 inst_3 prob fun w =>                                 @OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x w t i);                             have n :=                               @HMul.hMul Real Real Real (@instHMul Real Real.instMul)                                 (@Nat.cast Real Real.instNatCast (@Fintype.card \u03b9 inst_2))                                 (@Nat.cast Real Real.instNatCast T);                             And                               (@LE.le Real Real.instLE                                 (@HDiv.hDiv Real Real Real                                   (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                                   (\u2211 t \u2208 Finset.range T, A t) n)                                 (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                                   (@HDiv.hDiv Real Real Real                                     (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                                       (@OfNat.ofNat Real (nat_lit 2)                                         (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))                                       (z (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))                                     (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 n))                                   varianceBound))                               (\u2200 (m : Real),                                 @LT.lt Real Real.instLT                                     (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) m \u2192                                   @LE.le Real Real.instLE m L \u2192                                     \u2200 (a : @OptimizerConvergence.GradDominance E inst f g star m),                                       have r := OptimizerConvergence.Contraction L \u03b7 \u03bc m;                                       @LE.le Real Real.instLE (z T)                                         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                                           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                                             (@HPow.hPow Real Nat Real                                               (@instHPow Real Nat                                                 (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                                               (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) r)                                               T)                                             (z (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))))                                           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                                             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                                               (@HPow.hPow Real Nat Real                                                 (@instHPow Real Nat                                                   (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                                                 (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                                   (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) r)                                                 T))                                             (@HDiv.hDiv Real Real Real                                               (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                                               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                                                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7                                                   (@Nat.cast Real Real.instNatCast (@Fintype.card \u03b9 inst_2)))                                                 varianceBound)                                               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                                                 (@OfNat.ofNat Real (nat_lit 2)                                                   (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))                                                 r)))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.Contraction",
+        "OptimizerConvergence.Energy",
+        "OptimizerConvergence.Gap",
+        "OptimizerConvergence.GradDominance",
+        "OptimizerConvergence.Mean",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.MomentumRun.mk",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.momentum_geometric_rate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9]   {f : E \u2192 \u211d} {g : E \u2192 E} {star L \u03b7 \u03bc m : \u211d} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), star \u2264 f x) \u2192     \u2200 (pl : @OptimizerConvergence.GradDominance E inst f g star m),       0 < \u03b7 \u2192         \u03b7 * L < 1 - \u03bc ^ 2 \u2192           0 \u2264 \u03bc \u2192             m \u2264 L \u2192               \u2200 (x u d : \u2115 \u2192 \u03b9 \u2192 E) (a : \u2115 \u2192 \u03b9 \u2192 \u211d)                 (run : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d (fun x x_1 => 0) a) (T : \u2115),                 @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 (x T) (u T) \u2264                   (1 - OptimizerConvergence.Contraction L \u03b7 \u03bc m) ^ T *                     @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 (x 0) (u 0)",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {f : E \u2192 Real} {g : E \u2192 E} {star L \u03b7 \u03bc m : Real}   (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), @LE.le Real Real.instLE star (f x)) \u2192     \u2200 (pl : @OptimizerConvergence.GradDominance E inst f g star m),       @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192         @LT.lt Real Real.instLT (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))               (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc                 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) \u2192           @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03bc \u2192             @LE.le Real Real.instLE m L \u2192               \u2200 (x u d : Nat \u2192 \u03b9 \u2192 E) (a : Nat \u2192 \u03b9 \u2192 Real)                 (run :                   @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d                     (fun x x_1 =>                       @OfNat.ofNat E (nat_lit 0)                         (@Zero.toOfNat0 E                           (@NegZeroClass.toZero E                             (@SubNegZeroMonoid.toNegZeroClass E                               (@SubtractionMonoid.toSubNegZeroMonoid E                                 (@SubtractionCommMonoid.toSubtractionMonoid E                                   (@AddCommGroup.toDivisionAddCommMonoid E                                     (@NormedAddCommGroup.toAddCommGroup E inst))))))))                     a)                 (T : Nat),                 @LE.le Real Real.instLE (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 (x T) (u T))                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                     (@HPow.hPow Real Nat Real                       (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                       (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                         (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                         (OptimizerConvergence.Contraction L \u03b7 \u03bc m))                       T)                     (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7                       (x (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))                       (u (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.Contraction",
+        "OptimizerConvergence.Energy",
+        "OptimizerConvergence.Gap",
+        "OptimizerConvergence.GradDominance",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.MomentumRun.mk",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.momentum_pathwise_rate",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9]   {f : E \u2192 \u211d} {g : E \u2192 E} {star L \u03b7 \u03bc : \u211d} (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), star \u2264 f x) \u2192     0 < \u03b7 \u2192       \u03b7 * L < 1 - \u03bc ^ 2 \u2192         0 \u2264 \u03bc \u2192           \u2200 (x u d \u03be : \u2115 \u2192 \u03b9 \u2192 E) (a : \u2115 \u2192 \u03b9 \u2192 \u211d)             (run : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) (T : \u2115),             0 < T \u2192               0 < Fintype.card \u03b9 \u2192                 have n := \u2191(Fintype.card \u03b9) * \u2191T;                 (\u2211 t \u2208 Finset.range T, @OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x t i)) / n \u2264                   2 * @OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7 (x 0) (u 0) / (\u03b7 * n) +                     ((1 + 2 * \u03bc ^ 2 / (1 - \u03b7 * L - \u03bc ^ 2)) *                         \u2211 t \u2208 Finset.range T, @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (\u03be t)) /                       n",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {f : E \u2192 Real} {g : E \u2192 E} {star L \u03b7 \u03bc : Real}   (model : @OptimizerConvergence.UpperModel E inst inst_1 f g L),   (\u2200 (x : E), @LE.le Real Real.instLE star (f x)) \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192       @LT.lt Real Real.instLT (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L)           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))) \u2192         @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03bc \u2192           \u2200 (x u d \u03be : Nat \u2192 \u03b9 \u2192 E) (a : Nat \u2192 \u03b9 \u2192 Real)             (run : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) (T : Nat),             @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) T \u2192               @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) (@Fintype.card \u03b9 inst_2) \u2192                 have n :=                   @HMul.hMul Real Real Real (@instHMul Real Real.instMul)                     (@Nat.cast Real Real.instNatCast (@Fintype.card \u03b9 inst_2)) (@Nat.cast Real Real.instNatCast T);                 @LE.le Real Real.instLE                   (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                     (\u2211 t \u2208 Finset.range T, @OptimizerConvergence.SqMass E inst \u03b9 inst_2 fun i => g (x t i)) n)                   (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                     (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                         (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))                         (@OptimizerConvergence.Energy E inst \u03b9 inst_2 f star L \u03b7                           (x (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))                           (u (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))))))                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 n))                     (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                           (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                           (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                               (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))                               (@HPow.hPow Real Nat Real                                 (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc                                 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))                             (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                               (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)                                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 L))                               (@HPow.hPow Real Nat Real                                 (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc                                 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))))                         (\u2211 t \u2208 Finset.range T, @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (\u03be t)))                       n))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.Energy",
+        "OptimizerConvergence.Gap",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.UpperModel",
+        "OptimizerConvergence.MomentumRun.mk",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.noise_cross_bound",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] (u \u03be : E) {\u03bc a \u03b7 \u03b4 : \u211d},   0 \u2264 \u03bc \u2192 0 \u2264 a \u2227 a \u2264 1 \u2192 0 < \u03b7 \u2192 0 < \u03b4 \u2192 -inner \u211d ((\u03bc * a) \u2022 u) \u03be \u2264 \u03b4 / (4 * \u03b7) * \u2016u\u2016 ^ 2 + \u03b7 * \u03bc ^ 2 / \u03b4 * \u2016\u03be\u2016 ^ 2",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] (u \u03be : E)   {\u03bc a \u03b7 \u03b4 : Real},   @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03bc \u2192     And (@LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) a)         (@LE.le Real Real.instLE a (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))) \u2192       @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192         @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b4 \u2192           @LE.le Real Real.instLE             (@Neg.neg Real Real.instNeg               (@inner Real E                 (@InnerProductSpace.toInner Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                   inst_1)                 (@HSMul.hSMul Real E E                   (@instHSMul Real E                     (@SMulZeroClass.toSMul Real E                       (@AddZero.toZero E                         (@AddZeroClass.toAddZero E                           (@AddMonoid.toAddZeroClass E                             (@SubNegMonoid.toAddMonoid E                               (@AddGroup.toSubNegMonoid E                                 (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                       (@DistribSMul.toSMulZeroClass Real E                         (@AddMonoid.toAddZeroClass E                           (@SubNegMonoid.toAddMonoid E                             (@AddGroup.toSubNegMonoid E                               (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                         (@DistribMulAction.toDistribSMul Real E Real.instMonoid                           (@SubNegMonoid.toAddMonoid E                             (@AddGroup.toSubNegMonoid E                               (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                           (@Module.toDistribMulAction Real E Real.semiring                             (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                             (@NormedSpace.toModule Real E Real.normedField                               (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                               (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                                 (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03bc a) u)                 \u03be))             (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b4                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                     (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef)) \u03b7))                 (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                   (@norm E (@NormedAddCommGroup.toNorm E inst) u)                   (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                   (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7                     (@HPow.hPow Real Nat Real                       (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) \u03bc                       (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))                   \u03b4)                 (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                   (@norm E (@NormedAddCommGroup.toNorm E inst) \u03be)                   (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.norm_pair_sq",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [InnerProductSpace \u211d E] (a b : E),   \u2016a + b\u2016 ^ 2 \u2264 2 * \u2016a\u2016 ^ 2 + 2 * \u2016b\u2016 ^ 2",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] (a b : E),   @LE.le Real Real.instLE     (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))       (@norm E (@NormedAddCommGroup.toNorm E inst)         (@HAdd.hAdd E E E           (@instHAdd E             (@AddCommMagma.toAdd E               (@AddCommSemigroup.toAddCommMagma E                 (@AddCommMonoid.toAddCommSemigroup E                   (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))           a b))       (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))     (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)         (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))         (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))           (@norm E (@NormedAddCommGroup.toNorm E inst) a) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)         (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef))         (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))           (@norm E (@NormedAddCommGroup.toNorm E inst) b) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.normalize_sum",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {A B k \u03b7 n : \u211d}, 0 < \u03b7 \u2192 0 < n \u2192 \u03b7 / 2 * A \u2264 B + \u03b7 / 2 * k \u2192 A / n \u2264 2 * B / (\u03b7 * n) + k / n",
+      "type_explicit": "\u2200 {A B k \u03b7 n : Real},   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192     @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) n \u2192       @LE.le Real Real.instLE           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7               (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))             A)           (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) B             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))               k)) \u2192         @LE.le Real Real.instLE           (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) A n)           (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) B)               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03b7 n))             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) k n))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.reflection_compatible",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : InnerProductSpace \u211d E] \u2192       {g s : E} \u2192         {e : \u211d} \u2192           0 < inner \u211d g s \u2192             0 \u2264 e \u2192               e \u2264 1 \u2192                 have n := \u2016g\u2016\u207b\u00b9 \u2022 g;                 @OptimizerConvergence.Compatible E inst inst_1 g (s - ((1 + e) * inner \u211d s n) \u2022 n) s",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       {g s : E} \u2192         {e : Real} \u2192           @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))               (@inner Real E                 (@InnerProductSpace.toInner Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                   inst_1)                 g s) \u2192             @LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) e \u2192               @LE.le Real Real.instLE e (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) \u2192                 have n :=                   @HSMul.hSMul Real E E                     (@instHSMul Real E                       (@SMulZeroClass.toSMul Real E                         (@AddZero.toZero E                           (@AddZeroClass.toAddZero E                             (@AddMonoid.toAddZeroClass E                               (@SubNegMonoid.toAddMonoid E                                 (@AddGroup.toSubNegMonoid E                                   (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                         (@DistribSMul.toSMulZeroClass Real E                           (@AddMonoid.toAddZeroClass E                             (@SubNegMonoid.toAddMonoid E                               (@AddGroup.toSubNegMonoid E                                 (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                           (@DistribMulAction.toDistribSMul Real E Real.instMonoid                             (@SubNegMonoid.toAddMonoid E                               (@AddGroup.toSubNegMonoid E                                 (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                             (@Module.toDistribMulAction Real E Real.semiring                               (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                               (@NormedSpace.toModule Real E Real.normedField                                 (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                                 (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                                   (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))                     (@Inv.inv Real Real.instInv (@norm E (@NormedAddCommGroup.toNorm E inst) g)) g;                 @OptimizerConvergence.Compatible E inst inst_1 g                   (@HSub.hSub E E E                     (@instHSub E                       (@SubNegMonoid.toSub E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                     s                     (@HSMul.hSMul Real E E                       (@instHSMul Real E                         (@SMulZeroClass.toSMul Real E                           (@AddZero.toZero E                             (@AddZeroClass.toAddZero E                               (@AddMonoid.toAddZeroClass E                                 (@SubNegMonoid.toAddMonoid E                                   (@AddGroup.toSubNegMonoid E                                     (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                           (@DistribSMul.toSMulZeroClass Real E                             (@AddMonoid.toAddZeroClass E                               (@SubNegMonoid.toAddMonoid E                                 (@AddGroup.toSubNegMonoid E                                   (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                             (@DistribMulAction.toDistribSMul Real E Real.instMonoid                               (@SubNegMonoid.toAddMonoid E                                 (@AddGroup.toSubNegMonoid E                                   (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                               (@Module.toDistribMulAction Real E Real.semiring                                 (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                                 (@NormedSpace.toModule Real E Real.normedField                                   (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                                   (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                                     (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))                       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)                           (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)) e)                         (@inner Real E                           (@InnerProductSpace.toInner Real E Real.instRCLike                             (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)                           s n))                       n))                   s",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.some_le_average",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {a : \u2115 \u2192 \u211d} {T : \u2115} {B : \u211d}, 0 < T \u2192 \u2211 t \u2208 Finset.range T, a t \u2264 \u2191T * B \u2192 \u2203 t < T, a t \u2264 B",
+      "type_explicit": "\u2200 {a : Nat \u2192 Real} {T : Nat} {B : Real},   @LT.lt Nat instLTNat (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0))) T \u2192     @LE.le Real Real.instLE (\u2211 t \u2208 Finset.range T, a t)         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (@Nat.cast Real Real.instNatCast T) B) \u2192       \u2203 t, And (@LT.lt Nat instLTNat t T) (@LE.le Real Real.instLE (a t) B)",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.sum_descent",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {z a b : \u2115 \u2192 \u211d},   (\u2200 (t : \u2115), z (t + 1) + a t \u2264 z t + b t) \u2192     \u2200 (T : \u2115), z T + \u2211 t \u2208 Finset.range T, a t \u2264 z 0 + \u2211 t \u2208 Finset.range T, b t",
+      "type_explicit": "\u2200 {z a b : Nat \u2192 Real},   (\u2200 (t : Nat),       @LE.le Real Real.instLE         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)           (z             (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t               (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1)))))           (a t))         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (z t) (b t))) \u2192     \u2200 (T : Nat),       @LE.le Real Real.instLE         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (z T) (\u2211 t \u2208 Finset.range T, a t))         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)           (z (@OfNat.ofNat Nat (nat_lit 0) (instOfNatNat (nat_lit 0)))) (\u2211 t \u2208 Finset.range T, b t))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.trial_identity",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] (p g \u03be : E) {\u03b7 : \u211d},   0 < \u03b7 \u2192     have s := p - \u03b7 \u2022 (g + \u03be);     inner \u211d g s + \u2016s\u2016 ^ 2 / (2 * \u03b7) = \u2016p\u2016 ^ 2 / (2 * \u03b7) - \u03b7 / 2 * \u2016g\u2016 ^ 2 + \u03b7 / 2 * \u2016\u03be\u2016 ^ 2 - inner \u211d p \u03be",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] (p g \u03be : E)   {\u03b7 : Real},   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03b7 \u2192     have s :=       @HSub.hSub E E E         (@instHSub E           (@SubNegMonoid.toSub E             (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))         p         (@HSMul.hSMul Real E E           (@instHSMul Real E             (@SMulZeroClass.toSMul Real E               (@AddZero.toZero E                 (@AddZeroClass.toAddZero E                   (@AddMonoid.toAddZeroClass E                     (@SubNegMonoid.toAddMonoid E                       (@AddGroup.toSubNegMonoid E                         (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))               (@DistribSMul.toSMulZeroClass Real E                 (@AddMonoid.toAddZeroClass E                   (@SubNegMonoid.toAddMonoid E                     (@AddGroup.toSubNegMonoid E                       (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                 (@DistribMulAction.toDistribSMul Real E Real.instMonoid                   (@SubNegMonoid.toAddMonoid E                     (@AddGroup.toSubNegMonoid E                       (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                   (@Module.toDistribMulAction Real E Real.semiring                     (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                     (@NormedSpace.toModule Real E Real.normedField (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                       (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                         (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))           \u03b7           (@HAdd.hAdd E E E             (@instHAdd E               (@AddCommMagma.toAdd E                 (@AddCommSemigroup.toAddCommMagma E                   (@AddCommMonoid.toAddCommSemigroup E                     (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))             g \u03be));     @Eq Real       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)         (@inner Real E           (@InnerProductSpace.toInner Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)             inst_1)           g s)         (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@norm E (@NormedAddCommGroup.toNorm E inst) s) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) \u03b7)))       (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)           (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))               (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                 (@norm E (@NormedAddCommGroup.toNorm E inst) p)                 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))               (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)) \u03b7))             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)               (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7                 (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))               (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))                 (@norm E (@NormedAddCommGroup.toNorm E inst) g)                 (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7               (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))               (@norm E (@NormedAddCommGroup.toNorm E inst) \u03be)               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))         (@inner Real E           (@InnerProductSpace.toInner Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)             inst_1)           p \u03be))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "OptimizerConvergence.Guard.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] (L \u03b7 : \u211d) (G d : E),   @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G d =     (inner \u211d G d + L / 2 * \u2016d\u2016 ^ 2 \u2264 -(\u03b7 / 2) * \u2016G\u2016 ^ 2 \u2227 \u2016d\u2016 \u2264 2 * \u03b7 * \u2016G\u2016)",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   (L \u03b7 : Real) (G d : E),   @Eq Prop (@OptimizerConvergence.Guard E inst inst_1 L \u03b7 G d)     (And       (@LE.le Real Real.instLE         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)           (@inner Real E             (@InnerProductSpace.toInner Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)               inst_1)             G d)           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) L               (@OfNat.ofNat Real (nat_lit 2)                 (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast OptimizerConvergence.UpperModel._proof_1)))             (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))               (@norm E (@NormedAddCommGroup.toNorm E inst) d)               (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@Neg.neg Real Real.instNeg             (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid)) \u03b7               (@OfNat.ofNat Real (nat_lit 2)                 (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast OptimizerConvergence.UpperModel._proof_1))))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@norm E (@NormedAddCommGroup.toNorm E inst) G) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))       (@LE.le Real Real.instLE (@norm E (@NormedAddCommGroup.toNorm E inst) d)         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@OfNat.ofNat Real (nat_lit 2)               (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast OptimizerConvergence.UpperModel._proof_1))             \u03b7)           (@norm E (@NormedAddCommGroup.toNorm E inst) G))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Guard",
+        "OptimizerConvergence.UpperModel._proof_1"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.Mean.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] (prob value : \u03a9 \u2192 \u211d),   @OptimizerConvergence.Mean \u03a9 inst prob value = \u2211 w, prob w * value w",
+      "type_explicit": "\u2200 {\u03a9 : Type u_3} [inst : Fintype \u03a9] (prob value : \u03a9 \u2192 Real),   @Eq Real (@OptimizerConvergence.Mean \u03a9 inst prob value)     (\u2211 w, @HMul.hMul Real Real Real (@instHMul Real Real.instMul) (prob w) (value w))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Mean"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.MomentumRun.attenuation",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9]   {g : E \u2192 E} {\u03bc \u03b7 : \u211d} {x u d \u03be : \u2115 \u2192 \u03b9 \u2192 E} {a : \u2115 \u2192 \u03b9 \u2192 \u211d}   (self : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) (t : \u2115) (i : \u03b9),   0 \u2264 a t i \u2227 a t i \u2264 1",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {g : E \u2192 E} {\u03bc \u03b7 : Real} {x u d \u03be : Nat \u2192 \u03b9 \u2192 E} {a : Nat \u2192 \u03b9 \u2192 Real}   (self : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) (t : Nat) (i : \u03b9),   And (@LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (a t i))     (@LE.le Real Real.instLE (a t i) (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.MomentumRun.mk"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.MomentumRun.direction",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : InnerProductSpace \u211d E] \u2192       {\u03b9 : Type u_2} \u2192         [inst_2 : Fintype \u03b9] \u2192           {g : E \u2192 E} \u2192             {\u03bc \u03b7 : \u211d} \u2192               {x u d \u03be : \u2115 \u2192 \u03b9 \u2192 E} \u2192                 {a : \u2115 \u2192 \u03b9 \u2192 \u211d} \u2192                   @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a \u2192                     (t : \u2115) \u2192                       (i : \u03b9) \u2192                         @OptimizerConvergence.Compatible E inst inst_1 (g (x t i)) (d t i)                           (@OptimizerConvergence.Trial E inst inst_1 \u03bc \u03b7 (a t i) (u t i) (g (x t i)) (\u03be t i))",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       {\u03b9 : Type u_2} \u2192         [inst_2 : Fintype \u03b9] \u2192           {g : E \u2192 E} \u2192             {\u03bc \u03b7 : Real} \u2192               {x u d \u03be : Nat \u2192 \u03b9 \u2192 E} \u2192                 {a : Nat \u2192 \u03b9 \u2192 Real} \u2192                   @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a \u2192                     (t : Nat) \u2192                       (i : \u03b9) \u2192                         @OptimizerConvergence.Compatible E inst inst_1 (g (x t i)) (d t i)                           (@OptimizerConvergence.Trial E inst inst_1 \u03bc \u03b7 (a t i) (u t i) (g (x t i)) (\u03be t i))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.MomentumRun.mk"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.MomentumRun.exchange",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9]   {g : E \u2192 E} {\u03bc \u03b7 : \u211d} {x u d \u03be : \u2115 \u2192 \u03b9 \u2192 E} {a : \u2115 \u2192 \u03b9 \u2192 \u211d}   (self : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) (t : \u2115),   @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (u (t + 1)) \u2264 @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (d t)",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {g : E \u2192 E} {\u03bc \u03b7 : Real} {x u d \u03be : Nat \u2192 \u03b9 \u2192 E} {a : Nat \u2192 \u03b9 \u2192 Real}   (self : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) (t : Nat),   @LE.le Real Real.instLE     (@OptimizerConvergence.SqMass E inst \u03b9 inst_2       (u         (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t           (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))     (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 (d t))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.MomentumRun.mk"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.MomentumRun.mk",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : InnerProductSpace \u211d E] \u2192       {\u03b9 : Type u_2} \u2192         [inst_2 : Fintype \u03b9] \u2192           {g : E \u2192 E} \u2192             {\u03bc \u03b7 : \u211d} \u2192               {x u d \u03be : \u2115 \u2192 \u03b9 \u2192 E} \u2192                 {a : \u2115 \u2192 \u03b9 \u2192 \u211d} \u2192                   (\u2200 (t : \u2115) (i : \u03b9), 0 \u2264 a t i \u2227 a t i \u2264 1) \u2192                     (\u2200 (t : \u2115) (i : \u03b9), x (t + 1) i = x t i + d t i) \u2192                       ((t : \u2115) \u2192                           (i : \u03b9) \u2192                             @OptimizerConvergence.Compatible E inst inst_1 (g (x t i)) (d t i)                               (@OptimizerConvergence.Trial E inst inst_1 \u03bc \u03b7 (a t i) (u t i) (g (x t i)) (\u03be t i))) \u2192                         (\u2200 (t : \u2115),                             @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (u (t + 1)) \u2264                               @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (d t)) \u2192                           @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       {\u03b9 : Type u_2} \u2192         [inst_2 : Fintype \u03b9] \u2192           {g : E \u2192 E} \u2192             {\u03bc \u03b7 : Real} \u2192               {x u d \u03be : Nat \u2192 \u03b9 \u2192 E} \u2192                 {a : Nat \u2192 \u03b9 \u2192 Real} \u2192                   (\u2200 (t : Nat) (i : \u03b9),                       And                         (@LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))                           (a t i))                         (@LE.le Real Real.instLE (a t i)                           (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))) \u2192                     (\u2200 (t : Nat) (i : \u03b9),                         @Eq E                           (x                             (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t                               (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))                             i)                           (@HAdd.hAdd E E E                             (@instHAdd E                               (@AddCommMagma.toAdd E                                 (@AddCommSemigroup.toAddCommMagma E                                   (@AddCommMonoid.toAddCommSemigroup E                                     (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))                             (x t i) (d t i))) \u2192                       ((t : Nat) \u2192                           (i : \u03b9) \u2192                             @OptimizerConvergence.Compatible E inst inst_1 (g (x t i)) (d t i)                               (@OptimizerConvergence.Trial E inst inst_1 \u03bc \u03b7 (a t i) (u t i) (g (x t i)) (\u03be t i))) \u2192                         (\u2200 (t : Nat),                             @LE.le Real Real.instLE                               (@OptimizerConvergence.SqMass E inst \u03b9 inst_2                                 (u                                   (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t                                     (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))                               (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 (d t))) \u2192                           @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a",
+      "kind": "other",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.MomentumRun.mk"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.MomentumRun.motion",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9]   {g : E \u2192 E} {\u03bc \u03b7 : \u211d} {x u d \u03be : \u2115 \u2192 \u03b9 \u2192 E} {a : \u2115 \u2192 \u03b9 \u2192 \u211d}   (self : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) (t : \u2115) (i : \u03b9),   x (t + 1) i = x t i + d t i",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {\u03b9 : Type u_2} [inst_2 : Fintype \u03b9] {g : E \u2192 E} {\u03bc \u03b7 : Real} {x u d \u03be : Nat \u2192 \u03b9 \u2192 E} {a : Nat \u2192 \u03b9 \u2192 Real}   (self : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) (t : Nat) (i : \u03b9),   @Eq E     (x (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))       i)     (@HAdd.hAdd E E E       (@instHAdd E         (@AddCommMagma.toAdd E           (@AddCommSemigroup.toAddCommMagma E             (@AddCommMonoid.toAddCommSemigroup E               (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))       (x t i) (d t i))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.MomentumRun.mk"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.MomentumRun.rec",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : InnerProductSpace \u211d E] \u2192       {\u03b9 : Type u_2} \u2192         [inst_2 : Fintype \u03b9] \u2192           {g : E \u2192 E} \u2192             {\u03bc \u03b7 : \u211d} \u2192               {x u d \u03be : \u2115 \u2192 \u03b9 \u2192 E} \u2192                 {a : \u2115 \u2192 \u03b9 \u2192 \u211d} \u2192                   {motive : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a \u2192 Sort u} \u2192                     ((attenuation : \u2200 (t : \u2115) (i : \u03b9), 0 \u2264 a t i \u2227 a t i \u2264 1) \u2192                         (motion : \u2200 (t : \u2115) (i : \u03b9), x (t + 1) i = x t i + d t i) \u2192                           (direction :                               (t : \u2115) \u2192                                 (i : \u03b9) \u2192                                   @OptimizerConvergence.Compatible E inst inst_1 (g (x t i)) (d t i)                                     (@OptimizerConvergence.Trial E inst inst_1 \u03bc \u03b7 (a t i) (u t i) (g (x t i))                                       (\u03be t i))) \u2192                             (exchange :                                 \u2200 (t : \u2115),                                   @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (u (t + 1)) \u2264                                     @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (d t)) \u2192                               motive                                 (@OptimizerConvergence.MomentumRun.mk E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a attenuation                                   motion direction exchange)) \u2192                       (t : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) \u2192 motive t",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       {\u03b9 : Type u_2} \u2192         [inst_2 : Fintype \u03b9] \u2192           {g : E \u2192 E} \u2192             {\u03bc \u03b7 : Real} \u2192               {x u d \u03be : Nat \u2192 \u03b9 \u2192 E} \u2192                 {a : Nat \u2192 \u03b9 \u2192 Real} \u2192                   {motive : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a \u2192 Sort u} \u2192                     ((attenuation :                           \u2200 (t : Nat) (i : \u03b9),                             And                               (@LE.le Real Real.instLE                                 (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) (a t i))                               (@LE.le Real Real.instLE (a t i)                                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))) \u2192                         (motion :                             \u2200 (t : Nat) (i : \u03b9),                               @Eq E                                 (x                                   (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t                                     (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))                                   i)                                 (@HAdd.hAdd E E E                                   (@instHAdd E                                     (@AddCommMagma.toAdd E                                       (@AddCommSemigroup.toAddCommMagma E                                         (@AddCommMonoid.toAddCommSemigroup E                                           (@AddCommGroup.toAddCommMonoid E                                             (@NormedAddCommGroup.toAddCommGroup E inst))))))                                   (x t i) (d t i))) \u2192                           (direction :                               (t : Nat) \u2192                                 (i : \u03b9) \u2192                                   @OptimizerConvergence.Compatible E inst inst_1 (g (x t i)) (d t i)                                     (@OptimizerConvergence.Trial E inst inst_1 \u03bc \u03b7 (a t i) (u t i) (g (x t i))                                       (\u03be t i))) \u2192                             (exchange :                                 \u2200 (t : Nat),                                   @LE.le Real Real.instLE                                     (@OptimizerConvergence.SqMass E inst \u03b9 inst_2                                       (u                                         (@HAdd.hAdd Nat Nat Nat (@instHAdd Nat instAddNat) t                                           (@OfNat.ofNat Nat (nat_lit 1) (instOfNatNat (nat_lit 1))))))                                     (@OptimizerConvergence.SqMass E inst \u03b9 inst_2 (d t))) \u2192                               motive                                 (@OptimizerConvergence.MomentumRun.mk E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a attenuation                                   motion direction exchange)) \u2192                       (t : @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a) \u2192 motive t",
+      "kind": "other",
+      "statement_uses": [
+        "OptimizerConvergence.Compatible",
+        "OptimizerConvergence.MomentumRun",
+        "OptimizerConvergence.SqMass",
+        "OptimizerConvergence.Trial",
+        "OptimizerConvergence.MomentumRun.mk"
+      ]
+    },
+    {
+      "name": "OptimizerConvergence.SqMass.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] {\u03b9 : Type u_2} [inst_1 : Fintype \u03b9] (v : \u03b9 \u2192 E),   @OptimizerConvergence.SqMass E inst \u03b9 inst_1 v = \u2211 i, \u2016v i\u2016 ^ 2",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] {\u03b9 : Type u_2} [inst_1 : Fintype \u03b9] (v : \u03b9 \u2192 E),   @Eq Real (@OptimizerConvergence.SqMass E inst \u03b9 inst_1 v)     (\u2211 i,       @HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))         (@norm E (@NormedAddCommGroup.toNorm E inst) (v i)) (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "OptimizerConvergence.SqMass"
+      ]
+    }
+  ],
+  "statement_context": {
+    "OptimizerConvergence.Compatible": {
+      "definition": "fun {E} [NormedAddCommGroup E] [InnerProductSpace \u211d E] g d s => inner \u211d g d \u2264 inner \u211d g s \u2227 \u2016d\u2016 ^ 2 \u2264 \u2016s\u2016 ^ 2",
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 E \u2192 E \u2192 E \u2192 Prop"
+    },
+    "OptimizerConvergence.Contraction": {
+      "definition": "fun L \u03b7 \u03bc m => min (\u03b7 * m) ((1 - \u03b7 * L - \u03bc ^ 2) / (1 - \u03b7 * L))",
+      "type": "\u211d \u2192 \u211d \u2192 \u211d \u2192 \u211d \u2192 \u211d"
+    },
+    "OptimizerConvergence.Energy": {
+      "definition": "fun {E} [inst : NormedAddCommGroup E] {\u03b9} [inst_1 : Fintype \u03b9] f star L \u03b7 x u =>   @OptimizerConvergence.Gap E \u03b9 inst_1 f star x + (1 - \u03b7 * L) / (2 * \u03b7) * @OptimizerConvergence.SqMass E inst \u03b9 inst_1 u",
+      "type": "{E : Type u_1} \u2192 [NormedAddCommGroup E] \u2192 {\u03b9 : Type u_2} \u2192 [Fintype \u03b9] \u2192 (E \u2192 \u211d) \u2192 \u211d \u2192 \u211d \u2192 \u211d \u2192 (\u03b9 \u2192 E) \u2192 (\u03b9 \u2192 E) \u2192 \u211d"
+    },
+    "OptimizerConvergence.Gap": {
+      "definition": "fun {E} {\u03b9} [Fintype \u03b9] f star x => \u2211 i, (f (x i) - star)",
+      "type": "{E : Type u_1} \u2192 {\u03b9 : Type u_2} \u2192 [Fintype \u03b9] \u2192 (E \u2192 \u211d) \u2192 \u211d \u2192 (\u03b9 \u2192 E) \u2192 \u211d"
+    },
+    "OptimizerConvergence.GradDominance": {
+      "definition": "fun {E} [NormedAddCommGroup E] f g star m => \u2200 (x : E), 2 * m * (f x - star) \u2264 \u2016g x\u2016 ^ 2",
+      "type": "{E : Type u_1} \u2192 [NormedAddCommGroup E] \u2192 (E \u2192 \u211d) \u2192 (E \u2192 E) \u2192 \u211d \u2192 \u211d \u2192 Prop"
+    },
+    "OptimizerConvergence.Guard": {
+      "definition": "fun {E} [NormedAddCommGroup E] [InnerProductSpace \u211d E] L \u03b7 G d =>   inner \u211d G d + L / 2 * \u2016d\u2016 ^ 2 \u2264 -(\u03b7 / 2) * \u2016G\u2016 ^ 2 \u2227 \u2016d\u2016 \u2264 2 * \u03b7 * \u2016G\u2016",
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 Prop"
+    },
+    "OptimizerConvergence.GuardedStep": {
+      "definition": "fun {E} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] L \u03b7 G candidate =>   if @OptimizerConvergence.Guard E inst inst_1 L \u03b7 G candidate then candidate else -\u03b7 \u2022 G",
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 E"
+    },
+    "OptimizerConvergence.Mean": {
+      "definition": "fun {\u03a9} [Fintype \u03a9] prob value => \u2211 w, prob w * value w",
+      "type": "{\u03a9 : Type u_3} \u2192 [Fintype \u03a9] \u2192 (\u03a9 \u2192 \u211d) \u2192 (\u03a9 \u2192 \u211d) \u2192 \u211d"
+    },
+    "OptimizerConvergence.MomentumRun": {
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [InnerProductSpace \u211d E] \u2192       {\u03b9 : Type u_2} \u2192         [Fintype \u03b9] \u2192 (E \u2192 E) \u2192 \u211d \u2192 \u211d \u2192 (\u2115 \u2192 \u03b9 \u2192 E) \u2192 (\u2115 \u2192 \u03b9 \u2192 E) \u2192 (\u2115 \u2192 \u03b9 \u2192 E) \u2192 (\u2115 \u2192 \u03b9 \u2192 E) \u2192 (\u2115 \u2192 \u03b9 \u2192 \u211d) \u2192 Prop"
+    },
+    "OptimizerConvergence.MomentumRun.mk": {
+      "type": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [inst_1 : InnerProductSpace \u211d E] \u2192       {\u03b9 : Type u_2} \u2192         [inst_2 : Fintype \u03b9] \u2192           {g : E \u2192 E} \u2192             {\u03bc \u03b7 : \u211d} \u2192               {x u d \u03be : \u2115 \u2192 \u03b9 \u2192 E} \u2192                 {a : \u2115 \u2192 \u03b9 \u2192 \u211d} \u2192                   (\u2200 (t : \u2115) (i : \u03b9), 0 \u2264 a t i \u2227 a t i \u2264 1) \u2192                     (\u2200 (t : \u2115) (i : \u03b9), x (t + 1) i = x t i + d t i) \u2192                       ((t : \u2115) \u2192                           (i : \u03b9) \u2192                             @OptimizerConvergence.Compatible E inst inst_1 (g (x t i)) (d t i)                               (@OptimizerConvergence.Trial E inst inst_1 \u03bc \u03b7 (a t i) (u t i) (g (x t i)) (\u03be t i))) \u2192                         (\u2200 (t : \u2115),                             @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (u (t + 1)) \u2264                               @OptimizerConvergence.SqMass E inst \u03b9 inst_2 (d t)) \u2192                           @OptimizerConvergence.MomentumRun E inst inst_1 \u03b9 inst_2 g \u03bc \u03b7 x u d \u03be a"
+    },
+    "OptimizerConvergence.SqMass": {
+      "definition": "fun {E} [NormedAddCommGroup E] {\u03b9} [Fintype \u03b9] v => \u2211 i, \u2016v i\u2016 ^ 2",
+      "type": "{E : Type u_1} \u2192 [NormedAddCommGroup E] \u2192 {\u03b9 : Type u_2} \u2192 [Fintype \u03b9] \u2192 (\u03b9 \u2192 E) \u2192 \u211d"
+    },
+    "OptimizerConvergence.Trial": {
+      "definition": "fun {E} [NormedAddCommGroup E] [InnerProductSpace \u211d E] \u03bc \u03b7 a u g \u03be => (\u03bc * a) \u2022 u - \u03b7 \u2022 (g + \u03be)",
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 E \u2192 E"
+    },
+    "OptimizerConvergence.UpperModel": {
+      "definition": "fun {E} [NormedAddCommGroup E] [InnerProductSpace \u211d E] f g L =>   \u2200 (x d : E), f (x + d) \u2264 f x + inner \u211d (g x) d + L / 2 * \u2016d\u2016 ^ 2",
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 (E \u2192 \u211d) \u2192 (E \u2192 E) \u2192 \u211d \u2192 Prop"
+    },
+    "OptimizerConvergence.UpperModel._proof_1": {
+      "type": "(1 + 1).AtLeastTwo"
+    }
+  },
+  "checker": {
+    "version": "2.5",
+    "sha256_checker": "94612c73d6e82faa7bc0f8496ce779d799b80862f4b0f895dc9dfd89a0fe1353",
+    "sha256_driver": "629965dfd96f28296344971f45e4f622800cf8cfab6c808561a485866746e749"
+  },
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_rev": "v4.35.0",
+  "pinned": true,
+  "tier": "local",
+  "stages": {
+    "source_scan": {
+      "status": "pass"
+    },
+    "packages": {
+      "status": "pass",
+      "seconds": 0.8,
+      "checked": [
+        "mathlib",
+        "plausible",
+        "LeanSearchClient",
+        "importGraph",
+        "proofwidgets",
+        "aesop",
+        "Qq",
+        "batteries",
+        "Cli"
+      ]
+    },
+    "compile": {
+      "status": "pass",
+      "seconds": 37.0,
+      "sandboxed": false
+    },
+    "audit": {
+      "status": "pass",
+      "seconds": 423.5
+    },
+    "replay": {
+      "status": "pass",
+      "seconds": 124.1
+    }
+  }
+}

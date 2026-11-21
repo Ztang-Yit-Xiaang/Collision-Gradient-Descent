@@ -1,0 +1,35 @@
+{
+  "new_runs": 0,
+  "new_oracle_calls": 0,
+  "font": "/Library/Fonts/Arial Unicode.ttf",
+  "views": [
+    {
+      "source_summary": "output/collision_curvature_energy/summary.json",
+      "source_sha256": "dba703d64a753321c44cc0487e4bf10bf7b0c17745ec6109ea21e53ba592cbb4",
+      "view": "docs/figures/2026-11-10-metric-terminology/e22_rest.png",
+      "view_sha256": "8a2dcb7e2bebddc33e0f1a06e998864e46e06a65b91771d1c9c6f33e89ff2f03",
+      "changed": "Labels and plotting units only: counts out of20; no metric recomputation"
+    },
+    {
+      "source_summary": "output/collision_curvature_energy_kinetic/summary.json",
+      "source_sha256": "18f4f0b3b48a80fd66e1909948445a46be9ac74d732a1245b6313779146bdfce",
+      "view": "docs/figures/2026-11-10-metric-terminology/e22_moving.png",
+      "view_sha256": "dafccc4fcbb2ffd2a64dbffd63043881bb9a57d285049a4f50c67222a1e69710",
+      "changed": "Labels and plotting units only: counts out of20; no metric recomputation"
+    },
+    {
+      "source_summary": "output/collision_energy_generalization/summary.json",
+      "source_sha256": "ca2e9cc289df4fff50bf81605ead7dc1dd51a82becba67bbde8b5ff105d17e8f",
+      "view": "docs/figures/2026-11-10-metric-terminology/e23.png",
+      "view_sha256": "928fd53d05f092e7df678c827e31613cb52e4d49a9d8dcd70b4627e105e20f9e",
+      "changed": "Labels and plotting units only: counts out of20; no metric recomputation"
+    },
+    {
+      "source_summary": "output/collision_initial_budget/summary.json",
+      "source_sha256": "6667aea3ba974bf5e58707049df95f98cb579967a56a34cf4f55eec35eb529e4",
+      "view": "docs/figures/2026-11-10-metric-terminology/e24.png",
+      "view_sha256": "b2d697767dc6661d7d311a2340512e4fdfd2351c3f98e5a49b6d44922545e1d7",
+      "changed": "Labels and plotting units only: counts out of20; no metric recomputation"
+    }
+  ]
+}

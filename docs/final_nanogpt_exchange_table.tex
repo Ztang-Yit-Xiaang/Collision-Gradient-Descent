@@ -1,0 +1,14 @@
+\begin{center}
+\begin{tabular}{@{}lrr@{}}
+\toprule
+Method & Final test loss, mean \(\pm\) SD & Gradients\\
+\midrule
+Momentum SGD with velocity exchange & \(2.70996\pm0.01695\) & 400\\
+Best of four independent Momentum SGD & \(2.69117\pm0.02088\) & 400\\
+AdamW & \(2.47283\pm0.00866\) & 400\\
+\bottomrule
+\end{tabular}
+\end{center}
+Exchange minus independent Momentum was \(+0.01879\) (paired 95\% bootstrap interval \([+0.00276,+0.03430]\)), with two improvements and eight deteriorations. Exchange minus AdamW averaged \(+0.23713\) with interval \([+0.22344,+0.25011]\) and higher loss on all ten seeds. The intervals resample whole seed groups.
+
+All 80 scheduled pair swaps exchanged distinct velocity vectors. The maximum pair residuals in linear momentum (componentwise absolute maximum) and kinetic energy (absolute difference) were both zero in float64. Position hashes were unchanged at every event, and the median absolute energy transferred per pair was \(0.00907\) in squared displacement units.

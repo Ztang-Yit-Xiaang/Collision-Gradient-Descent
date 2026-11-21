@@ -1,0 +1,282 @@
+{
+  "date": "2026-11-08",
+  "review_type": "Targeted scoping search, not an exhaustive systematic review or novelty certification",
+  "language": "zh-Hant",
+  "repositories": [
+    "arXiv",
+    "PMLR",
+    "NeurIPS proceedings",
+    "author manuscripts",
+    "Springer publisher"
+  ],
+  "supplemental_access": "OpenReview attempted but browser challenge blocked the selected page",
+  "queries": [
+    {
+      "id": "Q01",
+      "query": "site.proceedings.mlr.press How to Escape Saddle Points Efficiently Jin 2017",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q02",
+      "query": "site.proceedings.neurips.cc Probabilistic Line Searches for Stochastic Optimization 2015",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q03",
+      "query": "site.proceedings.neurips.cc Painless Stochastic Gradient Interpolation Line Search Convergence Rates 2019",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q04",
+      "query": "site.arxiv.org stochastic trust region optimization accurate estimates acceptance ratio STORM Chen Menickelly Scheinberg",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q05",
+      "query": "site.proceedings.mlr.press \"Accelerated Proximal Gradient Methods for Nonconvex Programming\"",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q06",
+      "query": "site.openreview.net optimizer \"safeguard\" \"perturbation\"",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q07",
+      "query": "\"adaptive operator selection\" \"cost\" optimization bandit paper",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q08",
+      "query": "\"Stochastic Line Search\" \"2024\" \"2025\" optimization acceptance",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q09",
+      "query": "site.openreview.net \"stochastic line search\" \"2025\"",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q10",
+      "query": "site.proceedings.mlr.press \"stochastic line search\" \"2024\"",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q11",
+      "query": "\"Don't be so Monotone\" arxiv Galli Rauhut Schmidt",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q12",
+      "query": "\"Basin-Hopping\" Wales Doye Metropolis lowest energy best 1997",
+      "engine_total_hits": null
+    },
+    {
+      "id": "Q13",
+      "query": "\"Adaptive Operator Selection with Dynamic Multi-Armed Bandits\" \"2008\" DaCosta Fialho",
+      "engine_total_hits": null
+    }
+  ],
+  "screening": {
+    "retained_unique_references": 11,
+    "core": 8,
+    "context": 3,
+    "search_engine_hits_and_duplicate_counts": "Not supplied reliably by tool; no fabricated PRISMA counts",
+    "excluded_topics": [
+      "adversarial data-protection perturbations",
+      "quantum VQE operator selection",
+      "unrelated newly proposed metaheuristics"
+    ],
+    "inclusion": "Primary optimization methods relevant to bounded perturbation, safeguarding, nonmonotone/noisy acceptance, momentum compatibility or cost-aware operator choice; foundational work plus recent 2023–2026 context",
+    "limits": "No full citation-network closure, independent reproduction of paper results, or proof of absence of similar algorithms"
+  },
+  "references": [
+    {
+      "id": "R01",
+      "role": "core",
+      "title": "How to Escape Saddle Points Efficiently",
+      "authors": [
+        "Chi Jin",
+        "Rong Ge",
+        "Praneeth Netrapalli",
+        "Sham M. Kakade",
+        "Michael I. Jordan"
+      ],
+      "year": 2017,
+      "venue": "ICML / PMLR 70:1724–1732",
+      "url": "https://proceedings.mlr.press/v70/jin17a.html",
+      "fulltext": "https://proceedings.mlr.press/v70/jin17a/jin17a.pdf",
+      "read": "Algorithm 2 (PDF p.5), assumptions and abstract",
+      "note": "Small-gradient perturbation, bounded observation period, and return of saved pre-perturbation point if sufficient decrease fails; not a global-minimum certificate.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R02",
+      "role": "core",
+      "title": "Convergence Analysis of Proximal Gradient with Momentum for Nonconvex Optimization",
+      "authors": [
+        "Qunwei Li",
+        "Yi Zhou",
+        "Yingbin Liang",
+        "Pramod K. Varshney"
+      ],
+      "year": 2017,
+      "venue": "ICML / PMLR 70:2111–2119",
+      "url": "https://proceedings.mlr.press/v70/li17g.html",
+      "fulltext": "https://proceedings.mlr.press/v70/li17g/li17g.pdf",
+      "read": "Abstract, Algorithms 2/3 and Section 1 comparison",
+      "note": "APGnc compares an ordinary proximal-gradient candidate with extrapolation, retaining the lower objective; nonconvex/KL conditions do not automatically cover minibatch NanoGPT.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R03",
+      "role": "core",
+      "title": "Stochastic Optimization Using a Trust-Region Method and Random Models",
+      "authors": [
+        "Ruobing Chen",
+        "Matt Menickelly",
+        "Katya Scheinberg"
+      ],
+      "year": 2015,
+      "version": "arXiv v2 revised 2016-09-23",
+      "venue": "arXiv:1504.04231 (publication metadata not inferred)",
+      "url": "https://arxiv.org/abs/1504.04231",
+      "fulltext": "https://arxiv.org/html/1504.04231v2",
+      "read": "Trust-region algorithm and true/false successful iterations",
+      "note": "Noisy acceptance can increase the true objective. Convergence needs accuracy assumptions; acceptance is not strict per-decision protection.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R04",
+      "role": "core",
+      "title": "Probabilistic Line Searches for Stochastic Optimization",
+      "authors": [
+        "Maren Mahsereci",
+        "Philipp Hennig"
+      ],
+      "year": 2015,
+      "venue": "NeurIPS 28",
+      "url": "https://arxiv.org/abs/1502.02846",
+      "fulltext": "https://arxiv.org/html/1502.02846",
+      "read": "Probabilistic Wolfe acceptance, noise scales and cost discussion; arXiv v4 is January 2016",
+      "note": "Lightweight acceptance inference is distinct from paid objective/gradient evaluations; probabilistic decisions are not zero-error guarantees.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R05",
+      "role": "core",
+      "title": "Don't be so Monotone: Relaxing Stochastic Line Search in Over-Parameterized Models",
+      "authors": [
+        "Leonardo Galli",
+        "Holger Rauhut",
+        "Mark Schmidt"
+      ],
+      "year": 2023,
+      "venue": "NeurIPS 36",
+      "url": "https://proceedings.neurips.cc/paper_files/paper/2023/hash/6d0bf1265ea9635fb4f9d56f16d7efb2-Abstract-Conference.html",
+      "fulltext": "https://arxiv.org/html/2306.12747",
+      "read": "Abstract and PoNoS Algorithm 1 / reference-value acceptance",
+      "note": "Nonmonotone minibatch acceptance directly addresses the objection that every uphill step should not be rejected; interpolation assumptions need checking.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R06",
+      "role": "core",
+      "title": "Effectively leveraging momentum terms in stochastic line search frameworks for fast optimization of finite-sum problems",
+      "authors": [
+        "Matteo Lapucci",
+        "Davide Pucci"
+      ],
+      "year": 2026,
+      "venue": "Computational Optimization and Applications 94:543–569",
+      "published": "2026-03-11",
+      "doi": "10.1007/s10589-026-00776-2",
+      "url": "https://link.springer.com/article/10.1007/s10589-026-00776-2",
+      "fulltext": "https://arxiv.org/html/2411.07102v4",
+      "read": "Publisher metadata; abstract, minibatch persistency and estimator-bias section",
+      "note": "Momentum and stochastic line search are not a free combination. Data persistency is a concrete related mechanism; paper claims are not independently reproduced here.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R07",
+      "role": "core",
+      "title": "Adaptive Operator Selection with Dynamic Multi-Armed Bandits",
+      "authors": [
+        "Luis DaCosta",
+        "Álvaro Fialho",
+        "Marc Schoenauer",
+        "Michèle Sebag"
+      ],
+      "year": 2008,
+      "venue": "GECCO 2008; author manuscript inria-00278542",
+      "url": "https://www.cs.ubc.ca/~hutter/EARG.shtml/earg/papers08/pap333s1-dacosta.pdf",
+      "read": "Title/authors, Section 2 credit assignment and cost-aware prior work",
+      "note": "Separate scoring operators from choosing operators. Improvement-per-cost appears in the paper's prior-work discussion, not as a new guarantee of D-MAB. DOI resolver access failed; citation uses the primary author manuscript.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R08",
+      "role": "context",
+      "title": "Armijo Line-search Can Make (Stochastic) Gradient Descent Provably Faster",
+      "authors": [
+        "Sharan Vaswani",
+        "Reza Babanezhad Harikandeh"
+      ],
+      "year": 2025,
+      "venue": "ICML / PMLR 267:61035–61070",
+      "url": "https://proceedings.mlr.press/v267/vaswani25a.html",
+      "read": "Verified proceedings metadata and abstract only",
+      "note": "Recent context. Stochastic theory stated for convex interpolation; not a blanket result for momentum or nonconvex language-model training.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R09",
+      "role": "core",
+      "title": "Global Optimization by Basin-Hopping and the Lowest Energy Structures of Lennard-Jones Clusters Containing up to 110 Atoms",
+      "authors": [
+        "David J. Wales",
+        "Jonathan P. K. Doye"
+      ],
+      "year": 1997,
+      "venue": "Journal of Physical Chemistry A 101:5111–5116",
+      "url": "https://www-wales.ch.cam.ac.uk/pdf/JPCA.101.5111.1997.pdf",
+      "read": "Methods and saved-lowest-energy structures on PDF p.4",
+      "note": "Exploration, local minimization and retaining low-energy structures already coexist in physical optimization. 1998 arXiv posting is not the publication year; DOI resolver was blocked.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R10",
+      "role": "context",
+      "title": "Adaptive Restart for Accelerated Gradient Schemes",
+      "authors": [
+        "Brendan O'Donoghue",
+        "Emmanuel Candès"
+      ],
+      "year": 2012,
+      "venue": "arXiv:1204.3982 (preprint metadata used)",
+      "url": "https://arxiv.org/abs/1204.3982",
+      "read": "Abstract; previously cited project context",
+      "note": "Adaptive restarting based on high-momentum periodicity is established context; does not supply a theorem for the project's noisy partial-damping thresholds.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    },
+    {
+      "id": "R11",
+      "role": "context",
+      "title": "Painless Stochastic Gradient: Interpolation, Line-Search, and Convergence Rates",
+      "authors": [
+        "Sharan Vaswani",
+        "Aaron Mishkin",
+        "Issam Laradji",
+        "Mark Schmidt",
+        "Gauthier Gidel",
+        "Simon Lacoste-Julien"
+      ],
+      "year": 2019,
+      "venue": "NeurIPS 2019 / arXiv:1905.09997",
+      "url": "https://arxiv.org/abs/1905.09997",
+      "read": "Abstract and bibliographic metadata only",
+      "note": "Stochastic Armijo background under interpolation. Not treated as a fully read implementation recipe.",
+      "metadata_check": "Title/authors/year checked against primary page or author manuscript; reading depth recorded separately"
+    }
+  ]
+}

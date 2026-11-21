@@ -1,0 +1,75 @@
+{
+  "date": "2026-11-10",
+  "kind": "terminology_and_presentation_maintenance",
+  "approved_display_name": "好粒子途中曾明顯偏離初始解的次數",
+  "definition": "Count one run if max over saved observations of f(particle0)-its own initial f exceeds1e-4; final recovery scored separately",
+  "machine_keys_preserved": [
+    "particle0_harmed",
+    "particle0_harmed_or_failed"
+  ],
+  "new_experiments": 0,
+  "new_oracle_calls": 0,
+  "historical_top_level_artifact_hashes_unchanged": 853,
+  "analysis_changes_are_plot_text_only": [
+    "analyze_curvature_energy.py",
+    "analyze_energy_generalization.py",
+    "analyze_initial_budget.py"
+  ],
+  "count_view_metadata": {
+    "new_runs": 0,
+    "new_oracle_calls": 0,
+    "font": "/Library/Fonts/Arial Unicode.ttf",
+    "views": [
+      {
+        "source_summary": "output/collision_curvature_energy/summary.json",
+        "source_sha256": "dba703d64a753321c44cc0487e4bf10bf7b0c17745ec6109ea21e53ba592cbb4",
+        "view": "docs/figures/2026-11-10-metric-terminology/e22_rest.png",
+        "view_sha256": "8a2dcb7e2bebddc33e0f1a06e998864e46e06a65b91771d1c9c6f33e89ff2f03",
+        "changed": "Labels and plotting units only: counts out of20; no metric recomputation"
+      },
+      {
+        "source_summary": "output/collision_curvature_energy_kinetic/summary.json",
+        "source_sha256": "18f4f0b3b48a80fd66e1909948445a46be9ac74d732a1245b6313779146bdfce",
+        "view": "docs/figures/2026-11-10-metric-terminology/e22_moving.png",
+        "view_sha256": "dafccc4fcbb2ffd2a64dbffd63043881bb9a57d285049a4f50c67222a1e69710",
+        "changed": "Labels and plotting units only: counts out of20; no metric recomputation"
+      },
+      {
+        "source_summary": "output/collision_energy_generalization/summary.json",
+        "source_sha256": "ca2e9cc289df4fff50bf81605ead7dc1dd51a82becba67bbde8b5ff105d17e8f",
+        "view": "docs/figures/2026-11-10-metric-terminology/e23.png",
+        "view_sha256": "928fd53d05f092e7df678c827e31613cb52e4d49a9d8dcd70b4627e105e20f9e",
+        "changed": "Labels and plotting units only: counts out of20; no metric recomputation"
+      },
+      {
+        "source_summary": "output/collision_initial_budget/summary.json",
+        "source_sha256": "6667aea3ba974bf5e58707049df95f98cb579967a56a34cf4f55eec35eb529e4",
+        "view": "docs/figures/2026-11-10-metric-terminology/e24.png",
+        "view_sha256": "b2d697767dc6661d7d311a2340512e4fdfd2351c3f98e5a49b6d44922545e1d7",
+        "changed": "Labels and plotting units only: counts out of20; no metric recomputation"
+      }
+    ]
+  },
+  "archive": "docs/research/2026-11-10-metric-terminology-sources.zip",
+  "archive_sha256": "7a0a93bc8cbb9b94f7220d73f3cbad4f0aad7ac71e2d964daed2e6ab51a07575",
+  "files": {
+    "README.md": "f61444d3936ea1be83f0b3a86c0aa3f54cea82c20f9cc24d1da7167bbb4908c6",
+    "AGENTS.md": "41d9fe7cf81ab372ec3e64cafc0e76fda76bb6b869975a97efb5a78dd9503f5f",
+    "docs/experiment_log.md": "6e1449990781cece02e063d9c89e5b9a9ff22246c102f415cb67e7e45d581879",
+    "docs/collision_curvature_energy_results.md": "a701ef9ce63128758ab86dc14faf68cdb99bacafb65d610b3fa04601e2c75789",
+    "docs/collision_energy_generalization_results.md": "b96699d79d7185384e4e05770afd05c0e3c9c7840f652eb11c1d33a4c3fef66b",
+    "docs/collision_initial_budget_results.md": "aec1fff9bc3f9c219249a7ca6bf0f0228b6ada82fc6ab20bcefeb2f075870cbd",
+    "analyze_curvature_energy.py": "846db84003232ef9ea248ce1dd673e26e5b87dcb95d8aa935ef745d179f8e1b3",
+    "analyze_energy_generalization.py": "efcb415923aade880cff2d16188b2b83e6c944eb077b7334c9205f4fca4dc145",
+    "analyze_initial_budget.py": "391bbc84afe3522fe42fdbabfad6450bb2ce958fe633478720c80f55827927c2",
+    "docs/research/2026-11-10-metric-terminology-render.py": "130b53acac96f7185290155910d933530b8bacd50ca9b2b26f2a10f0e576acf8",
+    "docs/figures/2026-11-10-metric-terminology/views.json": "810b76af2d558400b5a50e67b49732ed3e65af2381ca2359a37a1286f2ca6907",
+    "docs/figures/2026-11-10-metric-terminology/e22_rest.png": "8a2dcb7e2bebddc33e0f1a06e998864e46e06a65b91771d1c9c6f33e89ff2f03",
+    "docs/figures/2026-11-10-metric-terminology/e22_moving.png": "dafccc4fcbb2ffd2a64dbffd63043881bb9a57d285049a4f50c67222a1e69710",
+    "docs/figures/2026-11-10-metric-terminology/e23.png": "928fd53d05f092e7df678c827e31613cb52e4d49a9d8dcd70b4627e105e20f9e",
+    "docs/figures/2026-11-10-metric-terminology/e24.png": "b2d697767dc6661d7d311a2340512e4fdfd2351c3f98e5a49b6d44922545e1d7"
+  },
+  "render_command": "OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 MPLCONFIGDIR=/private/tmp/collision-plots-cache XDG_CACHE_HOME=/private/tmp/collision-font-cache python3 docs/research/2026-11-10-metric-terminology-render.py",
+  "checks_passed": true,
+  "note": "Original output images/source archives untouched; new count views outside output experiment roots."
+}

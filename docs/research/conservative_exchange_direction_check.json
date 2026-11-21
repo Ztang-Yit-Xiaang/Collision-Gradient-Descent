@@ -1,0 +1,238 @@
+{
+  "file": "/Users/chenyixin/Documents/EE 5239/Project/docs/research/conservative_exchange_direction.lean",
+  "status": "PASS",
+  "problems": [],
+  "declarations": [
+    {
+      "name": "ConservativeExchangeDirection.UpperAt",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 (E \u2192 \u211d) \u2192 \u211d \u2192 E \u2192 E \u2192 Prop",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       (E \u2192 Real) \u2192 Real \u2192 E \u2192 E \u2192 Prop",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "ConservativeExchangeDirection.invariants",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [InnerProductSpace \u211d E] {c w v : E},   \u2016v\u2016 = \u2016w\u2016 \u2192 c + v + (c - v) = c + w + (c - w) \u2227 \u2016c + v\u2016 ^ 2 + \u2016c - v\u2016 ^ 2 = \u2016c + w\u2016 ^ 2 + \u2016c - w\u2016 ^ 2",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] {c w v : E},   @Eq Real (@norm E (@NormedAddCommGroup.toNorm E inst) v) (@norm E (@NormedAddCommGroup.toNorm E inst) w) \u2192     And       (@Eq E         (@HAdd.hAdd E E E           (@instHAdd E             (@AddCommMagma.toAdd E               (@AddCommSemigroup.toAddCommMagma E                 (@AddCommMonoid.toAddCommSemigroup E                   (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))           (@HAdd.hAdd E E E             (@instHAdd E               (@AddCommMagma.toAdd E                 (@AddCommSemigroup.toAddCommMagma E                   (@AddCommMonoid.toAddCommSemigroup E                     (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))             c v)           (@HSub.hSub E E E             (@instHSub E               (@SubNegMonoid.toSub E                 (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))             c v))         (@HAdd.hAdd E E E           (@instHAdd E             (@AddCommMagma.toAdd E               (@AddCommSemigroup.toAddCommMagma E                 (@AddCommMonoid.toAddCommSemigroup E                   (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))           (@HAdd.hAdd E E E             (@instHAdd E               (@AddCommMagma.toAdd E                 (@AddCommSemigroup.toAddCommMagma E                   (@AddCommMonoid.toAddCommSemigroup E                     (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))             c w)           (@HSub.hSub E E E             (@instHSub E               (@SubNegMonoid.toSub E                 (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))             c w)))       (@Eq Real         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@norm E (@NormedAddCommGroup.toNorm E inst)               (@HAdd.hAdd E E E                 (@instHAdd E                   (@AddCommMagma.toAdd E                     (@AddCommSemigroup.toAddCommMagma E                       (@AddCommMonoid.toAddCommSemigroup E                         (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))                 c v))             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@norm E (@NormedAddCommGroup.toNorm E inst)               (@HSub.hSub E E E                 (@instHSub E                   (@SubNegMonoid.toSub E                     (@AddGroup.toSubNegMonoid E                       (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                 c v))             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2)))))         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@norm E (@NormedAddCommGroup.toNorm E inst)               (@HAdd.hAdd E E E                 (@instHAdd E                   (@AddCommMagma.toAdd E                     (@AddCommSemigroup.toAddCommMagma E                       (@AddCommMonoid.toAddCommSemigroup E                         (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))                 c w))             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))           (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid)))             (@norm E (@NormedAddCommGroup.toNorm E inst)               (@HSub.hSub E E E                 (@instHSub E                   (@SubNegMonoid.toSub E                     (@AddGroup.toSubNegMonoid E                       (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                 c w))             (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))))",
+      "kind": "theorem",
+      "statement_uses": []
+    },
+    {
+      "name": "ConservativeExchangeDirection.model",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 E \u2192 E \u2192 \u211d",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       Real \u2192 Real \u2192 E \u2192 E \u2192 E \u2192 E \u2192 Real",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "ConservativeExchangeDirection.model_on_sphere",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] (L \u03bc : \u211d) (g\u2081 g\u2082 w v : E),   \u2016v\u2016 = \u2016w\u2016 \u2192     @ConservativeExchangeDirection.model E inst inst_1 L \u03bc g\u2081 g\u2082 w v =       \u03bc * inner \u211d (@ConservativeExchangeDirection.score E inst inst_1 L \u03bc g\u2081 g\u2082 w) (v - w)",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   (L \u03bc : Real) (g\u2081 g\u2082 w v : E),   @Eq Real (@norm E (@NormedAddCommGroup.toNorm E inst) v) (@norm E (@NormedAddCommGroup.toNorm E inst) w) \u2192     @Eq Real (@ConservativeExchangeDirection.model E inst inst_1 L \u03bc g\u2081 g\u2082 w v)       (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) \u03bc         (@inner Real E           (@InnerProductSpace.toInner Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)             inst_1)           (@ConservativeExchangeDirection.score E inst inst_1 L \u03bc g\u2081 g\u2082 w)           (@HSub.hSub E E E             (@instHSub E               (@SubNegMonoid.toSub E                 (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))             v w)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "ConservativeExchangeDirection.model",
+        "ConservativeExchangeDirection.score",
+        "ConservativeExchangeDirection.UpperAt._proof_1"
+      ]
+    },
+    {
+      "name": "ConservativeExchangeDirection.optimal_model_exchange",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {f : E \u2192 \u211d} {L \u03bc : \u211d}   {y\u2081 y\u2082 g\u2081 g\u2082 w : E},   0 < \u03bc \u2192     \u2200 (h\u2081 : @ConservativeExchangeDirection.UpperAt E inst inst_1 f L y\u2081 g\u2081)       (h\u2082 : @ConservativeExchangeDirection.UpperAt E inst inst_1 f L y\u2082 g\u2082),       @ConservativeExchangeDirection.score E inst inst_1 L \u03bc g\u2081 g\u2082 w \u2260 0 \u2192         have s := @ConservativeExchangeDirection.score E inst inst_1 L \u03bc g\u2081 g\u2082 w;         have v := -(\u2016w\u2016 / \u2016s\u2016) \u2022 s;         have margin := \u2016w\u2016 * \u2016s\u2016 + inner \u211d s w;         \u2016v\u2016 = \u2016w\u2016 \u2227           (\u2200 (u : E),               \u2016u\u2016 = \u2016w\u2016 \u2192                 @ConservativeExchangeDirection.model E inst inst_1 L \u03bc g\u2081 g\u2082 w v \u2264                   @ConservativeExchangeDirection.model E inst inst_1 L \u03bc g\u2081 g\u2082 w u) \u2227             0 \u2264 margin \u2227 @ConservativeExchangeDirection.pairChange E inst inst_1 f \u03bc y\u2081 y\u2082 w v \u2264 -\u03bc * margin",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {f : E \u2192 Real} {L \u03bc : Real} {y\u2081 y\u2082 g\u2081 g\u2082 w : E},   @LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) \u03bc \u2192     \u2200 (h\u2081 : @ConservativeExchangeDirection.UpperAt E inst inst_1 f L y\u2081 g\u2081)       (h\u2082 : @ConservativeExchangeDirection.UpperAt E inst inst_1 f L y\u2082 g\u2082),       @Ne E (@ConservativeExchangeDirection.score E inst inst_1 L \u03bc g\u2081 g\u2082 w)           (@OfNat.ofNat E (nat_lit 0)             (@Zero.toOfNat0 E               (@NegZeroClass.toZero E                 (@SubNegZeroMonoid.toNegZeroClass E                   (@SubtractionMonoid.toSubNegZeroMonoid E                     (@SubtractionCommMonoid.toSubtractionMonoid E                       (@AddCommGroup.toDivisionAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst)))))))) \u2192         have s := @ConservativeExchangeDirection.score E inst inst_1 L \u03bc g\u2081 g\u2082 w;         have v :=           @HSMul.hSMul Real E E             (@instHSMul Real E               (@SMulZeroClass.toSMul Real E                 (@AddZero.toZero E                   (@AddZeroClass.toAddZero E                     (@AddMonoid.toAddZeroClass E                       (@SubNegMonoid.toAddMonoid E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                 (@DistribSMul.toSMulZeroClass Real E                   (@AddMonoid.toAddZeroClass E                     (@SubNegMonoid.toAddMonoid E                       (@AddGroup.toSubNegMonoid E                         (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                   (@DistribMulAction.toDistribSMul Real E Real.instMonoid                     (@SubNegMonoid.toAddMonoid E                       (@AddGroup.toSubNegMonoid E                         (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                     (@Module.toDistribMulAction Real E Real.semiring                       (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                       (@NormedSpace.toModule Real E Real.normedField                         (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                         (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                           (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))             (@Neg.neg Real Real.instNeg               (@HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))                 (@norm E (@NormedAddCommGroup.toNorm E inst) w) (@norm E (@NormedAddCommGroup.toNorm E inst) s)))             s;         have margin :=           @HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)             (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (@norm E (@NormedAddCommGroup.toNorm E inst) w)               (@norm E (@NormedAddCommGroup.toNorm E inst) s))             (@inner Real E               (@InnerProductSpace.toInner Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                 inst_1)               s w);         And (@Eq Real (@norm E (@NormedAddCommGroup.toNorm E inst) v) (@norm E (@NormedAddCommGroup.toNorm E inst) w))           (And             (\u2200 (u : E),               @Eq Real (@norm E (@NormedAddCommGroup.toNorm E inst) u) (@norm E (@NormedAddCommGroup.toNorm E inst) w) \u2192                 @LE.le Real Real.instLE (@ConservativeExchangeDirection.model E inst inst_1 L \u03bc g\u2081 g\u2082 w v)                   (@ConservativeExchangeDirection.model E inst inst_1 L \u03bc g\u2081 g\u2082 w u))             (And (@LE.le Real Real.instLE (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)) margin)               (@LE.le Real Real.instLE (@ConservativeExchangeDirection.pairChange E inst inst_1 f \u03bc y\u2081 y\u2082 w v)                 (@HMul.hMul Real Real Real (@instHMul Real Real.instMul) (@Neg.neg Real Real.instNeg \u03bc) margin))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "ConservativeExchangeDirection.UpperAt",
+        "ConservativeExchangeDirection.model",
+        "ConservativeExchangeDirection.pairChange",
+        "ConservativeExchangeDirection.score",
+        "ConservativeExchangeDirection.UpperAt._proof_1"
+      ]
+    },
+    {
+      "name": "ConservativeExchangeDirection.pairChange",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 (E \u2192 \u211d) \u2192 \u211d \u2192 E \u2192 E \u2192 E \u2192 E \u2192 \u211d",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       (E \u2192 Real) \u2192 Real \u2192 E \u2192 E \u2192 E \u2192 E \u2192 Real",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "ConservativeExchangeDirection.pair_upper",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] {f : E \u2192 \u211d} {L \u03bc : \u211d}   {y\u2081 y\u2082 g\u2081 g\u2082 w v : E} (h\u2081 : @ConservativeExchangeDirection.UpperAt E inst inst_1 f L y\u2081 g\u2081)   (h\u2082 : @ConservativeExchangeDirection.UpperAt E inst inst_1 f L y\u2082 g\u2082),   @ConservativeExchangeDirection.pairChange E inst inst_1 f \u03bc y\u2081 y\u2082 w v \u2264     @ConservativeExchangeDirection.model E inst inst_1 L \u03bc g\u2081 g\u2082 w v",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   {f : E \u2192 Real} {L \u03bc : Real} {y\u2081 y\u2082 g\u2081 g\u2082 w v : E}   (h\u2081 : @ConservativeExchangeDirection.UpperAt E inst inst_1 f L y\u2081 g\u2081)   (h\u2082 : @ConservativeExchangeDirection.UpperAt E inst inst_1 f L y\u2082 g\u2082),   @LE.le Real Real.instLE (@ConservativeExchangeDirection.pairChange E inst inst_1 f \u03bc y\u2081 y\u2082 w v)     (@ConservativeExchangeDirection.model E inst inst_1 L \u03bc g\u2081 g\u2082 w v)",
+      "kind": "theorem",
+      "statement_uses": [
+        "ConservativeExchangeDirection.UpperAt",
+        "ConservativeExchangeDirection.model",
+        "ConservativeExchangeDirection.pairChange",
+        "ConservativeExchangeDirection.UpperAt._proof_1"
+      ]
+    },
+    {
+      "name": "ConservativeExchangeDirection.quadratic_witness",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "have f := fun x => x ^ 2 / 2; @ConservativeExchangeDirection.UpperAt \u211d Real.normedAddCommGroup RCLike.toInnerProductSpaceReal f 1 4 4 \u2227   @ConservativeExchangeDirection.UpperAt \u211d Real.normedAddCommGroup RCLike.toInnerProductSpaceReal f 1 0 0 \u2227     0 <         \u20161\u2016 *             \u2016@ConservativeExchangeDirection.score \u211d Real.normedAddCommGroup RCLike.toInnerProductSpaceReal 1 1 4 0 1\u2016 +           inner \u211d             (@ConservativeExchangeDirection.score \u211d Real.normedAddCommGroup RCLike.toInnerProductSpaceReal 1 1 4 0 1)             1 \u2227       @ConservativeExchangeDirection.pairChange \u211d Real.normedAddCommGroup RCLike.toInnerProductSpaceReal f 1 4 0 1             (-1) =           -4 \u2227         f 2 > f 0",
+      "type_explicit": "have f := fun x =>   @HDiv.hDiv Real Real Real (@instHDiv Real (@DivInvMonoid.toDiv Real Real.instDivInvMonoid))     (@HPow.hPow Real Nat Real (@instHPow Real Nat (@NPow.toPow Real (@Monoid.toNPow Real Real.instMonoid))) x       (@OfNat.ofNat Nat (nat_lit 2) (instOfNatNat (nat_lit 2))))     (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)); And   (@ConservativeExchangeDirection.UpperAt Real Real.normedAddCommGroup     (@RCLike.toInnerProductSpaceReal Real Real.instRCLike) f     (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))     (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef))     (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef)))   (And     (@ConservativeExchangeDirection.UpperAt Real Real.normedAddCommGroup       (@RCLike.toInnerProductSpaceReal Real Real.instRCLike) f       (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))       (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))       (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)))     (And       (@LT.lt Real Real.instLT (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))         (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@norm Real Real.norm (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))             (@norm Real Real.norm               (@ConservativeExchangeDirection.score Real Real.normedAddCommGroup                 (@RCLike.toInnerProductSpaceReal Real Real.instRCLike)                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))                 (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef))                 (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))                 (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))))           (@inner Real Real             (@InnerProductSpace.toInner Real Real Real.instRCLike               (@NonUnitalSeminormedRing.toSeminormedAddCommGroup Real                 (@NonUnitalSeminormedCommRing.toNonUnitalSeminormedRing Real                   (@SeminormedCommRing.toNonUnitalSeminormedCommRing Real                     (@NormedCommRing.toSeminormedCommRing Real                       (@NormedField.toNormedCommRing Real                         (@DenselyNormedField.toNormedField Real                           (@RCLike.toDenselyNormedField Real Real.instRCLike)))))))               (@RCLike.toInnerProductSpaceReal Real Real.instRCLike))             (@ConservativeExchangeDirection.score Real Real.normedAddCommGroup               (@RCLike.toInnerProductSpaceReal Real Real.instRCLike)               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))               (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef))               (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))               (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne)))))       (And         (@Eq Real           (@ConservativeExchangeDirection.pairChange Real Real.normedAddCommGroup             (@RCLike.toInnerProductSpaceReal Real Real.instRCLike) f             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))             (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef))             (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero))             (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))             (@Neg.neg Real Real.instNeg (@OfNat.ofNat Real (nat_lit 1) (@One.toOfNat1 Real Real.instOne))))           (@Neg.neg Real Real.instNeg             (@OfNat.ofNat Real (nat_lit 4) (@instOfNatAtLeastTwo Real (nat_lit 4) Real.instNatCast \u22ef))))         (@GT.gt Real Real.instLT           (f (@OfNat.ofNat Real (nat_lit 2) (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast \u22ef)))           (f (@OfNat.ofNat Real (nat_lit 0) (@Zero.toOfNat0 Real Real.instZero)))))))",
+      "kind": "theorem",
+      "statement_uses": [
+        "ConservativeExchangeDirection.UpperAt",
+        "ConservativeExchangeDirection.pairChange",
+        "ConservativeExchangeDirection.score",
+        "ConservativeExchangeDirection.UpperAt._proof_1"
+      ]
+    },
+    {
+      "name": "ConservativeExchangeDirection.score",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 E \u2192 E",
+      "type_explicit": "{E : Type u_1} \u2192   [inst : NormedAddCommGroup E] \u2192     [@InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)] \u2192       Real \u2192 Real \u2192 E \u2192 E \u2192 E \u2192 E",
+      "kind": "other",
+      "statement_uses": []
+    },
+    {
+      "name": "ConservativeExchangeDirection.pairChange.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] (f : E \u2192 \u211d) (\u03bc : \u211d) (y\u2081 y\u2082 w v : E),   @ConservativeExchangeDirection.pairChange E inst inst_1 f \u03bc y\u2081 y\u2082 w v =     f (y\u2081 + \u03bc \u2022 (v - w)) + f (y\u2082 - \u03bc \u2022 (v - w)) - (f y\u2081 + f y\u2082)",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   (f : E \u2192 Real) (\u03bc : Real) (y\u2081 y\u2082 w v : E),   @Eq Real (@ConservativeExchangeDirection.pairChange E inst inst_1 f \u03bc y\u2081 y\u2082 w v)     (@HSub.hSub Real Real Real (@instHSub Real Real.instSub)       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd)         (f           (@HAdd.hAdd E E E             (@instHAdd E               (@AddCommMagma.toAdd E                 (@AddCommSemigroup.toAddCommMagma E                   (@AddCommMonoid.toAddCommSemigroup E                     (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))))))             y\u2081             (@HSMul.hSMul Real E E               (@instHSMul Real E                 (@SMulZeroClass.toSMul Real E                   (@AddZero.toZero E                     (@AddZeroClass.toAddZero E                       (@AddMonoid.toAddZeroClass E                         (@SubNegMonoid.toAddMonoid E                           (@AddGroup.toSubNegMonoid E                             (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                   (@DistribSMul.toSMulZeroClass Real E                     (@AddMonoid.toAddZeroClass E                       (@SubNegMonoid.toAddMonoid E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                     (@DistribMulAction.toDistribSMul Real E Real.instMonoid                       (@SubNegMonoid.toAddMonoid E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                       (@Module.toDistribMulAction Real E Real.semiring                         (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                         (@NormedSpace.toModule Real E Real.normedField                           (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                           (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                             (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))               \u03bc               (@HSub.hSub E E E                 (@instHSub E                   (@SubNegMonoid.toSub E                     (@AddGroup.toSubNegMonoid E                       (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                 v w))))         (f           (@HSub.hSub E E E             (@instHSub E               (@SubNegMonoid.toSub E                 (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))             y\u2082             (@HSMul.hSMul Real E E               (@instHSMul Real E                 (@SMulZeroClass.toSMul Real E                   (@AddZero.toZero E                     (@AddZeroClass.toAddZero E                       (@AddMonoid.toAddZeroClass E                         (@SubNegMonoid.toAddMonoid E                           (@AddGroup.toSubNegMonoid E                             (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))                   (@DistribSMul.toSMulZeroClass Real E                     (@AddMonoid.toAddZeroClass E                       (@SubNegMonoid.toAddMonoid E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                     (@DistribMulAction.toDistribSMul Real E Real.instMonoid                       (@SubNegMonoid.toAddMonoid E                         (@AddGroup.toSubNegMonoid E                           (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                       (@Module.toDistribMulAction Real E Real.semiring                         (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                         (@NormedSpace.toModule Real E Real.normedField                           (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                           (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                             (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))               \u03bc               (@HSub.hSub E E E                 (@instHSub E                   (@SubNegMonoid.toSub E                     (@AddGroup.toSubNegMonoid E                       (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))                 v w)))))       (@HAdd.hAdd Real Real Real (@instHAdd Real Real.instAdd) (f y\u2081) (f y\u2082)))",
+      "kind": "theorem",
+      "statement_uses": [
+        "ConservativeExchangeDirection.pairChange"
+      ]
+    },
+    {
+      "name": "ConservativeExchangeDirection.score.eq_1",
+      "axioms": [
+        "propext",
+        "Classical.choice",
+        "Quot.sound"
+      ],
+      "nonstandard_axioms": [],
+      "type": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E] [inst_1 : InnerProductSpace \u211d E] (L \u03bc : \u211d) (g\u2081 g\u2082 w : E),   @ConservativeExchangeDirection.score E inst inst_1 L \u03bc g\u2081 g\u2082 w = g\u2081 - g\u2082 - (2 * L * \u03bc) \u2022 w",
+      "type_explicit": "\u2200 {E : Type u_1} [inst : NormedAddCommGroup E]   [inst_1 : @InnerProductSpace Real E Real.instRCLike (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)]   (L \u03bc : Real) (g\u2081 g\u2082 w : E),   @Eq E (@ConservativeExchangeDirection.score E inst inst_1 L \u03bc g\u2081 g\u2082 w)     (@HSub.hSub E E E       (@instHSub E         (@SubNegMonoid.toSub E           (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))       (@HSub.hSub E E E         (@instHSub E           (@SubNegMonoid.toSub E             (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))         g\u2081 g\u2082)       (@HSMul.hSMul Real E E         (@instHSMul Real E           (@SMulZeroClass.toSMul Real E             (@AddZero.toZero E               (@AddZeroClass.toAddZero E                 (@AddMonoid.toAddZeroClass E                   (@SubNegMonoid.toAddMonoid E                     (@AddGroup.toSubNegMonoid E                       (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))))             (@DistribSMul.toSMulZeroClass Real E               (@AddMonoid.toAddZeroClass E                 (@SubNegMonoid.toAddMonoid E                   (@AddGroup.toSubNegMonoid E                     (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst)))))               (@DistribMulAction.toDistribSMul Real E Real.instMonoid                 (@SubNegMonoid.toAddMonoid E                   (@AddGroup.toSubNegMonoid E (@AddCommGroup.toAddGroup E (@NormedAddCommGroup.toAddCommGroup E inst))))                 (@Module.toDistribMulAction Real E Real.semiring                   (@AddCommGroup.toAddCommMonoid E (@NormedAddCommGroup.toAddCommGroup E inst))                   (@NormedSpace.toModule Real E Real.normedField (@NormedAddCommGroup.toSeminormedAddCommGroup E inst)                     (@InnerProductSpace.toNormedSpace Real E Real.instRCLike                       (@NormedAddCommGroup.toSeminormedAddCommGroup E inst) inst_1)))))))         (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)           (@HMul.hMul Real Real Real (@instHMul Real Real.instMul)             (@OfNat.ofNat Real (nat_lit 2)               (@instOfNatAtLeastTwo Real (nat_lit 2) Real.instNatCast ConservativeExchangeDirection.UpperAt._proof_1))             L)           \u03bc)         w))",
+      "kind": "theorem",
+      "statement_uses": [
+        "ConservativeExchangeDirection.score",
+        "ConservativeExchangeDirection.UpperAt._proof_1"
+      ]
+    }
+  ],
+  "statement_context": {
+    "ConservativeExchangeDirection.UpperAt": {
+      "definition": "fun {E} [NormedAddCommGroup E] [InnerProductSpace \u211d E] f L y g =>   \u2200 (d : E), f (y + d) - f y \u2264 inner \u211d g d + L / 2 * \u2016d\u2016 ^ 2",
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 (E \u2192 \u211d) \u2192 \u211d \u2192 E \u2192 E \u2192 Prop"
+    },
+    "ConservativeExchangeDirection.UpperAt._proof_1": {
+      "type": "(1 + 1).AtLeastTwo"
+    },
+    "ConservativeExchangeDirection.model": {
+      "definition": "fun {E} [NormedAddCommGroup E] [InnerProductSpace \u211d E] L \u03bc g\u2081 g\u2082 w v =>   \u03bc * inner \u211d (g\u2081 - g\u2082) (v - w) + L * \u03bc ^ 2 * \u2016v - w\u2016 ^ 2",
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 E \u2192 E \u2192 \u211d"
+    },
+    "ConservativeExchangeDirection.pairChange": {
+      "definition": "fun {E} [NormedAddCommGroup E] [InnerProductSpace \u211d E] f \u03bc y\u2081 y\u2082 w v =>   have d := \u03bc \u2022 (v - w);   f (y\u2081 + d) + f (y\u2082 - d) - (f y\u2081 + f y\u2082)",
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 (E \u2192 \u211d) \u2192 \u211d \u2192 E \u2192 E \u2192 E \u2192 E \u2192 \u211d"
+    },
+    "ConservativeExchangeDirection.score": {
+      "definition": "fun {E} [NormedAddCommGroup E] [InnerProductSpace \u211d E] L \u03bc g\u2081 g\u2082 w => g\u2081 - g\u2082 - (2 * L * \u03bc) \u2022 w",
+      "type": "{E : Type u_1} \u2192 [inst : NormedAddCommGroup E] \u2192 [InnerProductSpace \u211d E] \u2192 \u211d \u2192 \u211d \u2192 E \u2192 E \u2192 E \u2192 E"
+    }
+  },
+  "checker": {
+    "version": "2.5",
+    "sha256_checker": "94612c73d6e82faa7bc0f8496ce779d799b80862f4b0f895dc9dfd89a0fe1353",
+    "sha256_driver": "629965dfd96f28296344971f45e4f622800cf8cfab6c808561a485866746e749"
+  },
+  "toolchain": "leanprover/lean4:v4.35.0",
+  "mathlib_rev": "v4.35.0",
+  "pinned": true,
+  "tier": "local",
+  "stages": {
+    "source_scan": {
+      "status": "pass"
+    },
+    "packages": {
+      "status": "pass",
+      "seconds": 0.9,
+      "checked": [
+        "mathlib",
+        "plausible",
+        "LeanSearchClient",
+        "importGraph",
+        "proofwidgets",
+        "aesop",
+        "Qq",
+        "batteries",
+        "Cli"
+      ]
+    },
+    "compile": {
+      "status": "pass",
+      "seconds": 33.9,
+      "sandboxed": false
+    },
+    "audit": {
+      "status": "pass",
+      "seconds": 227.7
+    },
+    "replay": {
+      "status": "pass",
+      "seconds": 62.5
+    }
+  }
+}
