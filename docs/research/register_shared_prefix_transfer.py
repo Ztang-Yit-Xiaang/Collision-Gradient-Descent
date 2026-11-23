@@ -20,14 +20,14 @@ STAGES = {
 
 def seal(root, tests):
     files = [Path(n) for n in (
-        "run_shared_prefix_transfer.py", "audit_shared_prefix_transfer.py",
+        "scripts/run_shared_prefix_transfer.py", "scripts/audit_shared_prefix_transfer.py",
         "docs/research/register_shared_prefix_transfer.py", "docs/research/register_overlap_transfer.py",
         "docs/research/e27_prefix_timing.py",
         "docs/superpowers/specs/2026-11-10-shared-prefix-transfer-design.md",
         "docs/collision_shared_prefix_transfer_results.md", "docs/experiment_log.md",
     )]
     create(root / "verification.json", {
-        "audit_command": ["python3", "audit_shared_prefix_transfer.py", str(root)],
+        "audit_command": ["python3", "scripts/audit_shared_prefix_transfer.py", str(root)],
         "audit_environment": {"PYTHONPATH": "src", "OMP_NUM_THREADS": "1",
                               "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"},
         "test_run": tests, "audit": read(root / "audit.json"), "same_runtime_source_all_stages": True,

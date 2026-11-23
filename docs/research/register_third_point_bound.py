@@ -14,5 +14,5 @@ if __name__=="__main__":
     register({"passed":args.tests_passed,"seconds":args.test_seconds,
         "command":"OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m pytest -q"},
         phase="E52",base=BASE,spec=SPEC,stem="third_point_bound",diagnostic="loss_bound_skips",
-        extra_sources=("docs/research/register_third_point_bound.py","run_second_contact_reflection.py",
-                       "run_third_saved_point.py","audit_third_saved_point.py"))
+        extra_sources=("docs/research/register_third_point_bound.py","scripts/run_second_contact_reflection.py",
+                       "scripts/run_third_saved_point.py","scripts/audit_third_saved_point.py"))

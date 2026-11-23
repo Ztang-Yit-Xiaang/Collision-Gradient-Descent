@@ -51,7 +51,7 @@ def mechanism_scan(output):
 
 def snapshot(output):
     files = set()
-    for directory in ("src", "tests"):
+    for directory in ("src", "tests", "scripts"):
         files.update(p for p in (ROOT/directory).rglob("*.py") if "__pycache__" not in p.parts)
     files.update(ROOT.glob("*.py"))
     files.update(ROOT/p for p in ("AGENTS.md", "pyproject.toml", "docs/superpowers/specs/2026-11-08-collision-scattering-design.md"))

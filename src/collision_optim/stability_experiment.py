@@ -27,7 +27,7 @@ def sha(path):return hashlib.sha256(path.read_bytes()).hexdigest()
 
 def archive(output):
     paths=set(ROOT.glob('*.py'))
-    for name in ('src','tests'):paths.update(p for p in (ROOT/name).rglob('*.py') if '__pycache__' not in p.parts)
+    for name in ('src','tests','scripts'):paths.update(p for p in (ROOT/name).rglob('*.py') if '__pycache__' not in p.parts)
     paths.update(ROOT/p for p in ('AGENTS.md','pyproject.toml',SPEC,PLAN));manifest={}
     with zipfile.ZipFile(output/'source.zip','x',zipfile.ZIP_DEFLATED) as z:
         for path in sorted(paths):

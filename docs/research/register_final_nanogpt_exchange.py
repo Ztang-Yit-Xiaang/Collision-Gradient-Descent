@@ -36,7 +36,7 @@ def register():
     for root, config, classification in zip(roots, configs, ('engineering_preflight', 'formal_neural_equal_gradient_comparison')):
         result = read(root/'audit.json')
         assert result['passed']
-        paths = [Path(p) for p in ('audit_final_nanogpt_exchange.py',
+        paths = [Path(p) for p in ('scripts/audit_final_nanogpt_exchange.py',
                                    'docs/research/register_final_nanogpt_exchange.py',
                                    'docs/research/nanogpt_exchange_proofs.lean',
                                    'docs/final_nanogpt_exchange_results.md',

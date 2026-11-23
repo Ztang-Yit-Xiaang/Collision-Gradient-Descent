@@ -46,7 +46,7 @@ def register(tests):
         assert sha(root/"source.zip")==config["source_archive_sha256"]
         validation["source_archive_checks"].append(archive_check(root/"source.zip",main_source))
         audit = {"passed":True,"baseline":baseline_audit,"second_reflection":added_audit,"engineering_probe":probe}
-        extra = (str(Path(__file__).resolve().relative_to(Path.cwd())),"run_second_reflection_branches.py",
+        extra = (str(Path(__file__).resolve().relative_to(Path.cwd())),"scripts/run_second_reflection_branches.py",
                  "docs/research/e40_engineering_probe.py")
         validation["source_archive_checks"].append(seal(root,tests,audit,"second_reflection_capped_policy",str(SPEC),extra))
         tables = {}

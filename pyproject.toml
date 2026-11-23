@@ -20,6 +20,6 @@ collision-smoke = "collision_optim.smoke:main"
 where = ["src"]
 
 [tool.pytest.ini_options]
-pythonpath = ["src"]
+pythonpath = ["src", "scripts"]
 testpaths = ["tests"]
 

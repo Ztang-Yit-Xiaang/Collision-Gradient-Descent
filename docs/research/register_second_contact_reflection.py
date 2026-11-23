@@ -50,8 +50,8 @@ def register(tests, *, phase="E50", base=BASE, spec=SPEC, stem="second_contact_r
         assert sha(root/"source.zip")==cfg["source_archive_sha256"]
         validation["source_archive_checks"].append(archive_check(root/"source.zip",cfg["source_sha256"]))
         validation["source_archive_checks"].append(seal(root,tests,audit,stem,str(spec),(
-            str(Path(__file__).resolve().relative_to(Path.cwd())), "run_post_contact_curvature_screen.py",
-            "audit_mixed_post_contact_curvature.py", "src/collision_optim/reflection_window.py", *extra_sources)))
+            str(Path(__file__).resolve().relative_to(Path.cwd())), "scripts/run_post_contact_curvature_screen.py",
+            "scripts/audit_mixed_post_contact_curvature.py", "src/collision_optim/reflection_window.py", *extra_sources)))
         tables = {}
         for name, role in (("decisions","new_paid_forecasts"),("runs","new_capped_continuations"),
                            ("paired_outcomes","derived_policy_comparisons"),(diagnostic,"derived_case_diagnostics")):

@@ -20,7 +20,7 @@ from collision_optim.strategic_experiment import _csv, _json
 PARENT = Path('output/final_nanogpt_exchange')
 SEEDS = (5110, 5111, 5113, 5115, 5117, 5118)
 DEPENDENCIES = (
-    'run_final_nanogpt_exchange.py',
+    'scripts/run_final_nanogpt_exchange.py',
     'src/collision_optim/nanogpt_benchmark.py',
     'src/collision_optim/strategic_experiment.py',
     'third_party/nanogpt/model.py',

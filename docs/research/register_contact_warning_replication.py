@@ -13,12 +13,12 @@ from register_overlap_transfer import archive_check, check_links
 
 def seal(root, tests, audit, stem, spec, extra_sources):
     files = [Path(n) for n in (
-        f"run_{stem}.py", f"audit_{stem}.py",
+        f"scripts/run_{stem}.py", f"scripts/audit_{stem}.py",
         "docs/research/register_contact_warning_replication.py", "docs/research/register_overlap_transfer.py",
         spec, f"docs/collision_{stem}_results.md", "docs/experiment_log.md", *extra_sources,
     )]
     create(root / "verification.json", {
-        "audit": audit, "test_run": tests, "audit_command": ["python3", f"audit_{stem}.py", str(root)],
+        "audit": audit, "test_run": tests, "audit_command": ["python3", f"scripts/audit_{stem}.py", str(root)],
         "audit_environment": {"PYTHONPATH": "src", "OMP_NUM_THREADS": "1",
                               "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"},
     })

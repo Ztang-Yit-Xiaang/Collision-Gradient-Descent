@@ -15,4 +15,4 @@ if __name__=="__main__":
               "command":"OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m pytest -q"},
              base_dir=BASE,spec=SPEC,phase="E44",stem="third_reflection_saved_window",result_file="saved_window_results.json",
              min_links=395,extra_sources=("docs/research/register_third_reflection_saved_window.py",
-                                           "docs/research/e44_contact_recovery.py","run_third_reflection_saved_window_branches.py"))
+                                           "docs/research/e44_contact_recovery.py","scripts/run_third_reflection_saved_window_branches.py"))

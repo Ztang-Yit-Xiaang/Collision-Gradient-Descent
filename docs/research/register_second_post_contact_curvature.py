@@ -46,7 +46,7 @@ def register(tests):
         assert sha(root / "source.zip") == cfg["source_archive_sha256"]
         validation["source_archive_checks"].append(archive_check(root / "source.zip", cfg["source_sha256"]))
         validation["source_archive_checks"].append(seal(root, tests, audit, "second_post_contact_curvature",
-            str(SPEC), (str(Path(__file__).resolve().relative_to(Path.cwd())), "run_post_contact_curvature_screen.py")))
+            str(SPEC), (str(Path(__file__).resolve().relative_to(Path.cwd())), "scripts/run_post_contact_curvature_screen.py")))
         tables = {}
         for name, role in (("decisions", "new_paid_forecasts"), ("runs", "new_continuations"),
                           ("paired_outcomes", "derived_policy_comparisons"),

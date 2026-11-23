@@ -44,8 +44,8 @@ def register(tests, *, base_dir=BASE, spec=SPEC, phase="E43", stem="third_reflec
         assert base["contexts"]==second["contexts"]==extension["continuations"]==third["contexts"]==n
         validation["source_archive_checks"].append(archive_check(root/"source.zip",source))
         validation["source_archive_checks"].append(seal(root,tests,{"passed":True,**checks},stem,str(spec),(
-            str(Path(__file__).resolve().relative_to(Path.cwd())),"run_third_reflection_replication_branches.py",
-            "audit_third_reflection_guard.py",*extra_sources)))
+            str(Path(__file__).resolve().relative_to(Path.cwd())),"scripts/run_third_reflection_replication_branches.py",
+            "scripts/audit_third_reflection_guard.py",*extra_sources)))
         tables = {}
         for relative,role in (("contexts","fresh_initial_states"),("prefixes","executed_E37_prefixes"),("runs","executed_E37_continuations"),
                 ("uninterrupted","engineering_controls"),("second_reflection/runs","executed_second_reflection_transfers"),

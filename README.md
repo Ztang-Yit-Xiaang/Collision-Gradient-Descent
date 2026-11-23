@@ -2,6 +2,21 @@
 
 這個專案實作主動反射、融合接觸、純重力及多粒子彈性碰撞，並提供 momentum SGD、Adam／AdamW 與外部介入控制。除了 **NumPy 合成函數**，已新增官方 NanoGPT 小模型的標準優化器及介入基準；真實地形碰撞版尚未接入神經網路。
 
+## 專案結構
+
+| 路徑 | 內容 |
+| --- | --- |
+| [`src/collision_optim/`](src/collision_optim/) | 優化器、碰撞物理與實驗共用程式 |
+| [`scripts/`](scripts/) | 實驗執行、驗證、分析、繪圖與登錄腳本 |
+| [`tests/`](tests/) | 單元及整合測試 |
+| [`docs/`](docs/) | [期末報告](docs/ee5239_final_report.pdf)、[實驗總紀錄](docs/experiment_log.md)與[課程資料](docs/course/) |
+| [`data/`](data/) 和 [`third_party/`](third_party/) | NanoGPT 測試資料與第三方程式 |
+| `output/` | 在本機產生的軌跡、結果、圖表及原始碼封存 |
+
+從專案根目錄執行 `python3 scripts/<腳本>.py`。需要匯入專案套件的腳本可先安裝 `python3 -m pip install -e '.[test]'`，或在指令前加上 `PYTHONPATH=src`。若要執行 `docs/research/` 中會匯入實驗腳本的程式，可使用 `PYTHONPATH=src:scripts`。
+
+實驗總紀錄與過往報告保留當時的指令和封存路徑。重現要求原始碼雜湊完全一致的實驗時，請在該次實驗的來源封存或對應 commit 中執行當時的指令。
+
 ## 開始使用
 
 指標用語統一為「**好粒子途中曾明顯偏離初始解的次數**」：在一次實驗已保存的觀察點中，好粒子的loss曾比自身初始值上升超過0.0001，就記1次。20/20表示20次全發生，0/20表示全未超過門檻；途中曾發生與最後是否恢復分開報告。
@@ -115,7 +130,7 @@ Smoke test 共用水平作用力、初始位置／速度、步長及阻尼，並
 ## 高維診斷：100 到 100,000 維
 
 ```sh
-python3 run_highdim.py --dimensions 100 1000 10000 100000 --seeds 3 --steps 500
+python3 scripts/run_highdim.py --dimensions 100 1000 10000 100000 --seeds 3 --steps 500
 ```
 
 預設輸出到 `output/highdim`，包含原雙井實驗的事件分析、設定、全部 240 次執行的摘要、每條壓縮純量軌跡，以及 `highdim_comparison.png`。這輪固定兩個方法的既有設定，沒有針對結果調參。
@@ -142,7 +157,7 @@ python3 run_highdim.py --dimensions 100 1000 10000 100000 --seeds 3 --steps 500
 ### 數值穩定性診斷
 
 ```sh
-python3 run_stability.py --dimension 100000 --duration 25 --h-values 0.05 0.025 0.0125
+python3 scripts/run_stability.py --dimension 100000 --duration 25 --h-values 0.05 0.025 0.0125
 ```
 
 此測試針對十萬維 Rosenbrock，固定物理時間及連續阻尼率。較小步長會使用更多步數及評估，因此這不是等計算成本的優化器排名。主動版同時依步長調整耐心次數與 loss 變化門檻，以維持近似相同的觀察時間及變化率容忍度。設定、停止原因、評估次數與能量曲線會保存在 `output/stability`。
@@ -150,8 +165,8 @@ python3 run_stability.py --dimension 100000 --duration 25 --h-values 0.05 0.025 
 ## 方法三：純重力、彈性碰撞與持續接觸
 
 ```sh
-python3 run_gravity.py
-python3 run_gravity_duration.py
+python3 scripts/run_gravity.py
+python3 scripts/run_gravity_duration.py
 ```
 
 `GravityContact` 位於 `src/collision_optim/gravity.py`。質量為 1，地形為 `z >= height_scale*f(x)`，只有垂直重力，位能為 `gravity*z`。預設 `gravity=0.5`、`height_scale=1`，因此表面上的位能係數與普通動量控制組的 `0.5*f` 相同。這個模型沒有另加水平梯度力，也沒有 loss 惡化觸發器。
@@ -181,9 +196,9 @@ print(result.best_value, result.stop_reason)
 ## 多粒子：共用時鐘的彈性碰撞
 
 ```sh
-python3 run_population.py
-python3 run_population_cost.py
-python3 run_population.py --output output/population_preflight --seeds 2 --steps 60 --geometry-seeds 5
+python3 scripts/run_population.py
+python3 scripts/run_population_cost.py
+python3 scripts/run_population.py --output output/population_preflight --seeds 2 --steps 60 --geometry-seeds 5
 ```
 
 `src/collision_optim/population.py` 新增 `PopulationState`、`PopulationConfig`、`PopulationGravity`、`PopulationOracle` 與 `run_population`。各粒子維持原本的純重力自由飛行與地形反彈，所有粒子共用事件時鐘與阻尼時刻。粒子間距離首次達到固定 `rho` 且正在靠近時，沿接觸點中心連線施加等質量彈性衝量；不以 loss 或梯度判斷是否碰撞。
@@ -205,8 +220,8 @@ python3 run_population.py --output output/population_preflight --seeds 2 --steps
 ## 停滯時發球：有限供能與直接擾動對照
 
 ```sh
-python3 run_strategic.py
-python3 run_strategic.py --output output/strategic_check --seeds 2 --steps 100
+python3 scripts/run_strategic.py
+python3 scripts/run_strategic.py --output output/strategic_check --seeds 2 --steps 100
 ```
 
 `src/collision_optim/strategic.py` 在純重力群體原型上加入 `StrategicConfig`、`StagnationMonitor`、`run_strategic`。這輪以一個目標粒子出發，最多新增兩個輔助球；**只評分原目標，輔助球不算額外搜尋者**。這是純重力模型的介入策略，尚未接到 momentum SGD 或 NanoGPT。
@@ -226,9 +241,9 @@ python3 run_strategic.py --output output/strategic_check --seeds 2 --steps 100
 ## 預演後才發球：規劃成本與首次衝量控制
 
 ```sh
-python3 run_predictive.py
-python3 run_predictive.py --output output/predictive_budget1500_new --oracle-budget 1500
-python3 run_predictive.py --output output/predictive_check --seed-start 90 --seeds 2 --steps 220
+python3 scripts/run_predictive.py
+python3 scripts/run_predictive.py --output output/predictive_budget1500_new --oracle-budget 1500
+python3 scripts/run_predictive.py --output output/predictive_check --seed-start 90 --seeds 2 --steps 220
 ```
 
 `src/collision_optim/predictive.py` 負責共用查詢帳本與有限預演，`predictive_runner.py` 負責真實執行及物理帳本。原本的停滯條件只允許規劃；先預演不介入，再測兩個相反方向與由小至大的 `0.10 / 0.20 / 0.30` 供能，每個分支觀察時間固定為 8。只有相對於不介入的原目標最佳 loss 改善超過 `1e-4`，才選該層較好的可行方案；優先採用最低通過的供能層。
@@ -244,11 +259,11 @@ python3 run_predictive.py --output output/predictive_check --seed-start 90 --see
 ## 標準優化器、介入控制與小型 NanoGPT
 
 ```sh
-python3 run_optimizer_comparison.py
-python3 run_nanogpt_comparison.py
-python3 audit_optimizer_comparison.py synthetic output/optimizer_comparison
-python3 audit_optimizer_comparison.py nanogpt output/nanogpt_comparison --matched-replay
-python3 plot_optimizer_comparison.py
+python3 scripts/run_optimizer_comparison.py
+python3 scripts/run_nanogpt_comparison.py
+python3 scripts/audit_optimizer_comparison.py synthetic output/optimizer_comparison
+python3 scripts/audit_optimizer_comparison.py nanogpt output/nanogpt_comparison --matched-replay
+python3 scripts/plot_optimizer_comparison.py
 ```
 
 合成函數仍只需原本依賴；NanoGPT 另需 PyTorch，可安裝 `.[test,benchmark]`。本輪以已安裝的 PyTorch 2.11.0、CPU float32 執行。`third_party/nanogpt/model.py` 是固定提交的未改動官方版本，保留 MIT 授權；文字資料位於 `data/tinyshakespeare.txt`，來源與雜湊均保存。沒有下載預訓練權重。
@@ -266,10 +281,10 @@ python3 plot_optimizer_comparison.py
 ## 便宜的動量控制：繼續、減速與有限加能
 
 ```sh
-PYTHONPATH=src python3 run_momentum_routing.py --suite synthetic --output output/momentum_routing_new
-PYTHONPATH=src python3 run_momentum_routing.py --suite nanogpt --output output/nanogpt_routing_new
-python3 audit_momentum_routing.py synthetic output/momentum_routing_new
-python3 audit_momentum_routing.py nanogpt output/nanogpt_routing_new
+PYTHONPATH=src python3 scripts/run_momentum_routing.py --suite synthetic --output output/momentum_routing_new
+PYTHONPATH=src python3 scripts/run_momentum_routing.py --suite nanogpt --output output/nanogpt_routing_new
+python3 scripts/audit_momentum_routing.py synthetic output/momentum_routing_new
+python3 scripts/audit_momentum_routing.py nanogpt output/nanogpt_routing_new
 ```
 
 `momentum_routing.py` 只讀已有的 loss、梯度、動量與位移，選擇繼續、減速或有限脈衝；沒有模型預演或額外診斷前向。`nanogpt_routing.py` 在原生 SGD 動量上實作，減速同時修改原生 buffer 與外部速度。脈衝後保留兩個視窗的探索觀察期，容許短暫上坡。這些是控制動作，沒有冒稱自然碰撞。
@@ -283,9 +298,9 @@ python3 audit_momentum_routing.py nanogpt output/nanogpt_routing_new
 ## 減速分支：十個新種子的重複驗證
 
 ```sh
-PYTHONPATH=src python3 run_damping_replication.py --output output/damping_replication_new
-PYTHONPATH=src python3 run_damping_replication.py --audit --output output/damping_replication_new
-python3 audit_damping_prefixes.py output/damping_replication_new
+PYTHONPATH=src python3 scripts/run_damping_replication.py --output output/damping_replication_new
+PYTHONPATH=src python3 scripts/run_damping_replication.py --audit --output output/damping_replication_new
+python3 scripts/audit_damping_prefixes.py output/damping_replication_new
 ```
 
 新增固定時刻減速對照：在完成 80／160／240／320 次更新後，將原生動量減半，不做逐步狀態診斷。與原版 Momentum、依狀態重置、依狀態減速及 AdamW，在種子 400–409 上共完成 **50 次訓練**；每組 400 次實際更新，沒有加能或額外模型查詢。全套 **193 個測試通過**。
@@ -297,10 +312,10 @@ python3 audit_damping_prefixes.py output/damping_replication_new
 ## 物理碰撞幾何與守恆隨機出射
 
 ```sh
-PYTHONPATH=src python3 run_scattering.py --output output/collision_scattering_new
-python3 audit_scattering.py output/collision_scattering_new
-python3 plot_scattering.py output/collision_scattering_new
-python3 plot_scattering_mechanism.py output/collision_scattering_new
+PYTHONPATH=src python3 scripts/run_scattering.py --output output/collision_scattering_new
+python3 scripts/audit_scattering.py output/collision_scattering_new
+python3 scripts/plot_scattering.py output/collision_scattering_new
+python3 scripts/plot_scattering_mechanism.py output/collision_scattering_new
 ```
 
 本輪固定初態、四粒子總動能 0.6、共享查詢上限 6,000，比較獨立粒子、真實彈性碰撞，以及同時守恆線性動量／動能的隨機出射消融。後者通常不守恆角動量，不冒稱完整剛體物理。沒有新增供能或 loss 觸發反射。
@@ -312,10 +327,10 @@ python3 plot_scattering_mechanism.py output/collision_scattering_new
 ## 探索後的物理耗散（E17）
 
 ```sh
-PYTHONPATH=src OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 run_cooling.py --output output/collision_cooling_new --workers 4
-python3 audit_cooling.py output/collision_cooling_new
-python3 diagnose_cooling.py output/collision_cooling_new
-python3 plot_cooling.py output/collision_cooling_new
+PYTHONPATH=src OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 scripts/run_cooling.py --output output/collision_cooling_new --workers 4
+python3 scripts/audit_cooling.py output/collision_cooling_new
+python3 scripts/diagnose_cooling.py output/collision_cooling_new
+python3 scripts/plot_cooling.py output/collision_cooling_new
 ```
 
 保留彈性碰撞，比較固定弱、固定較強與預定漸增的外部速度阻尼；三地形、三種粒子規則、三排程、新種子600–609，共 **270條正式軌跡、27條預檢，215個測試通過**。每條正式實際用完共同6000次查詢，無數值／接觸失敗，移除的熱與外部衝量逐步列帳。E16的300條另作衍生診斷，不重算為新實驗。
@@ -325,10 +340,10 @@ python3 plot_cooling.py output/collision_cooling_new
 ## 固定探索／精修交接與獨立復驗（E18）
 
 ```sh
-PYTHONPATH=src OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 run_handoff.py --output output/collision_handoff_new --workers 4
-python3 audit_handoff.py output/collision_handoff_new
-python3 summarize_handoff.py output/collision_handoff_new
-MPLCONFIGDIR=/private/tmp/collision-plots-cache XDG_CACHE_HOME=/private/tmp/collision-font-cache python3 plot_handoff.py output/collision_handoff_new
+PYTHONPATH=src OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 python3 scripts/run_handoff.py --output output/collision_handoff_new --workers 4
+python3 scripts/audit_handoff.py output/collision_handoff_new
+python3 scripts/summarize_handoff.py output/collision_handoff_new
+MPLCONFIGDIR=/private/tmp/collision-plots-cache XDG_CACHE_HOME=/private/tmp/collision-font-cache python3 scripts/plot_handoff.py output/collision_handoff_new
 ```
 
 新種子720–739、三地形、三種探索前段，在實際查詢約半程後比較保留交互作用、四粒子解除交互作用、當前最佳粒子固定GD精修。完成 **180個共用前段＋540個後段、另180條無交接耗散復驗**，225個測試通過；正式皆無數值／接觸失敗。完整路徑各計6000查詢，前段共享節省的實際執行與每個方法應付成本分開。

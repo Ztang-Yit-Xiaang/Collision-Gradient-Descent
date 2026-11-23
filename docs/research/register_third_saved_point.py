@@ -14,4 +14,4 @@ if __name__=="__main__":
     register({"passed":args.tests_passed,"seconds":args.test_seconds,
         "command":"OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m pytest -q"},
         phase="E51",base=BASE,spec=SPEC,stem="third_saved_point",diagnostic="previous_unprotected_cases",
-        extra_sources=("docs/research/register_third_saved_point.py","run_second_contact_reflection.py"))
+        extra_sources=("docs/research/register_third_saved_point.py","scripts/run_second_contact_reflection.py"))

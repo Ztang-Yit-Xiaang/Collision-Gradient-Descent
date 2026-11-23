@@ -43,7 +43,7 @@ class SetupObjective:
 
 def snapshot(output):
     paths = set(ROOT.glob('*.py'))
-    for name in ('src', 'tests'):
+    for name in ('src', 'tests', 'scripts'):
         paths.update(p for p in (ROOT/name).rglob('*.py') if '__pycache__' not in p.parts)
     paths.update(ROOT/p for p in ('AGENTS.md', 'pyproject.toml', SPEC, PLAN))
     extension = ROOT/'docs/research/2026-11-09-contact-sensitivity-extension.md'

@@ -9,6 +9,7 @@ import re
 from urllib.parse import unquote
 import zipfile
 
+from _source_paths import source_path
 from finalize_initial_budget import create, sha
 from refresh_experiment_inventory import read, write
 from register_conditional_transfer import artifact
@@ -26,19 +27,19 @@ def archive_check(path, members):
         for name, digest in members.items():
             assert hashlib.sha256(archive.read(name)).hexdigest() == digest
     return {"archive": str(path), "members_checked": len(members), "integrity_passed": True,
-            "current_differences": [name for name, digest in members.items() if sha(Path(name)) != digest]}
+            "current_differences": [name for name, digest in members.items() if not (current := source_path(name)).is_file() or sha(current) != digest]}
 
 
 def seal(root, tests):
     paths = [
-        Path("run_overlap_transfer.py"), Path("audit_overlap_transfer.py"),
-        Path(__file__).resolve().relative_to(Path.cwd()), Path("register_conditional_transfer.py"),
-        Path("audit_conditional_transfer.py"), Path("finalize_initial_budget.py"),
+        Path("scripts/run_overlap_transfer.py"), Path("scripts/audit_overlap_transfer.py"),
+        Path(__file__).resolve().relative_to(Path.cwd()), Path("scripts/register_conditional_transfer.py"),
+        Path("scripts/audit_conditional_transfer.py"), Path("scripts/finalize_initial_budget.py"),
         Path("docs/superpowers/specs/2026-11-10-overlap-transfer-design.md"),
         Path("docs/collision_overlap_transfer_results.md"), Path("docs/experiment_log.md"),
     ]
     create(root / "verification.json", {
-        "audit_command": ["python3", "audit_overlap_transfer.py", str(root)],
+        "audit_command": ["python3", "scripts/audit_overlap_transfer.py", str(root)],
         "audit_environment": {"PYTHONPATH": "src", "OMP_NUM_THREADS": "1",
                               "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"},
         "test_run": tests, "audit": read(root / "audit.json"),

@@ -25,7 +25,7 @@ SPEC = "docs/superpowers/specs/2026-11-08-collision-cooling-design.md"
 
 def save_snapshot(output):
     paths = set(ROOT.glob("*.py"))
-    for name in ("src", "tests"):
+    for name in ("src", "tests", "scripts"):
         paths.update(p for p in (ROOT/name).rglob("*.py") if "__pycache__" not in p.parts)
     paths.update(ROOT/p for p in ("AGENTS.md", "pyproject.toml", SPEC))
     manifest = {}

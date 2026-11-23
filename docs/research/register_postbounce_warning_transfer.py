@@ -19,14 +19,14 @@ STAGES = {
 
 def seal(root, tests):
     files = [Path(name) for name in (
-        "run_postbounce_warning_transfer.py", "audit_postbounce_warning_transfer.py",
+        "scripts/run_postbounce_warning_transfer.py", "scripts/audit_postbounce_warning_transfer.py",
         "docs/research/register_postbounce_warning_transfer.py", "docs/research/register_overlap_transfer.py",
         "docs/superpowers/specs/2026-11-11-postbounce-warning-transfer-design.md",
         "docs/collision_postbounce_warning_transfer_results.md", "docs/experiment_log.md",
     )]
     create(root / "verification.json", {
         "audit": read(root / "audit.json"), "test_run": tests,
-        "audit_command": ["python3", "audit_postbounce_warning_transfer.py", str(root)],
+        "audit_command": ["python3", "scripts/audit_postbounce_warning_transfer.py", str(root)],
         "audit_environment": {"PYTHONPATH": "src", "OMP_NUM_THREADS": "1",
                               "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"},
     })

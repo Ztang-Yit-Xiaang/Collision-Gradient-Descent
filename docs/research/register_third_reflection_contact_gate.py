@@ -16,4 +16,4 @@ if __name__=="__main__":
              base_dir=BASE,spec=SPEC,phase="E45",stem="third_reflection_contact_gate",result_file="contact_gate_results.json",
              min_links=406,extra_sources=("docs/research/register_third_reflection_contact_gate.py",
                 "docs/research/e45_archived_gate_scan.py","docs/research/e45_recovery_timelines.py",
-                "run_third_reflection_contact_gate_branches.py"))
+                "scripts/run_third_reflection_contact_gate_branches.py"))

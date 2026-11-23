@@ -20,12 +20,12 @@ STAGES = {
 
 def seal(root, tests, audit):
     paths = [Path(n) for n in (
-        "run_contact_time_transfer.py", "audit_contact_time_transfer.py", "docs/research/register_contact_time_transfer.py",
+        "scripts/run_contact_time_transfer.py", "scripts/audit_contact_time_transfer.py", "docs/research/register_contact_time_transfer.py",
         "docs/research/register_overlap_transfer.py", "docs/superpowers/specs/2026-11-11-contact-time-transfer-design.md",
         "docs/collision_contact_time_transfer_results.md", "docs/experiment_log.md",
     )]
     create(root / "verification.json", {
-        "audit": audit, "test_run": tests, "audit_command": ["python3", "audit_contact_time_transfer.py", str(root)],
+        "audit": audit, "test_run": tests, "audit_command": ["python3", "scripts/audit_contact_time_transfer.py", str(root)],
         "audit_environment": {"PYTHONPATH": "src", "OMP_NUM_THREADS": "1",
                               "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"},
     })

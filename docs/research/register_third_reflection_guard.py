@@ -49,7 +49,7 @@ def register(tests):
             assert source==cfg["source_sha256"]
         validation["source_archive_checks"].append(archive_check(root/"source.zip",cfg["source_sha256"]))
         validation["source_archive_checks"].append(seal(root,tests,audit,"third_reflection_guard",str(SPEC),(
-            str(Path(__file__).resolve().relative_to(Path.cwd())),"audit_later_reflection_warning.py",
+            str(Path(__file__).resolve().relative_to(Path.cwd())),"scripts/audit_later_reflection_warning.py",
             "docs/research/e42_policy_cost.py")))
         tables = {}
         for name,role in (("contexts","archived_E41_contexts"),("runs","new_continuations"),

@@ -20,12 +20,12 @@ STAGES = {
 
 def seal(root, tests):
     files = [Path(name) for name in (
-        "run_prebounce_warning.py", "audit_prebounce_warning.py", "docs/research/register_prebounce_warning.py",
+        "scripts/run_prebounce_warning.py", "scripts/audit_prebounce_warning.py", "docs/research/register_prebounce_warning.py",
         "docs/research/register_overlap_transfer.py", "docs/superpowers/specs/2026-11-11-prebounce-warning-design.md",
         "docs/collision_prebounce_warning_results.md", "docs/experiment_log.md",
     )]
     create(root / "verification.json", {
-        "audit_command": ["python3", "audit_prebounce_warning.py", str(root)],
+        "audit_command": ["python3", "scripts/audit_prebounce_warning.py", str(root)],
         "audit_environment": {"PYTHONPATH": "src", "OMP_NUM_THREADS": "1",
                               "OPENBLAS_NUM_THREADS": "1", "MKL_NUM_THREADS": "1"},
         "test_run": tests, "audit": read(root / "audit.json"), "same_runtime_source_all_stages": True,

@@ -22,7 +22,7 @@ PLAN='docs/superpowers/plans/2026-11-09-curvature-energy-plan.md'
 
 def snapshot(output):
     paths=set(ROOT.glob('*.py'))
-    for name in ('src','tests'):paths.update(p for p in (ROOT/name).rglob('*.py') if '__pycache__' not in p.parts)
+    for name in ('src','tests','scripts'):paths.update(p for p in (ROOT/name).rglob('*.py') if '__pycache__' not in p.parts)
     paths.update(ROOT/f for f in ('AGENTS.md','pyproject.toml',SPEC,PLAN))
     amendment=ROOT/'docs/research/2026-11-10-energy-exploration-amendment.md'
     if amendment.exists():paths.add(amendment)

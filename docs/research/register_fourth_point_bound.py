@@ -15,4 +15,4 @@ if __name__=="__main__":
         "command":"OMP_NUM_THREADS=1 OPENBLAS_NUM_THREADS=1 MKL_NUM_THREADS=1 /Library/Frameworks/Python.framework/Versions/3.12/bin/python3 -m pytest -q"},
         phase="E54",base=BASE,spec=SPEC,stem="fourth_point_bound",diagnostic="previous_unprotected_cases",
         retry_preflight=True,extra_sources=("docs/research/register_fourth_point_bound.py",
-        "run_second_contact_reflection.py","run_third_point_bound.py","audit_third_point_bound.py","audit_third_saved_point.py"))
+        "scripts/run_second_contact_reflection.py","scripts/run_third_point_bound.py","scripts/audit_third_point_bound.py","scripts/audit_third_saved_point.py"))

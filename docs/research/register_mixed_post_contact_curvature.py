@@ -43,8 +43,8 @@ def register(tests, *, phase="E49", base=BASE, spec=SPEC, stem="mixed_post_conta
         assert sha(root/"source.zip") == cfg["source_archive_sha256"]
         validation["source_archive_checks"].append(archive_check(root/"source.zip", source))
         validation["source_archive_checks"].append(seal(root, tests, audit, stem, str(spec), (
-            str(Path(__file__).resolve().relative_to(Path.cwd())), "run_post_contact_positive_stress.py",
-            "run_post_contact_curvature_screen.py", *extra_sources)))
+            str(Path(__file__).resolve().relative_to(Path.cwd())), "scripts/run_post_contact_positive_stress.py",
+            "scripts/run_post_contact_curvature_screen.py", *extra_sources)))
         tables = {}
         for name, role in (("contexts", "new_paired_states_and_paid_forecasts"),
                            ("runs", "executed_unique_continuations"),
